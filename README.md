@@ -36,11 +36,11 @@
 示例 URL：
 
 ```text
-Catalog: https://raw.githubusercontent.com/<owner>/<repo>/main/catalog/models.json
-Aliases: https://raw.githubusercontent.com/<owner>/<repo>/main/catalog/aliases.json
-SVG: https://raw.githubusercontent.com/<owner>/<repo>/main/assets/icons/grok.svg
-PNG 512: https://raw.githubusercontent.com/<owner>/<repo>/main/assets/raster/grok/android-chrome-512.png
-Pages: https://<owner>.github.io/<repo>/
+Catalog: https://raw.githubusercontent.com/sonnedu/ai-model-icons/main/catalog/models.json
+Aliases: https://raw.githubusercontent.com/sonnedu/ai-model-icons/main/catalog/aliases.json
+SVG: https://raw.githubusercontent.com/sonnedu/ai-model-icons/main/assets/icons/grok.svg
+PNG 512: https://raw.githubusercontent.com/sonnedu/ai-model-icons/main/assets/raster/grok/android-chrome-512.png
+Pages: https://sonnedu.github.io/ai-model-icons/
 ```
 
 ## Static Usage
