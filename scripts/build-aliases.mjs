@@ -27,16 +27,23 @@ const initials = (value) =>
 
 const aliases = {};
 const collisions = {};
+const manualKeys = new Set();
 
-const add = (alias, id) => {
+const add = (alias, id, options = {}) => {
   const key = normalize(alias);
   if (!key || key.length < 2) return;
+  if (!options.manual && manualKeys.has(key) && aliases[key] !== id) return;
   if (aliases[key] && aliases[key] !== id) {
     collisions[key] = [...new Set([aliases[key], id])];
     return;
   }
   aliases[key] = id;
+  if (options.manual) manualKeys.add(key);
 };
+
+for (const [id, values] of Object.entries(manualAliases)) {
+  for (const alias of values) add(alias, id, { manual: true });
+}
 
 for (const item of catalog.items) {
   add(item.id, item.id);
@@ -47,7 +54,6 @@ for (const item of catalog.items) {
     add(family, item.id);
     add(initials(family), item.id);
   }
-  for (const alias of manualAliases[item.id] || []) add(alias, item.id);
 }
 
 const payload = {

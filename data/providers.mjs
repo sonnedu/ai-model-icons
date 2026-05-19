@@ -128,4 +128,19 @@ export const providers = [
   ["you-com", "You.com", ["YouChat", "ARI"], "assistant", "US", "https://you.com"],
   ["poe", "Poe", ["Poe"], "assistant", "US", "https://poe.com"],
   ["morph-labs", "Morph Labs", ["Morph"], "foundation-model", "US", "https://morphllm.com"]
+  ,["grok", "Grok", ["Grok", "Grok 3", "Grok 4", "SuperGrok"], "assistant", "US", "https://grok.com", "xai"]
+  ,["github-copilot", "GitHub Copilot", ["Copilot", "GitHub Copilot"], "assistant", "US", "https://github.com/features/copilot", "github"]
+  ,["gemini", "Gemini", ["Gemini", "Gemini Pro", "Gemini Flash"], "assistant", "US", "https://gemini.google.com", "google-gemini"]
+  ,["sora", "Sora", ["Sora"], "media-model", "US", "https://sora.chatgpt.com", "openai"]
+  ,["dall-e", "DALL-E", ["DALL-E", "DALL-E 3"], "media-model", "US", "https://openai.com/dall-e", "openai"]
+  ,["qwen", "Qwen", ["Qwen", "QwQ", "QvQ"], "assistant", "CN", "https://qwen.ai", "alibaba-qwen"]
+  ,["kimi", "Kimi", ["Kimi", "Kimi K2"], "assistant", "CN", "https://www.kimi.com", "moonshot-ai"]
+  ,["doubao", "Doubao", ["Doubao"], "assistant", "CN", "https://www.doubao.com", "bytedance-doubao"]
+  ,["hunyuan", "Hunyuan", ["Hunyuan", "Tencent Hunyuan"], "assistant", "CN", "https://hunyuan.tencent.com", "tencent-hunyuan"]
+  ,["ernie", "ERNIE", ["ERNIE", "Wenxin", "文心一言"], "assistant", "CN", "https://yiyan.baidu.com", "baidu-ernie"]
+  ,["pangu", "Pangu", ["Pangu", "盘古"], "foundation-model", "CN", "https://www.huaweicloud.com/product/pangu.html", "huawei-pangu"]
+  ,["stable-diffusion", "Stable Diffusion", ["Stable Diffusion", "SDXL"], "media-model", "UK", "https://stability.ai/stable-diffusion", "stability-ai"]
+  ,["flux", "FLUX", ["FLUX", "FLUX.1"], "media-model", "DE", "https://blackforestlabs.ai", "black-forest-labs"]
+  ,["llama", "Llama", ["Llama", "Llama 3", "Llama 4"], "foundation-model", "US", "https://www.llama.com", "meta-ai"]
+  ,["phi", "Phi", ["Phi", "Phi-4"], "foundation-model", "US", "https://azure.microsoft.com/products/phi", "microsoft-ai"]
 ];

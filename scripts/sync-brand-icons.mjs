@@ -12,6 +12,13 @@ const sourceUrl = (source) => {
   if (source.type === "simple-icons") {
     return `https://cdn.simpleicons.org/${source.slug}`;
   }
+  if (source.type === "iconify") {
+    const [prefix, name] = source.icon.split(":");
+    return `https://api.iconify.design/${prefix}/${name}.svg`;
+  }
+  if (source.type === "lobe-icons") {
+    return `https://unpkg.com/@lobehub/icons-static-svg@latest/icons/${source.slug}.svg`;
+  }
   return source.url;
 };
 

@@ -28,9 +28,11 @@ const server = http.createServer((req, res) => {
       query,
       id: result.item.id,
       name: result.item.name,
+      ownerId: result.item.ownerId || null,
       score: result.score,
       icon: `/${result.item.icon.path}`,
-      source: result.item.icon.source
+      source: result.item.icon.source,
+      match: result.item.icon.match || null
     });
   }
 

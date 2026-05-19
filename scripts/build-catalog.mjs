@@ -50,7 +50,7 @@ const iconSvg = (provider) => {
 `;
 };
 
-const items = providers.map(([id, name, modelFamilies, category, country, website]) => {
+const items = providers.map(([id, name, modelFamilies, category, country, website, ownerId]) => {
   const iconPath = `assets/icons/${id}.svg`;
   fs.writeFileSync(path.join(root, iconPath), iconSvg([id, name]), "utf8");
   return {
@@ -60,6 +60,7 @@ const items = providers.map(([id, name, modelFamilies, category, country, websit
     category,
     country,
     website,
+    ...(ownerId ? { ownerId } : {}),
     icon: {
       type: "svg",
       source: "generated-vector",

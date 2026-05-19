@@ -1,5 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Technology Innovation Institute icon">
-  <rect width="256" height="256" rx="56" fill="hsl(74 58% 24%)"/>
-  <path d="M40 68C40 52.5 52.5 40 68 40h120c15.5 0 28 12.5 28 28v120c0 15.5-12.5 28-28 28H68c-15.5 0-28-12.5-28-28V68Z" fill="none" stroke="hsl(92 70% 54%)" stroke-width="12"/>
-  <text x="128" y="146" text-anchor="middle" dominant-baseline="middle" fill="hsl(112 88% 92%)" font-family="Inter, Arial, sans-serif" font-size="94" font-weight="800" letter-spacing="0">TI</text>
-</svg>
+<svg fill="currentColor" fill-rule="evenodd" height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Technology Innovation Institute</title><path d="M11.098 7.563H4.75V9.77h1.77v6.668h2.807V9.77h1.77V7.563zM14.812 7.563h-2.807v8.875h2.807V7.563zM19.433 7.563h-2.807v8.875h2.807V7.563z"></path><path d="M12 24v-1.055c3.01 0 5.613-1.079 7.737-3.208 2.123-2.13 3.209-4.727 3.209-7.737 0-3.009-1.08-5.607-3.209-7.736-2.128-2.13-4.732-3.21-7.736-3.21V0c3.294 0 6.148 1.184 8.482 3.518C22.817 5.852 24 8.706 24 12c0 3.295-1.183 6.155-3.518 8.483C18.147 22.811 15.3 24 12.001 24z"></path></svg>

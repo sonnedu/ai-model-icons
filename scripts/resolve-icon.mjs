@@ -16,6 +16,8 @@ console.log(JSON.stringify({
   query,
   id: result.item.id,
   name: result.item.name,
+  ownerId: result.item.ownerId || null,
   icon: result.item.icon.path,
+  match: result.item.icon.match || null,
   score: result.score
 }, null, 2));

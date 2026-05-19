@@ -1,5 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Character.AI icon">
-  <rect width="256" height="256" rx="56" fill="hsl(188 58% 24%)"/>
-  <path d="M40 68C40 52.5 52.5 40 68 40h120c15.5 0 28 12.5 28 28v120c0 15.5-12.5 28-28 28H68c-15.5 0-28-12.5-28-28V68Z" fill="none" stroke="hsl(206 70% 54%)" stroke-width="12"/>
-  <text x="128" y="146" text-anchor="middle" dominant-baseline="middle" fill="hsl(226 88% 92%)" font-family="Inter, Arial, sans-serif" font-size="78" font-weight="800" letter-spacing="0">CHA</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><rect width="37" height="37" x="5.5" y="5.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" rx="4" ry="4"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M19.282 25.898c-.45.9-1.5 1.5-2.55 1.5h0a3.01 3.01 0 0 1-3-3v-1.95a3.01 3.01 0 0 1 3-3h0c1.05 0 2.1.6 2.55 1.5"/><circle cx="33.518" cy="16.853" r=".75" fill="currentColor"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M33.518 19.297v8.101m-3.558 0v-8.101m0 5.101a3.01 3.01 0 0 1-3 3h0a3.01 3.01 0 0 1-3-3v-1.95a3.01 3.01 0 0 1 3-3h0a3.01 3.01 0 0 1 3 3"/><circle cx="21.879" cy="27.148" r=".75" fill="currentColor"/></svg>
