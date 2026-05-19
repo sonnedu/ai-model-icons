@@ -108,6 +108,38 @@
         font-size: 14px;
       }
 
+      .api {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+
+      .apiGroup {
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--card);
+      }
+
+      .apiGroup h2 {
+        margin: 0 0 10px;
+        font-size: 15px;
+        line-height: 1.25;
+      }
+
+      .apiGroup code {
+        display: block;
+        margin: 8px 0 0;
+        padding: 8px;
+        overflow: auto;
+        border-radius: 6px;
+        color: var(--fg);
+        background: var(--bg);
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
       .grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
@@ -219,7 +251,31 @@
       <div class="meta">
         <span id="count">0 items</span>
         <a href="catalog/models.json">catalog/models.json</a>
+        <a href="catalog/aliases.json">aliases.json</a>
+        <a href="https://github.com/sonnedu/ai-model-icons#api-usage" target="_blank" rel="noreferrer">API docs</a>
       </div>
+      <section class="api" aria-label="API 使用">
+        <div class="apiGroup">
+          <h2>Static catalog</h2>
+          <a href="catalog/models.json">models.json</a>
+          <code>GET /catalog/models.json</code>
+          <a href="catalog/aliases.json">aliases.json</a>
+          <code>GET /catalog/aliases.json</code>
+        </div>
+        <div class="apiGroup">
+          <h2>Direct assets</h2>
+          <a href="assets/icons/grok.svg">Grok SVG</a>
+          <code>GET /assets/icons/grok.svg</code>
+          <a href="assets/raster/grok/android-chrome-512.png">Grok PNG 512</a>
+          <code>GET /assets/raster/grok/android-chrome-512.png</code>
+        </div>
+        <div class="apiGroup">
+          <h2>Resolver API</h2>
+          <a href="https://github.com/sonnedu/ai-model-icons#api-usage" target="_blank" rel="noreferrer">README usage</a>
+          <code>npm run serve</code>
+          <code>GET /api/resolve?q=grok</code>
+        </div>
+      </section>
       <section id="grid" class="grid" aria-live="polite"></section>
       <p id="empty" class="empty">没有匹配的图标。</p>
     </main>

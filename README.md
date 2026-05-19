@@ -23,15 +23,17 @@
 | [`data/providers.mjs`](data/providers.mjs) | 生成 catalog 的结构化条目源 |
 | [`data/manual-aliases.mjs`](data/manual-aliases.mjs) | 人工别名和模型名映射 |
 | [`data/icon-sources.mjs`](data/icon-sources.mjs) | 可自动同步的官方/社区矢量源 |
-| [`docs/index.html`](docs/index.html) | GitHub Pages 静态浏览页面 |
+| [`docs/index.html`](docs/index.html) | 静态浏览页面源文件 |
+| [`scripts/build-site.mjs`](scripts/build-site.mjs) | 生成可部署的 `public/` 静态站点 |
 | [`scripts/api-server.mjs`](scripts/api-server.mjs) | 本地或服务器 API |
 
 ## Publish On GitHub
 
 1. 创建 GitHub 仓库并推送本项目。
 2. 在 GitHub repo settings 里启用 GitHub Pages。
-3. Pages source 选择 `main` 分支的 `/docs` 目录。
-4. 发布后可以用 GitHub raw URL 直接访问 catalog 和图标。
+3. Pages source 选择 `GitHub Actions`。
+4. 保留 `.github/workflows/pages.yml`，每次 push 到 `main` 会执行 `npm run build:site` 并发布 `public/`。
+5. 发布后可以用 Pages 同源 URL 或 GitHub raw URL 访问 catalog 和图标。
 
 示例 URL：
 
@@ -41,6 +43,15 @@ Aliases: https://raw.githubusercontent.com/sonnedu/ai-model-icons/main/catalog/a
 SVG: https://raw.githubusercontent.com/sonnedu/ai-model-icons/main/assets/icons/grok.svg
 PNG 512: https://raw.githubusercontent.com/sonnedu/ai-model-icons/main/assets/raster/grok/android-chrome-512.png
 Pages: https://sonnedu.github.io/ai-model-icons/
+```
+
+Pages 同源示例：
+
+```text
+Catalog: https://sonnedu.github.io/ai-model-icons/catalog/models.json
+Aliases: https://sonnedu.github.io/ai-model-icons/catalog/aliases.json
+SVG: https://sonnedu.github.io/ai-model-icons/assets/icons/grok.svg
+PNG 512: https://sonnedu.github.io/ai-model-icons/assets/raster/grok/android-chrome-512.png
 ```
 
 ## Static Usage
