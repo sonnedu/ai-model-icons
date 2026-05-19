@@ -1,0 +1,414 @@
+{
+  "version": "2026-05-19",
+  "licenseNote": "Brand icons and names are trademarks of their respective owners. Prefer official brand assets or Simple Icons where license terms permit.",
+  "items": [
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "modelFamilies": ["GPT", "o-series", "Sora", "DALL-E", "Whisper"],
+      "category": "foundation-model",
+      "country": "US",
+      "website": "https://openai.com",
+      "icon": {
+        "type": "favicon",
+        "url": "https://www.google.com/s2/favicons?domain=openai.com&sz=128"
+      }
+    },
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "modelFamilies": ["GPT"],
+      "category": "assistant",
+      "country": "US",
+      "website": "https://chatgpt.com",
+      "icon": {
+        "type": "favicon",
+        "url": "https://www.google.com/s2/favicons?domain=chatgpt.com&sz=128"
+      }
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "modelFamilies": ["Claude"],
+      "category": "foundation-model",
+      "country": "US",
+      "website": "https://anthropic.com",
+      "icon": {
+        "type": "simple-icons",
+        "slug": "anthropic",
+        "url": "https://cdn.simpleicons.org/anthropic/000000"
+      }
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "modelFamilies": ["Claude"],
+      "category": "assistant",
+      "country": "US",
+      "website": "https://claude.ai",
+      "icon": {
+        "type": "favicon",
+        "url": "https://www.google.com/s2/favicons?domain=claude.ai&sz=128"
+      }
+    },
+    {
+      "id": "google-gemini",
+      "name": "Google Gemini",
+      "modelFamilies": ["Gemini", "Imagen", "Veo", "Gemma"],
+      "category": "foundation-model",
+      "country": "US",
+      "website": "https://gemini.google.com",
+      "icon": {
+        "type": "simple-icons",
+        "slug": "googlegemini",
+        "url": "https://cdn.simpleicons.org/googlegemini/8E75B2"
+      }
+    },
+    {
+      "id": "google-deepmind",
+      "name": "Google DeepMind",
+      "modelFamilies": ["Gemini", "AlphaFold", "Gemma"],
+      "category": "research-lab",
+      "country": "UK",
+      "website": "https://deepmind.google",
+      "icon": {
+        "type": "favicon",
+        "url": "https://www.google.com/s2/favicons?domain=deepmind.google&sz=128"
+      }
+    },
+    {
+      "id": "meta-ai",
+      "name": "Meta AI",
+      "modelFamilies": ["Llama", "SAM", "Emu"],
+      "category": "foundation-model",
+      "country": "US",
+      "website": "https://ai.meta.com",
+      "icon": {
+        "type": "simple-icons",
+        "slug": "meta",
+        "url": "https://cdn.simpleicons.org/meta/0467DF"
+      }
+    },
+    {
+      "id": "xai",
+      "name": "xAI",
+      "modelFamilies": ["Grok"],
+      "category": "foundation-model",
+      "country": "US",
+      "website": "https://x.ai",
+      "icon": {
+        "type": "favicon",
+        "url": "https://www.google.com/s2/favicons?domain=x.ai&sz=128"
+      }
+    },
+    {
+      "id": "mistral-ai",
+      "name": "Mistral AI",
+      "modelFamilies": ["Mistral", "Mixtral", "Codestral", "Le Chat"],
+      "category": "foundation-model",
+      "country": "FR",
+      "website": "https://mistral.ai",
+      "icon": {
+        "type": "simple-icons",
+        "slug": "mistralai",
+        "url": "https://cdn.simpleicons.org/mistralai/FA520F"
+      }
+    },
+    {
+      "id": "cohere",
+      "name": "Cohere",
+      "modelFamilies": ["Command", "Embed", "Rerank"],
+      "category": "foundation-model",
+      "country": "CA",
+      "website": "https://cohere.com",
+      "icon": {
+        "type": "favicon",
+        "url": "https://www.google.com/s2/favicons?domain=cohere.com&sz=128"
+      }
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "modelFamilies": ["Sonar"],
+      "category": "assistant",
+      "country": "US",
+      "website": "https://perplexity.ai",
+      "icon": {
+        "type": "simple-icons",
+        "slug": "perplexity",
+        "url": "https://cdn.simpleicons.org/perplexity/1FB8CD"
+      }
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "modelFamilies": ["DeepSeek"],
+      "category": "foundation-model",
+      "country": "CN",
+      "website": "https://deepseek.com",
+      "icon": {
+        "type": "simple-icons",
+        "slug": "deepseek",
+        "url": "https://cdn.simpleicons.org/deepseek/4D6BFF"
+      }
+    },
+    {
+      "id": "alibaba-qwen",
+      "name": "Alibaba Qwen",
+      "modelFamilies": ["Qwen", "Wan", "Tongyi"],
+      "category": "foundation-model",
+      "country": "CN",
+      "website": "https://qwen.ai",
+      "icon": {
+        "type": "favicon",
+        "url": "https://www.google.com/s2/favicons?domain=qwen.ai&sz=128"
+      }
+    },
+    {
+      "id": "zhipu-ai",
+      "name": "Zhipu AI",
+      "modelFamilies": ["GLM", "ChatGLM"],
+      "category": "foundation-model",
+      "country": "CN",
+      "website": "https://z.ai",
+      "icon": {
+        "type": "favicon",
+        "url": "https://www.google.com/s2/favicons?domain=z.ai&sz=128"
+      }
+    },
+    {
+      "id": "moonshot-ai",
+      "name": "Moonshot AI",
+      "modelFamilies": ["Kimi"],
+      "category": "foundation-model",
+      "country": "CN",
+      "website": "https://moonshot.cn",
+      "icon": {
+        "type": "favicon",
+        "url": "https://www.google.com/s2/favicons?domain=moonshot.cn&sz=128"
+      }
+    },
+    {
+      "id": "baichuan-ai",
+      "name": "Baichuan AI",
+      "modelFamilies": ["Baichuan"],
+      "category": "foundation-model",
+      "country": "CN",
+      "website": "https://www.baichuan-ai.com",
+      "icon": {
+        "type": "favicon",
+        "url": "https://www.google.com/s2/favicons?domain=baichuan-ai.com&sz=128"
+      }
+    },
+    {
+      "id": "minimax",
+      "name": "MiniMax",
+      "modelFamilies": ["MiniMax", "Hailuo"],
+      "category": "foundation-model",
+      "country": "CN",
+      "website": "https://www.minimaxi.com",
+      "icon": {
+        "type": "favicon",
+        "url": "https://www.google.com/s2/favicons?domain=minimaxi.com&sz=128"
+      }
+    },
+    {
+      "id": "01-ai",
+      "name": "01.AI",
+      "modelFamilies": ["Yi"],
+      "category": "foundation-model",
+      "country": "CN",
+      "website": "https://01.ai",
+      "icon": {
+        "type": "favicon",
+        "url": "https://www.google.com/s2/favicons?domain=01.ai&sz=128"
+      }
+    },
+    {
+      "id": "bytedance-doubao",
+      "name": "ByteDance Doubao",
+      "modelFamilies": ["Doubao", "Seed", "Jimeng"],
+      "category": "foundation-model",
+      "country": "CN",
+      "website": "https://www.doubao.com",
+      "icon": {
+        "type": "favicon",
+        "url": "https://www.google.com/s2/favicons?domain=doubao.com&sz=128"
+      }
+    },
+    {
+      "id": "baidu-ernie",
+      "name": "Baidu ERNIE",
+      "modelFamilies": ["ERNIE", "Wenxin"],
+      "category": "foundation-model",
+      "country": "CN",
+      "website": "https://yiyan.baidu.com",
+      "icon": {
+        "type": "simple-icons",
+        "slug": "baidu",
+        "url": "https://cdn.simpleicons.org/baidu/2932E1"
+      }
+    },
+    {
+      "id": "tencent-hunyuan",
+      "name": "Tencent Hunyuan",
+      "modelFamilies": ["Hunyuan"],
+      "category": "foundation-model",
+      "country": "CN",
+      "website": "https://hunyuan.tencent.com",
+      "icon": {
+        "type": "favicon",
+        "url": "https://www.google.com/s2/favicons?domain=hunyuan.tencent.com&sz=128"
+      }
+    },
+    {
+      "id": "huawei-pangu",
+      "name": "Huawei Pangu",
+      "modelFamilies": ["Pangu"],
+      "category": "foundation-model",
+      "country": "CN",
+      "website": "https://www.huaweicloud.com/product/pangu.html",
+      "icon": {
+        "type": "simple-icons",
+        "slug": "huawei",
+        "url": "https://cdn.simpleicons.org/huawei/FF0000"
+      }
+    },
+    {
+      "id": "stability-ai",
+      "name": "Stability AI",
+      "modelFamilies": ["Stable Diffusion", "Stable Audio", "Stable Video"],
+      "category": "media-model",
+      "country": "UK",
+      "website": "https://stability.ai",
+      "icon": {
+        "type": "favicon",
+        "url": "https://www.google.com/s2/favicons?domain=stability.ai&sz=128"
+      }
+    },
+    {
+      "id": "midjourney",
+      "name": "Midjourney",
+      "modelFamilies": ["Midjourney"],
+      "category": "media-model",
+      "country": "US",
+      "website": "https://www.midjourney.com",
+      "icon": {
+        "type": "favicon",
+        "url": "https://www.google.com/s2/favicons?domain=midjourney.com&sz=128"
+      }
+    },
+    {
+      "id": "runway",
+      "name": "Runway",
+      "modelFamilies": ["Gen"],
+      "category": "media-model",
+      "country": "US",
+      "website": "https://runwayml.com",
+      "icon": {
+        "type": "favicon",
+        "url": "https://www.google.com/s2/favicons?domain=runwayml.com&sz=128"
+      }
+    },
+    {
+      "id": "elevenlabs",
+      "name": "ElevenLabs",
+      "modelFamilies": ["ElevenLabs"],
+      "category": "audio-model",
+      "country": "US",
+      "website": "https://elevenlabs.io",
+      "icon": {
+        "type": "simple-icons",
+        "slug": "elevenlabs",
+        "url": "https://cdn.simpleicons.org/elevenlabs/000000"
+      }
+    },
+    {
+      "id": "hugging-face",
+      "name": "Hugging Face",
+      "modelFamilies": ["Transformers", "Inference Providers"],
+      "category": "platform",
+      "country": "US",
+      "website": "https://huggingface.co",
+      "icon": {
+        "type": "simple-icons",
+        "slug": "huggingface",
+        "url": "https://cdn.simpleicons.org/huggingface/FFD21E"
+      }
+    },
+    {
+      "id": "replicate",
+      "name": "Replicate",
+      "modelFamilies": ["Replicate"],
+      "category": "platform",
+      "country": "US",
+      "website": "https://replicate.com",
+      "icon": {
+        "type": "simple-icons",
+        "slug": "replicate",
+        "url": "https://cdn.simpleicons.org/replicate/000000"
+      }
+    },
+    {
+      "id": "together-ai",
+      "name": "Together AI",
+      "modelFamilies": ["Together Inference"],
+      "category": "platform",
+      "country": "US",
+      "website": "https://www.together.ai",
+      "icon": {
+        "type": "favicon",
+        "url": "https://www.google.com/s2/favicons?domain=together.ai&sz=128"
+      }
+    },
+    {
+      "id": "fireworks-ai",
+      "name": "Fireworks AI",
+      "modelFamilies": ["Fireworks Inference"],
+      "category": "platform",
+      "country": "US",
+      "website": "https://fireworks.ai",
+      "icon": {
+        "type": "favicon",
+        "url": "https://www.google.com/s2/favicons?domain=fireworks.ai&sz=128"
+      }
+    },
+    {
+      "id": "groq",
+      "name": "Groq",
+      "modelFamilies": ["GroqCloud"],
+      "category": "platform",
+      "country": "US",
+      "website": "https://groq.com",
+      "icon": {
+        "type": "favicon",
+        "url": "https://www.google.com/s2/favicons?domain=groq.com&sz=128"
+      }
+    },
+    {
+      "id": "ollama",
+      "name": "Ollama",
+      "modelFamilies": ["Local LLM"],
+      "category": "local-runtime",
+      "country": "US",
+      "website": "https://ollama.com",
+      "icon": {
+        "type": "simple-icons",
+        "slug": "ollama",
+        "url": "https://cdn.simpleicons.org/ollama/000000"
+      }
+    },
+    {
+      "id": "lm-studio",
+      "name": "LM Studio",
+      "modelFamilies": ["Local LLM"],
+      "category": "local-runtime",
+      "country": "US",
+      "website": "https://lmstudio.ai",
+      "icon": {
+        "type": "favicon",
+        "url": "https://www.google.com/s2/favicons?domain=lmstudio.ai&sz=128"
+      }
+    }
+  ]
+}
