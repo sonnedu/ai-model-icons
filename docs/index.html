@@ -218,7 +218,7 @@
     <main class="wrap">
       <div class="meta">
         <span id="count">0 items</span>
-        <a href="../catalog/models.json">catalog/models.json</a>
+        <a href="https://raw.githubusercontent.com/sonnedu/ai-model-icons/main/catalog/models.json">catalog/models.json</a>
       </div>
       <section id="grid" class="grid" aria-live="polite"></section>
       <p id="empty" class="empty">没有匹配的图标。</p>
@@ -242,6 +242,8 @@
     </template>
 
     <script>
+      const rawBase = "https://raw.githubusercontent.com/sonnedu/ai-model-icons/main";
+
       const state = {
         items: [],
         query: "",
@@ -277,7 +279,7 @@
         els.empty.style.display = items.length ? "none" : "block";
 
         for (const item of items) {
-          const iconHref = `../${item.icon.path}`;
+          const iconHref = `${rawBase}/${item.icon.path}`;
           const node = els.template.content.cloneNode(true);
           node.querySelector("img").src = iconHref;
           node.querySelector("img").alt = `${item.name} icon`;
@@ -298,7 +300,10 @@
       }
 
       async function init() {
-        const response = await fetch("../catalog/models.json");
+        const response = await fetch(`${rawBase}/catalog/models.json`);
+        if (!response.ok) {
+          throw new Error(`catalog HTTP ${response.status}`);
+        }
         const catalog = await response.json();
         state.items = catalog.items.sort((a, b) => a.name.localeCompare(b.name));
 
