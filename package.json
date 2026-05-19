@@ -6,6 +6,7 @@
   "scripts": {
     "build:aliases": "node scripts/build-aliases.mjs",
     "build:raster": "node scripts/build-raster-assets.mjs",
+    "build:site": "node scripts/build-site.mjs",
     "check": "node scripts/validate-catalog.mjs && node scripts/check-icons.mjs && node scripts/check-raster-assets.mjs && node scripts/audit-icon-matches.mjs",
     "serve": "node scripts/api-server.mjs"
   },

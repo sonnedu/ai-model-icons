@@ -14,6 +14,7 @@ node_modules/
 # Build output and temp files
 dist/
 build/
+public/
 coverage/
 .cache/
 .wrangler/
