@@ -129,7 +129,7 @@ export const providers = [
   ["poe", "Poe", ["Poe"], "assistant", "US", "https://poe.com"],
   ["morph-labs", "Morph Labs", ["Morph"], "foundation-model", "US", "https://morphllm.com"]
   ,["grok", "Grok", ["Grok", "Grok 3", "Grok 4", "SuperGrok"], "assistant", "US", "https://grok.com", "xai"]
-  ,["github-copilot", "GitHub Copilot", ["Copilot", "GitHub Copilot"], "assistant", "US", "https://github.com/features/copilot", "github"]
+  ,["github-copilot", "GitHub Copilot", ["Copilot", "GitHub Copilot"], "assistant", "US", "https://github.com/features/copilot", "microsoft-ai"]
   ,["gemini", "Gemini", ["Gemini", "Gemini Pro", "Gemini Flash"], "assistant", "US", "https://gemini.google.com", "google-gemini"]
   ,["sora", "Sora", ["Sora"], "media-model", "US", "https://sora.chatgpt.com", "openai"]
   ,["dall-e", "DALL-E", ["DALL-E", "DALL-E 3"], "media-model", "US", "https://openai.com/dall-e", "openai"]

@@ -5,6 +5,10 @@ import { providers } from "../data/providers.mjs";
 const root = new URL("..", import.meta.url).pathname;
 const iconsDir = path.join(root, "assets/icons");
 const catalogPath = path.join(root, "catalog/models.json");
+const existingCatalog = fs.existsSync(catalogPath)
+  ? JSON.parse(fs.readFileSync(catalogPath, "utf8"))
+  : { items: [] };
+const existingById = new Map(existingCatalog.items.map((item) => [item.id, item]));
 
 fs.mkdirSync(iconsDir, { recursive: true });
 
@@ -52,8 +56,13 @@ const iconSvg = (provider) => {
 
 const items = providers.map(([id, name, modelFamilies, category, country, website, ownerId]) => {
   const iconPath = `assets/icons/${id}.svg`;
-  fs.writeFileSync(path.join(root, iconPath), iconSvg([id, name]), "utf8");
+  const absoluteIconPath = path.join(root, iconPath);
+  if (!fs.existsSync(absoluteIconPath)) {
+    fs.writeFileSync(absoluteIconPath, iconSvg([id, name]), "utf8");
+  }
+  const existing = existingById.get(id);
   return {
+    ...existing,
     id,
     name,
     modelFamilies,
@@ -61,11 +70,13 @@ const items = providers.map(([id, name, modelFamilies, category, country, websit
     country,
     website,
     ...(ownerId ? { ownerId } : {}),
-    icon: {
+    icon: existing?.icon || {
       type: "svg",
       source: "generated-vector",
       quality: "vector",
-      path: iconPath
+      path: iconPath,
+      sourceUrl: null,
+      match: "needs-entity-icon"
     }
   };
 });
@@ -73,9 +84,10 @@ const items = providers.map(([id, name, modelFamilies, category, country, websit
 const catalog = {
   version: new Date().toISOString().slice(0, 10),
   licenseNote:
+    existingCatalog.licenseNote ||
     "Brand names are trademarks of their respective owners. Icons in assets/icons are local vector placeholders unless source says otherwise; replace with official brand SVGs only when license terms permit.",
   items
 };
 
 fs.writeFileSync(catalogPath, `${JSON.stringify(catalog, null, 2)}\n`, "utf8");
-console.log(`Built ${items.length} catalog entries and SVG icons`);
+console.log(`Built ${items.length} catalog entries without overwriting existing icons`);

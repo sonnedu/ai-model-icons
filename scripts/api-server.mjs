@@ -77,12 +77,38 @@ const server = http.createServer((req, res) => {
     return sendJson(res, 200, xcodeImageSetContents(result.item));
   }
 
+  if (url.pathname.startsWith("/assets/apple/") && url.pathname.endsWith(".svg")) {
+    const match = url.pathname.match(/^\/assets\/apple\/([^/]+)\.imageset\/([^/]+\.svg)$/);
+    const raw = decodeURIComponent(match?.[1] || "");
+    const filename = decodeURIComponent(match?.[2] || "");
+    const result = resolveIcon(raw);
+    if (!result.matched || filename !== `${result.item.id}.svg`) {
+      res.writeHead(404);
+      return res.end("Not found");
+    }
+    const file = path.join(root, result.item.icon.path);
+    res.writeHead(200, {
+      "content-type": "image/svg+xml; charset=utf-8",
+      "access-control-allow-origin": "*",
+      "cache-control": "public, max-age=31536000, immutable"
+    });
+    return fs.createReadStream(file).pipe(res);
+  }
+
   if (url.pathname.startsWith("/assets/android/") && url.pathname.endsWith(".xml")) {
     const match = url.pathname.match(/^\/assets\/android\/([^/]+)\/(.+)$/);
     const raw = decodeURIComponent(match?.[1] || "");
     const file = match?.[2] || "";
     const result = resolveIcon(raw);
     if (!result.matched) return sendJson(res, 404, { matched: false, query: raw });
+    if (
+      file !== "mipmap-anydpi-v26/ic_launcher.xml" &&
+      file !== "drawable/ic_launcher_foreground.xml" &&
+      file !== "drawable/ic_launcher_monochrome.xml"
+    ) {
+      res.writeHead(404);
+      return res.end("Not found");
+    }
     res.writeHead(200, {
       "content-type": "application/xml; charset=utf-8",
       "access-control-allow-origin": "*",
