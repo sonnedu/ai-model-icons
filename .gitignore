@@ -16,6 +16,7 @@ dist/
 build/
 coverage/
 .cache/
+.wrangler/
 .tmp/
 tmp/
 *.tmp
