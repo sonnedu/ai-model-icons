@@ -41,7 +41,7 @@ export const providers = [
   ["nvidia-ai", "NVIDIA AI", ["Nemotron", "NIM", "BioNeMo"], "foundation-model", "US", "https://www.nvidia.com/en-us/ai"],
   ["microsoft-ai", "Microsoft AI", ["Phi", "MAI"], "foundation-model", "US", "https://ai.microsoft"],
   ["amazon-bedrock", "Amazon Bedrock", ["Nova", "Titan"], "platform", "US", "https://aws.amazon.com/bedrock"],
-  ["apple-machine-learning", "Apple Machine Learning", ["Apple Intelligence", "OpenELM", "Ferret"], "foundation-model", "US", "https://machinelearning.apple.com"],
+  ["apple-intelligence", "Apple Intelligence", ["Apple Intelligence"], "assistant", "US", "https://www.apple.com/apple-intelligence/"],
   ["ibm-watsonx", "IBM watsonx", ["Granite"], "foundation-model", "US", "https://www.ibm.com/watsonx"],
   ["salesforce-ai", "Salesforce AI", ["xGen", "BLIP", "Einstein"], "foundation-model", "US", "https://www.salesforce.com/artificial-intelligence"],
   ["databricks", "Databricks", ["DBRX", "MosaicML"], "foundation-model", "US", "https://www.databricks.com"],

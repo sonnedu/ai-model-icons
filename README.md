@@ -6,6 +6,7 @@
 
 - Gallery: [`docs/index.html`](docs/index.html)
 - Catalog JSON: [`catalog/models.json`](catalog/models.json)
+- Alias Index: [`catalog/aliases.json`](catalog/aliases.json)
 - Local SVG Icons: [`assets/icons`](assets/icons)
 - Raw JSON: `https://raw.githubusercontent.com/<owner>/<repo>/main/catalog/models.json`
 - GitHub Pages: `https://<owner>.github.io/<repo>/`
@@ -26,6 +27,7 @@
 | `icon.path` | 本地高清矢量图标路径，如 `assets/icons/openai.svg` |
 | `icon.source` | `generated-vector` 表示本地矢量占位；替换成官方 SVG 后可改为 `official` |
 | `icon.quality` | 当前统一为 `vector` |
+| `icon.match` | `entity` 表示图标匹配该条目本体；`brand` 表示品牌图标；不要用母公司 logo 冒充产品 logo |
 
 ## Current Coverage
 
@@ -36,14 +38,50 @@
 ```bash
 node scripts/validate-catalog.mjs
 node scripts/check-icons.mjs
+node scripts/build-aliases.mjs
 ```
+
+## Resolve Icons
+
+Static usage on GitHub Pages:
+
+- Load [`catalog/models.json`](catalog/models.json)
+- Load [`catalog/aliases.json`](catalog/aliases.json)
+- Normalize input by lowercasing and removing symbols/spaces, then read `aliases[normalizedInput]`
+- Return the matched item's `icon.path`
+
+Local/self-hosted API:
+
+```bash
+node scripts/api-server.mjs
+```
+
+```bash
+curl "http://localhost:8787/api/resolve?q=GPT-4o"
+curl "http://localhost:8787/icon/claude-sonnet"
+curl "http://localhost:8787/icon/混元"
+```
+
+CLI:
+
+```bash
+node scripts/resolve-icon.mjs GPT-4o
+node scripts/resolve-icon.mjs claude-sonnet
+node scripts/resolve-icon.mjs qwen
+```
+
+The resolver supports case-insensitive matching, punctuation-insensitive matching, aliases, abbreviations, Chinese names, and model-family names.
 
 ## Add A New Icon
 
 1. 在 [`data/providers.mjs`](data/providers.mjs) 中新增厂商。
 2. 运行 `node scripts/build-catalog.mjs` 生成 catalog 和本地 SVG。
-3. 如果有可合法使用的官方 SVG，把对应 `assets/icons/<id>.svg` 替换为官方矢量文件，并把 catalog 里的 `icon.source` 改成 `official`。
+3. 如果有可合法使用的官方 SVG，把对应 `assets/icons/<id>.svg` 替换为官方矢量文件，并把 catalog 里的 `icon.source` 改成对应来源。
 4. 运行校验脚本。
+
+## Icon Matching Policy
+
+图标必须匹配条目本体。厂商条目可以使用厂商品牌 logo；产品、助手、模型族条目必须使用产品/模型自己的 logo。没有可靠高清矢量来源时，保留 `generated-vector` 或待补状态，不使用母公司 logo 代替。
 
 ## Trademark And License Notes
 

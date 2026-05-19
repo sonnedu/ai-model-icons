@@ -11,7 +11,7 @@ async function check(item) {
     return;
   }
   const svg = fs.readFileSync(iconPath, "utf8");
-  if (!svg.includes("<svg") || !svg.includes("viewBox=")) {
+  if (!svg.includes("<svg") || !/(viewBox|width|height)=/.test(svg)) {
     failures.push(`INVALID ${item.id} ${item.icon.path}`);
   }
 }

@@ -1,0 +1,44 @@
+403 openai https://openai.com
+403 chatgpt https://chatgpt.com
+403 claude https://claude.ai
+NO_SVG google-deepmind https://deepmind.google
+403 xai https://x.ai
+NO_SVG alibaba-qwen https://qwen.ai
+NO_SVG baichuan-ai https://www.baichuan-ai.com
+NO_SVG minimax https://www.minimaxi.com
+NO_SVG 01-ai https://01.ai
+NO_SVG bytedance-doubao https://www.doubao.com
+NO_SVG stability-ai https://stability.ai
+403 midjourney https://www.midjourney.com
+NO_SVG runway https://runwayml.com
+ERR fireworks-ai fetch failed
+ERR microsoft-ai fetch failed
+NO_SVG amazon-bedrock https://aws.amazon.com/bedrock
+NO_SVG ibm-watsonx https://www.ibm.com/watsonx
+ERR character-ai fetch failed
+403 adept-ai https://www.adept.ai
+NO_SVG magic https://magic.dev
+403 ideogram https://ideogram.ai
+NO_SVG luma-ai https://lumalabs.ai
+NO_SVG pika https://pika.art
+NO_SVG kling-ai https://klingai.com
+403 canva-ai https://www.canva.com/ai
+NO_SVG udio https://www.udio.com
+ERR playht fetch failed
+NO_SVG azure-ai-foundry https://azure.microsoft.com/products/ai-foundry
+NO_SVG iflytek-spark https://xinghuo.xfyun.cn
+NO_SVG 360-zhinao https://ai.360.com
+NO_SVG kunlun-tiangong https://www.tiangong.cn
+NO_SVG ant-ling https://ling.tbox.cn
+NO_SVG baai https://www.baai.ac.cn
+ERR fudan-moss fetch failed
+403 tii-falcon https://www.tii.ae
+NO_SVG g42 https://www.g42.ai
+NO_SVG allen-ai https://allenai.org
+NO_SVG eleutherai https://www.eleuther.ai
+NO_SVG naver-hyperclova https://clova.ai
+NO_SVG sber-gigachat https://developers.sber.ru/portal/products/gigachat
+ERR writer fetch failed
+403 phind https://www.phind.com
+NO_SVG you-com https://you.com
+403 poe https://poe.com
