@@ -12,6 +12,22 @@ import { resolveIcon } from "./icon-resolver.mjs";
 
 const root = new URL("..", import.meta.url).pathname;
 const port = Number(process.env.PORT || 8787);
+const iconRoot = path.join(root, "assets/icons");
+const rasterRoot = path.join(root, "assets/raster");
+
+const isInside = (file, dir) => {
+  const relative = path.relative(dir, file);
+  return relative && !relative.startsWith("..") && !path.isAbsolute(relative);
+};
+
+const sendFile = (res, file, contentType, cacheControl = "public, max-age=31536000, immutable") => {
+  res.writeHead(200, {
+    "content-type": contentType,
+    "access-control-allow-origin": "*",
+    "cache-control": cacheControl
+  });
+  return fs.createReadStream(file).pipe(res);
+};
 
 const sendJson = (res, status, payload) => {
   res.writeHead(status, {
@@ -87,12 +103,7 @@ const server = http.createServer((req, res) => {
       return res.end("Not found");
     }
     const file = path.join(root, result.item.icon.path);
-    res.writeHead(200, {
-      "content-type": "image/svg+xml; charset=utf-8",
-      "access-control-allow-origin": "*",
-      "cache-control": "public, max-age=31536000, immutable"
-    });
-    return fs.createReadStream(file).pipe(res);
+    return sendFile(res, file, "image/svg+xml; charset=utf-8");
   }
 
   if (url.pathname.startsWith("/assets/android/") && url.pathname.endsWith(".xml")) {
@@ -121,22 +132,35 @@ const server = http.createServer((req, res) => {
   }
 
   if (url.pathname.startsWith("/assets/icons/")) {
-    const file = path.join(root, url.pathname);
-    if (!file.startsWith(path.join(root, "assets/icons")) || !fs.existsSync(file)) {
+    const raw = decodeURIComponent(path.basename(url.pathname, ".svg"));
+    const directFile = path.resolve(root, `.${url.pathname}`);
+    const result = resolveIcon(raw);
+    const file =
+      fs.existsSync(directFile) && isInside(directFile, iconRoot)
+        ? directFile
+        : result.matched
+          ? path.resolve(root, result.item.icon.path)
+          : null;
+    if (!file || !isInside(file, iconRoot) || !fs.existsSync(file)) {
       res.writeHead(404);
       return res.end("Not found");
     }
-    res.writeHead(200, {
-      "content-type": "image/svg+xml; charset=utf-8",
-      "access-control-allow-origin": "*",
-      "cache-control": "public, max-age=31536000, immutable"
-    });
-    return fs.createReadStream(file).pipe(res);
+    return sendFile(res, file, "image/svg+xml; charset=utf-8");
   }
 
   if (url.pathname.startsWith("/assets/raster/")) {
-    const file = path.join(root, url.pathname);
-    if (!file.startsWith(path.join(root, "assets/raster")) || !fs.existsSync(file)) {
+    const parts = url.pathname.split("/").filter(Boolean);
+    const raw = decodeURIComponent(parts[2] || "");
+    const rest = parts.slice(3).map((part) => decodeURIComponent(part));
+    const directFile = path.resolve(root, `.${url.pathname}`);
+    const result = resolveIcon(raw);
+    const file =
+      fs.existsSync(directFile) && isInside(directFile, rasterRoot)
+        ? directFile
+        : result.matched
+          ? path.resolve(rasterRoot, result.item.id, ...rest)
+          : null;
+    if (!file || !isInside(file, rasterRoot) || !fs.existsSync(file)) {
       res.writeHead(404);
       return res.end("Not found");
     }
