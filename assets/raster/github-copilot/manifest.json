@@ -1,0 +1,35 @@
+{
+  "id": "github-copilot",
+  "name": "GitHub Copilot",
+  "source": "assets/icons/github-copilot.svg",
+  "renditions": {
+    "favicon-16.png": {
+      "size": 16,
+      "path": "assets/raster/github-copilot/favicon-16.png"
+    },
+    "favicon-32.png": {
+      "size": 32,
+      "path": "assets/raster/github-copilot/favicon-32.png"
+    },
+    "favicon-48.png": {
+      "size": 48,
+      "path": "assets/raster/github-copilot/favicon-48.png"
+    },
+    "apple-touch-icon-180.png": {
+      "size": 180,
+      "path": "assets/raster/github-copilot/apple-touch-icon-180.png"
+    },
+    "android-chrome-192.png": {
+      "size": 192,
+      "path": "assets/raster/github-copilot/android-chrome-192.png"
+    },
+    "android-chrome-512.png": {
+      "size": 512,
+      "path": "assets/raster/github-copilot/android-chrome-512.png"
+    },
+    "icon-1024.png": {
+      "size": 1024,
+      "path": "assets/raster/github-copilot/icon-1024.png"
+    }
+  }
+}

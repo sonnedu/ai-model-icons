@@ -108,6 +108,21 @@ const server = http.createServer((req, res) => {
     return fs.createReadStream(file).pipe(res);
   }
 
+  if (url.pathname.startsWith("/assets/raster/")) {
+    const file = path.join(root, url.pathname);
+    if (!file.startsWith(path.join(root, "assets/raster")) || !fs.existsSync(file)) {
+      res.writeHead(404);
+      return res.end("Not found");
+    }
+    const isJson = file.endsWith(".json");
+    res.writeHead(200, {
+      "content-type": isJson ? "application/json; charset=utf-8" : "image/png",
+      "access-control-allow-origin": "*",
+      "cache-control": "public, max-age=31536000, immutable"
+    });
+    return fs.createReadStream(file).pipe(res);
+  }
+
   sendJson(res, 404, {
     error: "Use /api/resolve?q=claude-sonnet or /icon/gpt-4o"
   });

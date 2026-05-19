@@ -1,0 +1,15 @@
+{
+  "name": "models-assets",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:aliases": "node scripts/build-aliases.mjs",
+    "build:raster": "node scripts/build-raster-assets.mjs",
+    "check": "node scripts/validate-catalog.mjs && node scripts/check-icons.mjs && node scripts/audit-icon-matches.mjs",
+    "serve": "node scripts/api-server.mjs"
+  },
+  "dependencies": {
+    "sharp": "^0.33.5"
+  }
+}

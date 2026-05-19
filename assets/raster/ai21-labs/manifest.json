@@ -1,0 +1,35 @@
+{
+  "id": "ai21-labs",
+  "name": "AI21 Labs",
+  "source": "assets/icons/ai21-labs.svg",
+  "renditions": {
+    "favicon-16.png": {
+      "size": 16,
+      "path": "assets/raster/ai21-labs/favicon-16.png"
+    },
+    "favicon-32.png": {
+      "size": 32,
+      "path": "assets/raster/ai21-labs/favicon-32.png"
+    },
+    "favicon-48.png": {
+      "size": 48,
+      "path": "assets/raster/ai21-labs/favicon-48.png"
+    },
+    "apple-touch-icon-180.png": {
+      "size": 180,
+      "path": "assets/raster/ai21-labs/apple-touch-icon-180.png"
+    },
+    "android-chrome-192.png": {
+      "size": 192,
+      "path": "assets/raster/ai21-labs/android-chrome-192.png"
+    },
+    "android-chrome-512.png": {
+      "size": 512,
+      "path": "assets/raster/ai21-labs/android-chrome-512.png"
+    },
+    "icon-1024.png": {
+      "size": 1024,
+      "path": "assets/raster/ai21-labs/icon-1024.png"
+    }
+  }
+}

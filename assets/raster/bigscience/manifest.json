@@ -1,0 +1,35 @@
+{
+  "id": "bigscience",
+  "name": "BigScience",
+  "source": "assets/icons/bigscience.svg",
+  "renditions": {
+    "favicon-16.png": {
+      "size": 16,
+      "path": "assets/raster/bigscience/favicon-16.png"
+    },
+    "favicon-32.png": {
+      "size": 32,
+      "path": "assets/raster/bigscience/favicon-32.png"
+    },
+    "favicon-48.png": {
+      "size": 48,
+      "path": "assets/raster/bigscience/favicon-48.png"
+    },
+    "apple-touch-icon-180.png": {
+      "size": 180,
+      "path": "assets/raster/bigscience/apple-touch-icon-180.png"
+    },
+    "android-chrome-192.png": {
+      "size": 192,
+      "path": "assets/raster/bigscience/android-chrome-192.png"
+    },
+    "android-chrome-512.png": {
+      "size": 512,
+      "path": "assets/raster/bigscience/android-chrome-512.png"
+    },
+    "icon-1024.png": {
+      "size": 1024,
+      "path": "assets/raster/bigscience/icon-1024.png"
+    }
+  }
+}

@@ -1,6 +1,7 @@
 export const assetProfiles = (item, origin = "") => {
   const icon = `/${item.icon.path}`;
   const encodedName = encodeURIComponent(item.name);
+  const rasterBase = `/assets/raster/${item.id}`;
 
   return {
     id: item.id,
@@ -13,18 +14,24 @@ export const assetProfiles = (item, origin = "") => {
       xcodeImageSet: `/assets/apple/${item.id}.imageset/Contents.json`,
       universalSvg: icon,
       appleTouchIconSvg: icon,
-      note: "Apple touch icons normally require PNG. This repo provides SVG-first assets; generate PNG renditions with a rasterizer such as sharp, resvg, or Inkscape when required."
+      appleTouchIconPng: `${rasterBase}/apple-touch-icon-180.png`,
+      icon1024Png: `${rasterBase}/icon-1024.png`
     },
     android: {
       adaptiveIconXml: `/assets/android/${item.id}/mipmap-anydpi-v26/ic_launcher.xml`,
       foregroundVectorDrawable: `/assets/android/${item.id}/drawable/ic_launcher_foreground.xml`,
       monochromeVectorDrawable: `/assets/android/${item.id}/drawable/ic_launcher_monochrome.xml`,
+      chrome192Png: `${rasterBase}/android-chrome-192.png`,
+      chrome512Png: `${rasterBase}/android-chrome-512.png`,
       webManifest: `/manifest/${encodeURIComponent(item.id)}.webmanifest`,
       svg: icon,
       note: "Android VectorDrawable is not equivalent to arbitrary SVG. The XML endpoints provide a wrapper/reference profile; convert complex SVG paths with Android Studio Vector Asset, vector-drawable-tool, or a build step when native APK resources are required."
     },
     web: {
       faviconSvg: icon,
+      favicon16Png: `${rasterBase}/favicon-16.png`,
+      favicon32Png: `${rasterBase}/favicon-32.png`,
+      favicon48Png: `${rasterBase}/favicon-48.png`,
       maskIcon: icon,
       webManifest: `/manifest/${encodeURIComponent(item.id)}.webmanifest`
     },
@@ -36,6 +43,7 @@ export const assetProfiles = (item, origin = "") => {
     },
     urls: {
       svg: `${origin}${icon}`,
+      rasterManifest: `${origin}${rasterBase}/manifest.json`,
       assets: `${origin}/api/assets?q=${encodedName}`,
       manifest: `${origin}/manifest/${encodeURIComponent(item.id)}.webmanifest`
     }
@@ -46,6 +54,24 @@ export const webManifest = (item) => ({
   name: item.name,
   short_name: item.name,
   icons: [
+    {
+      src: `/assets/raster/${item.id}/android-chrome-192.png`,
+      sizes: "192x192",
+      type: "image/png",
+      purpose: "any"
+    },
+    {
+      src: `/assets/raster/${item.id}/android-chrome-512.png`,
+      sizes: "512x512",
+      type: "image/png",
+      purpose: "any"
+    },
+    {
+      src: `/assets/raster/${item.id}/android-chrome-512.png`,
+      sizes: "512x512",
+      type: "image/png",
+      purpose: "maskable"
+    },
     {
       src: `/${item.icon.path}`,
       sizes: "any",
