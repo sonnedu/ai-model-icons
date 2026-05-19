@@ -100,6 +100,29 @@ export const iconSources = {
   "adobe-firefly": { type: "simple-icons", slug: "adobe", match: "parent-brand" },
   udio: { type: "lobe-icons", slug: "udio", match: "entity" },
   assemblyai: { type: "lobe-icons", slug: "assemblyai", match: "brand" },
+  "baidu-ernie": { type: "simple-icons", slug: "baidu", match: "parent-brand" },
+  "huawei-pangu": { type: "simple-icons", slug: "huawei", match: "parent-brand" },
+  "snowflake-arctic": { type: "simple-icons", slug: "snowflake", match: "parent-brand" },
+  "replit-ai": { type: "simple-icons", slug: "replit", match: "parent-brand" },
+  "cloudflare-workers-ai": { type: "simple-icons", slug: "cloudflare", match: "parent-brand" },
+  "vertex-ai": { type: "lobe-icons", slug: "vertexai", match: "entity" },
+  "azure-ai-foundry": { type: "lobe-icons", slug: "azureai", match: "entity" },
+  "alibaba-cloud-model-studio": { type: "simple-icons", slug: "alibabacloud", match: "parent-brand" },
+  "sensetime-sensechat": {
+    type: "official-website",
+    url: "https://static.sensetime.com/images/st_logo_black.svg",
+    page: "https://www.sensetime.com",
+    match: "parent-brand"
+  },
+  "vivo-bluelm": { type: "simple-icons", slug: "vivo", match: "parent-brand" },
+  "oppo-andesgpt": { type: "simple-icons", slug: "oppo", match: "parent-brand" },
+  "meituan-longcat": { type: "simple-icons", slug: "meituan", match: "parent-brand" },
+  "jd-chatrhino": {
+    type: "official-website",
+    url: "https://img1.jcloudcs.com/portal/jdcloud-logo-white-2021.svg",
+    page: "https://www.jdcloud.com",
+    match: "parent-brand"
+  },
   "xiaomi-mimo": { type: "lobe-icons", slug: "xiaomimimo", match: "entity" },
   "360-zhinao": { type: "lobe-icons", slug: "ai360", match: "entity" },
   "kunlun-tiangong": { type: "lobe-icons", slug: "tiangong", match: "entity" },
@@ -184,5 +207,10 @@ export const iconSources = {
   doubao: { type: "lobe-icons", slug: "doubao", match: "entity" },
   hunyuan: { type: "lobe-icons", slug: "hunyuan", match: "entity" },
   flux: { type: "lobe-icons", slug: "flux", match: "entity" },
+  yandexgpt: { type: "simple-icons", slug: "yandexcloud", match: "parent-brand" },
+  ernie: { type: "simple-icons", slug: "baidu", match: "parent-brand" },
+  pangu: { type: "simple-icons", slug: "huawei", match: "parent-brand" },
+  "stable-diffusion": { type: "lobe-icons", slug: "stability", match: "parent-brand" },
+  llama: { type: "simple-icons", slug: "meta", match: "parent-brand" },
   phi: { type: "lobe-icons", slug: "microsoft", match: "parent-brand" }
 };

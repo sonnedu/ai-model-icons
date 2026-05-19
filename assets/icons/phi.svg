@@ -1,7 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Phi icon">
-  <rect width="256" height="256" rx="56" fill="#3B0764"/>
-  <path d="M128 38 204 82v88l-76 48-76-48V82l76-44Z" fill="none" stroke="#E879F9" stroke-width="12" stroke-linejoin="round"/>
-  <path d="M128 66 178 95v58l-50 32-50-32V95l50-29Z" fill="#E879F9" opacity=".22"/>
-  <circle cx="128" cy="126" r="54" fill="none" stroke="#FDF4FF" stroke-width="10" opacity=".92"/>
-  <text x="128" y="134" text-anchor="middle" dominant-baseline="middle" fill="#FDF4FF" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="800" letter-spacing="0">PHI</text>
-</svg>
+<svg fill="currentColor" fill-rule="evenodd" height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Azure</title><path d="M11.49 2H2v9.492h9.492V2h-.002z"></path><path d="M22 2h-9.492v9.492H22V2z"></path><path d="M11.49 12.508H2V22h9.492v-9.492h-.002z"></path><path d="M22 12.508h-9.492V22H22v-9.492z"></path></svg>

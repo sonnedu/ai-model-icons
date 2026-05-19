@@ -1,5 +1,204 @@
 {
   "checked": 148,
-  "reviewCount": 0,
-  "rows": []
+  "reviewCount": 18,
+  "rows": [
+    {
+      "id": "baidu-ernie",
+      "name": "Baidu ERNIE",
+      "category": "foundation-model",
+      "source": "simple-icons",
+      "match": "parent-brand",
+      "sourceUrl": "https://cdn.simpleicons.org/baidu",
+      "issues": [
+        "review-parent-brand"
+      ]
+    },
+    {
+      "id": "huawei-pangu",
+      "name": "Huawei Pangu",
+      "category": "foundation-model",
+      "source": "simple-icons",
+      "match": "parent-brand",
+      "sourceUrl": "https://cdn.simpleicons.org/huawei",
+      "issues": [
+        "review-parent-brand"
+      ]
+    },
+    {
+      "id": "snowflake-arctic",
+      "name": "Snowflake Arctic",
+      "category": "foundation-model",
+      "source": "simple-icons",
+      "match": "parent-brand",
+      "sourceUrl": "https://cdn.simpleicons.org/snowflake",
+      "issues": [
+        "review-parent-brand"
+      ]
+    },
+    {
+      "id": "replit-ai",
+      "name": "Replit AI",
+      "category": "foundation-model",
+      "source": "simple-icons",
+      "match": "parent-brand",
+      "sourceUrl": "https://cdn.simpleicons.org/replit",
+      "issues": [
+        "review-parent-brand"
+      ]
+    },
+    {
+      "id": "cloudflare-workers-ai",
+      "name": "Cloudflare Workers AI",
+      "category": "platform",
+      "source": "simple-icons",
+      "match": "parent-brand",
+      "sourceUrl": "https://cdn.simpleicons.org/cloudflare",
+      "issues": [
+        "review-parent-brand"
+      ]
+    },
+    {
+      "id": "alibaba-cloud-model-studio",
+      "name": "Alibaba Cloud Model Studio",
+      "category": "platform",
+      "source": "simple-icons",
+      "match": "parent-brand",
+      "sourceUrl": "https://cdn.simpleicons.org/alibabacloud",
+      "issues": [
+        "review-parent-brand"
+      ]
+    },
+    {
+      "id": "sensetime-sensechat",
+      "name": "SenseTime SenseChat",
+      "category": "foundation-model",
+      "source": "official-website",
+      "match": "parent-brand",
+      "sourceUrl": "https://www.sensetime.com",
+      "issues": [
+        "review-parent-brand"
+      ]
+    },
+    {
+      "id": "vivo-bluelm",
+      "name": "vivo BlueLM",
+      "category": "foundation-model",
+      "source": "simple-icons",
+      "match": "parent-brand",
+      "sourceUrl": "https://cdn.simpleicons.org/vivo",
+      "issues": [
+        "review-parent-brand"
+      ]
+    },
+    {
+      "id": "oppo-andesgpt",
+      "name": "OPPO AndesGPT",
+      "category": "foundation-model",
+      "source": "simple-icons",
+      "match": "parent-brand",
+      "sourceUrl": "https://cdn.simpleicons.org/oppo",
+      "issues": [
+        "review-parent-brand"
+      ]
+    },
+    {
+      "id": "meituan-longcat",
+      "name": "Meituan LongCat",
+      "category": "foundation-model",
+      "source": "simple-icons",
+      "match": "parent-brand",
+      "sourceUrl": "https://cdn.simpleicons.org/meituan",
+      "issues": [
+        "review-parent-brand"
+      ]
+    },
+    {
+      "id": "jd-chatrhino",
+      "name": "JD ChatRhino",
+      "category": "foundation-model",
+      "source": "official-website",
+      "match": "parent-brand",
+      "sourceUrl": "https://www.jdcloud.com",
+      "issues": [
+        "review-parent-brand"
+      ]
+    },
+    {
+      "id": "naver-hyperclova",
+      "name": "NAVER HyperCLOVA",
+      "category": "foundation-model",
+      "source": "wikimedia-commons",
+      "match": "parent-brand",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Naver_Clova_Logotype.svg",
+      "issues": [
+        "review-parent-brand"
+      ]
+    },
+    {
+      "id": "yandexgpt",
+      "name": "YandexGPT",
+      "category": "foundation-model",
+      "source": "simple-icons",
+      "match": "parent-brand",
+      "sourceUrl": "https://cdn.simpleicons.org/yandexcloud",
+      "issues": [
+        "review-parent-brand"
+      ]
+    },
+    {
+      "id": "ernie",
+      "name": "ERNIE",
+      "category": "assistant",
+      "source": "simple-icons",
+      "match": "parent-brand",
+      "sourceUrl": "https://cdn.simpleicons.org/baidu",
+      "issues": [
+        "review-parent-brand"
+      ]
+    },
+    {
+      "id": "pangu",
+      "name": "Pangu",
+      "category": "foundation-model",
+      "source": "simple-icons",
+      "match": "parent-brand",
+      "sourceUrl": "https://cdn.simpleicons.org/huawei",
+      "issues": [
+        "review-parent-brand"
+      ]
+    },
+    {
+      "id": "stable-diffusion",
+      "name": "Stable Diffusion",
+      "category": "media-model",
+      "source": "lobe-icons",
+      "match": "parent-brand",
+      "sourceUrl": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/stability.svg",
+      "issues": [
+        "review-parent-brand"
+      ]
+    },
+    {
+      "id": "llama",
+      "name": "Llama",
+      "category": "foundation-model",
+      "source": "simple-icons",
+      "match": "parent-brand",
+      "sourceUrl": "https://cdn.simpleicons.org/meta",
+      "issues": [
+        "review-parent-brand"
+      ]
+    },
+    {
+      "id": "phi",
+      "name": "Phi",
+      "category": "foundation-model",
+      "source": "lobe-icons",
+      "match": "parent-brand",
+      "sourceUrl": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/microsoft.svg",
+      "issues": [
+        "review-parent-brand"
+      ]
+    }
+  ]
 }
