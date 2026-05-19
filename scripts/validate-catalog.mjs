@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import { allowedConfidence, allowedIconQualities, confidenceForIcon } from "./icon-quality.mjs";
 
 const path = new URL("../catalog/models.json", import.meta.url);
 const catalog = JSON.parse(fs.readFileSync(path, "utf8"));
@@ -49,8 +50,16 @@ if (!Array.isArray(catalog.items)) {
       } else if (!fs.existsSync(new URL(`../${item.icon.path}`, import.meta.url))) {
         errors.push(`${item.id} icon.path does not exist`);
       }
-      if (item.icon.quality !== "vector") {
-        errors.push(`${item.id} svg icon must have vector quality`);
+      if (!allowedIconQualities.has(item.icon.quality)) {
+        errors.push(`${item.id} svg icon has invalid quality: ${item.icon.quality}`);
+      }
+      if (!allowedConfidence.has(item.icon.confidence)) {
+        errors.push(`${item.id} icon has invalid confidence: ${item.icon.confidence}`);
+      } else {
+        const expectedConfidence = confidenceForIcon(item.icon);
+        if (item.icon.confidence !== expectedConfidence) {
+          errors.push(`${item.id} icon.confidence should be ${expectedConfidence}`);
+        }
       }
     }
   }

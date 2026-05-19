@@ -8,8 +8,9 @@
 - `514` 个别名，支持大小写、简称、中文名、模型名、产品名匹配
 - `148` 组 SVG 本地缓存
 - `148` 组 PNG raster 缓存，每组包含 `16`、`32`、`48`、`180`、`192`、`512`、`1024` 尺寸
-- 图标语义审计已清零：`Needs review: 0`
-- 不再保留 `generated-vector`、`parent-brand`、`needs-entity-icon` 审计项
+- catalog 为每个图标标注 `quality` 和 `confidence`
+- `15` 个条目仍是 `placeholder`，见 [`catalog/pending-icons.json`](catalog/pending-icons.json)
+- `npm run check` 只做失败校验；`npm run audit` 输出语义审计和待补图清单
 
 ## Repository Layout
 
@@ -18,6 +19,7 @@
 | [`catalog/models.json`](catalog/models.json) | 主 catalog，包含条目元数据、owner、icon 来源和本地路径 |
 | [`catalog/aliases.json`](catalog/aliases.json) | 归一化后的别名索引，用于静态解析 |
 | [`catalog/icon-match-audit.json`](catalog/icon-match-audit.json) | 图标匹配审计结果 |
+| [`catalog/pending-icons.json`](catalog/pending-icons.json) | 暂无可信矢量源的占位图标清单 |
 | [`assets/icons`](assets/icons) | SVG 图标缓存 |
 | [`assets/raster`](assets/raster) | PNG raster 缓存 |
 | [`data/providers.mjs`](data/providers.mjs) | 生成 catalog 的结构化条目源 |
@@ -130,6 +132,9 @@ Response:
   "score": 100,
   "icon": "/assets/icons/grok.svg",
   "source": "lobe-icons",
+  "sourceUrl": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/grok.svg",
+  "quality": "vector",
+  "confidence": "community",
   "match": "entity",
   "assets": "/api/assets?q=Grok"
 }
@@ -156,6 +161,9 @@ curl "http://localhost:8787/api/assets?q=grok"
   "name": "Grok",
   "ownerId": "xai",
   "source": "lobe-icons",
+  "sourceUrl": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/grok.svg",
+  "quality": "vector",
+  "confidence": "community",
   "match": "entity",
   "svg": "/assets/icons/grok.svg",
   "apple": {
@@ -238,6 +246,7 @@ Android VectorDrawable 不等价于任意 SVG。API 提供的是 profile XML 和
 npm run build:aliases
 npm run build:raster
 npm run check
+npm run audit
 npm run serve
 ```
 
@@ -248,7 +257,7 @@ node scripts/build-catalog.mjs
 node scripts/sync-brand-icons.mjs
 node scripts/resolve-icon.mjs "gpt-4o"
 node scripts/resolve-icon.mjs "github copilot"
-node scripts/audit-icon-matches.mjs
+npm run audit
 ```
 
 ## Maintenance Workflow
@@ -264,6 +273,7 @@ node scripts/build-catalog.mjs
 npm run build:aliases
 npm run build:raster
 npm run check
+npm run audit
 ```
 
 6. Start the API and verify representative queries:
@@ -278,9 +288,11 @@ curl "http://localhost:8787/api/assets?q=gemini"
 
 - Product/model entries should resolve to product/model icons, not parent company logos.
 - Vendor entries may use vendor brand icons.
-- If a reliable official/public SVG cannot be found, use a distinct `local-product-vector` SVG and mark it as `entity`.
-- Do not mark a parent company icon as `entity` for a product/model entry.
-- `npm run check` must leave `catalog/icon-match-audit.json` with `reviewCount: 0`.
+- If a reliable official/public SVG cannot be found, use a distinct `local-product-vector` SVG and mark `confidence` as `placeholder`.
+- Do not mark a parent company icon as `entity` for a product/model entry; use `match: "parent-brand"` and `confidence: "parent-brand"`.
+- `quality: "vector"` means scalable SVG. `quality: "embedded-raster"` means the SVG contains raster image data.
+- `confidence: "official"` means first-party website SVG. `community` means trusted public vector source. `parent-brand` means a parent/vendor mark is used as a fallback. `placeholder` means local fallback art.
+- `npm run check` must pass. `npm run audit` may report review rows when parent-brand or placeholder fallbacks remain.
 
 ## License And Trademarks
 

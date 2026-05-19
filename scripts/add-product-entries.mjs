@@ -35,6 +35,7 @@ for (const [id, name, modelFamilies, category, country, website, ownerId] of pro
       type: "svg",
       source: "generated-vector",
       quality: "vector",
+      confidence: "placeholder",
       path: `assets/icons/${id}.svg`,
       sourceUrl: null,
       match: "needs-entity-icon"

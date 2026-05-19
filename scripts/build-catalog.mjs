@@ -74,6 +74,7 @@ const items = providers.map(([id, name, modelFamilies, category, country, websit
       type: "svg",
       source: "generated-vector",
       quality: "vector",
+      confidence: "placeholder",
       path: iconPath,
       sourceUrl: null,
       match: "needs-entity-icon"

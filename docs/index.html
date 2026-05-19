@@ -88,7 +88,7 @@
 
       .toolbar {
         display: grid;
-        grid-template-columns: minmax(240px, 1.5fr) repeat(3, minmax(140px, 0.55fr)) minmax(140px, 0.55fr) auto;
+        grid-template-columns: minmax(240px, 1.5fr) repeat(4, minmax(132px, 0.55fr)) minmax(132px, 0.55fr) auto;
         gap: 12px;
         align-items: center;
       }
@@ -368,6 +368,11 @@
         background: color-mix(in srgb, var(--accent) 10%, var(--chip));
       }
 
+      .chip.confidence {
+        color: var(--accent-2);
+        background: color-mix(in srgb, var(--accent-2) 10%, var(--chip));
+      }
+
       .links {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -585,6 +590,9 @@
           <select id="source" aria-label="按图标来源筛选">
             <option value="">全部来源</option>
           </select>
+          <select id="confidence" aria-label="按可信度筛选">
+            <option value="">全部可信度</option>
+          </select>
           <select id="sort" aria-label="排序">
             <option value="name">名称 A-Z</option>
             <option value="category">分类优先</option>
@@ -665,6 +673,7 @@
         category: "",
         country: "",
         source: "",
+        confidence: "",
         sort: "name",
         selectedId: ""
       };
@@ -676,6 +685,7 @@
         category: document.querySelector("#category"),
         country: document.querySelector("#country"),
         source: document.querySelector("#source"),
+        confidence: document.querySelector("#confidence"),
         sort: document.querySelector("#sort"),
         reset: document.querySelector("#reset"),
         activeFilters: document.querySelector("#activeFilters"),
@@ -745,6 +755,8 @@
           item.country,
           item.category,
           item.icon.source,
+          item.icon.confidence,
+          item.icon.quality,
           item.icon.match,
           ...(item.modelFamilies || []),
           ...itemAliases(item)
@@ -753,7 +765,8 @@
           (!state.query || haystack.includes(state.query)) &&
           (!state.category || item.category === state.category) &&
           (!state.country || item.country === state.country) &&
-          (!state.source || item.icon.source === state.source)
+          (!state.source || item.icon.source === state.source) &&
+          (!state.confidence || item.icon.confidence === state.confidence)
         );
       }
 
@@ -773,11 +786,12 @@
         const categories = new Set(items.map((item) => item.category));
         const countries = new Set(items.map((item) => item.country));
         const sources = new Set(items.map((item) => item.icon.source));
-        els.breakdown.textContent = `${categories.size} categories · ${countries.size} countries · ${sources.size} sources`;
+        const confidences = new Set(items.map((item) => item.icon.confidence));
+        els.breakdown.textContent = `${categories.size} categories · ${countries.size} countries · ${sources.size} sources · ${confidences.size} confidence levels`;
       }
 
       function hasActiveFilters() {
-        return Boolean(state.query || state.category || state.country || state.source || state.sort !== "name");
+        return Boolean(state.query || state.category || state.country || state.source || state.confidence || state.sort !== "name");
       }
 
       function filterDisplayValue(key) {
@@ -786,6 +800,7 @@
           category: state.category,
           country: state.country,
           source: chipLabel(state.source, "source"),
+          confidence: chipLabel(state.confidence, "confidence"),
           sort: els.sort.options[els.sort.selectedIndex]?.textContent || state.sort
         })[key];
       }
@@ -807,6 +822,10 @@
           state.source = "";
           els.source.value = "";
         }
+        if (key === "confidence") {
+          state.confidence = "";
+          els.confidence.value = "";
+        }
         if (key === "sort") {
           state.sort = "name";
           els.sort.value = "name";
@@ -820,6 +839,7 @@
           ["category", "Category", state.category],
           ["country", "Country", state.country],
           ["source", "Source", state.source],
+          ["confidence", "Confidence", state.confidence],
           ["sort", "Sort", state.sort !== "name" ? state.sort : ""]
         ].filter(([, , value]) => value);
 
@@ -861,6 +881,9 @@
             <div class="field"><span>Category</span><code>${escapeHtml(label(item.category))}</code></div>
             <div class="field"><span>Country</span><code>${escapeHtml(label(item.country))}</code></div>
             <div class="field"><span>Icon source</span><code>${escapeHtml(label(item.icon.source))}</code></div>
+            <div class="field"><span>Confidence</span><code>${escapeHtml(label(item.icon.confidence))}</code></div>
+            <div class="field"><span>Quality</span><code>${escapeHtml(label(item.icon.quality))}</code></div>
+            <div class="field"><span>Match</span><code>${escapeHtml(label(item.icon.match))}</code></div>
             <div class="field"><span>SVG</span><code>${escapeHtml(iconHref)}</code></div>
             <div class="field"><span>Raster base</span><code>${escapeHtml(rasterBase)}</code></div>
             <div class="field"><span>Aliases</span><code>${escapeHtml(aliases)}</code></div>
@@ -876,6 +899,14 @@
       }
 
       function chipLabel(value, type) {
+        if (type === "confidence") {
+          return ({
+            official: "official",
+            community: "community",
+            "parent-brand": "parent brand",
+            placeholder: "placeholder"
+          })[value] || value;
+        }
         if (type !== "source") return value;
         return ({
           iconify: "iconify",
@@ -919,7 +950,8 @@
           for (const [value, className] of [
             [item.category, "category"],
             [item.country, "country"],
-            [item.icon.source, "source"]
+            [item.icon.source, "source"],
+            [item.icon.confidence, "confidence"]
           ]) {
             const chip = document.createElement("span");
             chip.className = `chip ${className}`.trim();
@@ -931,11 +963,11 @@
         }
       }
 
-      function fillSelect(select, values) {
+      function fillSelect(select, values, format = (value) => value) {
         for (const value of values) {
           const option = document.createElement("option");
           option.value = value;
-          option.textContent = value;
+          option.textContent = format(value);
           select.append(option);
         }
       }
@@ -960,12 +992,14 @@
         state.category = "";
         state.country = "";
         state.source = "";
+        state.confidence = "";
         state.sort = "name";
         state.selectedId = "";
         els.search.value = "";
         els.category.value = "";
         els.country.value = "";
         els.source.value = "";
+        els.confidence.value = "";
         els.sort.value = "name";
         els.drawer.hidden = true;
         render();
@@ -1003,9 +1037,11 @@
         const categories = [...new Set(state.items.map((item) => item.category))].sort();
         const countries = [...new Set(state.items.map((item) => item.country))].sort();
         const sources = [...new Set(state.items.map((item) => item.icon.source))].sort();
+        const confidences = [...new Set(state.items.map((item) => item.icon.confidence))].sort();
         fillSelect(els.category, categories);
         fillSelect(els.country, countries);
-        fillSelect(els.source, sources);
+        fillSelect(els.source, sources, (value) => chipLabel(value, "source"));
+        fillSelect(els.confidence, confidences, (value) => chipLabel(value, "confidence"));
 
         els.search.addEventListener("input", (event) => {
           state.query = normalize(event.target.value.trim());
@@ -1021,6 +1057,10 @@
         });
         els.source.addEventListener("change", (event) => {
           state.source = event.target.value;
+          render();
+        });
+        els.confidence.addEventListener("change", (event) => {
+          state.confidence = event.target.value;
           render();
         });
         els.sort.addEventListener("change", (event) => {

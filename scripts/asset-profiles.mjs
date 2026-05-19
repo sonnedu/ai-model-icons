@@ -8,6 +8,9 @@ export const assetProfiles = (item, origin = "") => {
     name: item.name,
     ownerId: item.ownerId || null,
     source: item.icon.source,
+    sourceUrl: item.icon.sourceUrl || null,
+    quality: item.icon.quality,
+    confidence: item.icon.confidence || null,
     match: item.icon.match || null,
     svg: icon,
     apple: {

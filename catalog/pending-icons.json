@@ -1,0 +1,155 @@
+{
+  "count": 15,
+  "items": [
+    {
+      "id": "adept-ai",
+      "name": "Adept AI",
+      "category": "foundation-model",
+      "country": "US",
+      "website": "https://www.adept.ai",
+      "currentSource": "local-product-vector",
+      "currentMatch": "entity",
+      "reason": "needs-official-or-community-vector"
+    },
+    {
+      "id": "higgsfield",
+      "name": "Higgsfield",
+      "category": "media-model",
+      "country": "US",
+      "website": "https://higgsfield.ai",
+      "currentSource": "local-product-vector",
+      "currentMatch": "entity",
+      "reason": "needs-official-or-community-vector"
+    },
+    {
+      "id": "canva-ai",
+      "name": "Canva AI",
+      "category": "media-model",
+      "country": "AU",
+      "website": "https://www.canva.com/ai",
+      "currentSource": "local-product-vector",
+      "currentMatch": "entity",
+      "reason": "needs-official-or-community-vector"
+    },
+    {
+      "id": "playht",
+      "name": "PlayHT",
+      "category": "audio-model",
+      "country": "US",
+      "website": "https://play.ht",
+      "currentSource": "local-product-vector",
+      "currentMatch": "entity",
+      "reason": "needs-official-or-community-vector"
+    },
+    {
+      "id": "baidu-qianfan",
+      "name": "Baidu Qianfan",
+      "category": "platform",
+      "country": "CN",
+      "website": "https://cloud.baidu.com/product/wenxinworkshop",
+      "currentSource": "local-product-vector",
+      "currentMatch": "entity",
+      "reason": "needs-official-or-community-vector"
+    },
+    {
+      "id": "iflytek-spark",
+      "name": "iFlytek Spark",
+      "category": "foundation-model",
+      "country": "CN",
+      "website": "https://xinghuo.xfyun.cn",
+      "currentSource": "local-product-vector",
+      "currentMatch": "entity",
+      "reason": "needs-official-or-community-vector"
+    },
+    {
+      "id": "ant-ling",
+      "name": "Ant Ling",
+      "category": "foundation-model",
+      "country": "CN",
+      "website": "https://ling.tbox.cn",
+      "currentSource": "local-product-vector",
+      "currentMatch": "entity",
+      "reason": "needs-official-or-community-vector"
+    },
+    {
+      "id": "openbmb",
+      "name": "OpenBMB",
+      "category": "research-lab",
+      "country": "CN",
+      "website": "https://www.openbmb.cn",
+      "currentSource": "local-product-vector",
+      "currentMatch": "entity",
+      "reason": "needs-official-or-community-vector"
+    },
+    {
+      "id": "fudan-moss",
+      "name": "Fudan MOSS",
+      "category": "research-lab",
+      "country": "CN",
+      "website": "https://moss.fastnlp.top",
+      "currentSource": "local-product-vector",
+      "currentMatch": "entity",
+      "reason": "needs-official-or-community-vector"
+    },
+    {
+      "id": "nomic-ai",
+      "name": "Nomic AI",
+      "category": "foundation-model",
+      "country": "US",
+      "website": "https://www.nomic.ai",
+      "currentSource": "local-product-vector",
+      "currentMatch": "entity",
+      "reason": "needs-official-or-community-vector"
+    },
+    {
+      "id": "skt-aix",
+      "name": "SK Telecom AI",
+      "category": "foundation-model",
+      "country": "KR",
+      "website": "https://www.sktelecom.com",
+      "currentSource": "local-product-vector",
+      "currentMatch": "entity",
+      "reason": "needs-official-or-community-vector"
+    },
+    {
+      "id": "krutrim",
+      "name": "Krutrim",
+      "category": "foundation-model",
+      "country": "IN",
+      "website": "https://olakrutrim.com",
+      "currentSource": "local-product-vector",
+      "currentMatch": "entity",
+      "reason": "needs-official-or-community-vector"
+    },
+    {
+      "id": "ai4bharat",
+      "name": "AI4Bharat",
+      "category": "research-lab",
+      "country": "IN",
+      "website": "https://ai4bharat.iitm.ac.in",
+      "currentSource": "local-product-vector",
+      "currentMatch": "entity",
+      "reason": "needs-official-or-community-vector"
+    },
+    {
+      "id": "sber-gigachat",
+      "name": "Sber GigaChat",
+      "category": "foundation-model",
+      "country": "RU",
+      "website": "https://developers.sber.ru/portal/products/gigachat",
+      "currentSource": "local-product-vector",
+      "currentMatch": "entity",
+      "reason": "needs-official-or-community-vector"
+    },
+    {
+      "id": "cici-ai",
+      "name": "Cici AI",
+      "category": "assistant",
+      "country": "SG",
+      "website": "https://www.ciciai.com",
+      "currentSource": "local-product-vector",
+      "currentMatch": "entity",
+      "reason": "needs-official-or-community-vector"
+    }
+  ]
+}

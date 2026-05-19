@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { iconSources } from "../data/icon-sources.mjs";
+import { confidenceForIcon } from "./icon-quality.mjs";
 
 const root = new URL("..", import.meta.url).pathname;
 const catalogPath = path.join(root, "catalog/models.json");
@@ -45,6 +46,7 @@ for (const item of catalog.items) {
     item.icon.sourceUrl = source.page || url;
     item.icon.match = source.match || "brand";
     item.icon.quality = "vector";
+    item.icon.confidence = confidenceForIcon(item.icon);
     synced.push(item.id);
   } catch (error) {
     failures.push(`ERR ${item.id} ${error.message}`);

@@ -69,6 +69,9 @@ const server = http.createServer((req, res) => {
       score: result.score,
       icon: `/${result.item.icon.path}`,
       source: result.item.icon.source,
+      sourceUrl: result.item.icon.sourceUrl || null,
+      quality: result.item.icon.quality,
+      confidence: result.item.icon.confidence || null,
       match: result.item.icon.match || null,
       assets: `/api/assets?q=${encodeURIComponent(result.item.name)}`
     });

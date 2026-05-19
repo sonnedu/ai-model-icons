@@ -18,6 +18,10 @@ console.log(JSON.stringify({
   name: result.item.name,
   ownerId: result.item.ownerId || null,
   icon: result.item.icon.path,
+  source: result.item.icon.source,
+  sourceUrl: result.item.icon.sourceUrl || null,
+  quality: result.item.icon.quality,
+  confidence: result.item.icon.confidence || null,
   match: result.item.icon.match || null,
   score: result.score
 }, null, 2));

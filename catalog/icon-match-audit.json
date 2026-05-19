@@ -1,12 +1,14 @@
 {
   "checked": 148,
-  "reviewCount": 18,
+  "reviewCount": 35,
   "rows": [
     {
       "id": "baidu-ernie",
       "name": "Baidu ERNIE",
       "category": "foundation-model",
       "source": "simple-icons",
+      "quality": "vector",
+      "confidence": "parent-brand",
       "match": "parent-brand",
       "sourceUrl": "https://cdn.simpleicons.org/baidu",
       "issues": [
@@ -18,6 +20,8 @@
       "name": "Huawei Pangu",
       "category": "foundation-model",
       "source": "simple-icons",
+      "quality": "vector",
+      "confidence": "parent-brand",
       "match": "parent-brand",
       "sourceUrl": "https://cdn.simpleicons.org/huawei",
       "issues": [
@@ -25,10 +29,25 @@
       ]
     },
     {
+      "id": "apple-intelligence",
+      "name": "Apple Intelligence",
+      "category": "assistant",
+      "source": "wikimedia-apple-source",
+      "quality": "embedded-raster",
+      "confidence": "community",
+      "match": "entity",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Apple_Intelligence.svg",
+      "issues": [
+        "embedded-raster"
+      ]
+    },
+    {
       "id": "snowflake-arctic",
       "name": "Snowflake Arctic",
       "category": "foundation-model",
       "source": "simple-icons",
+      "quality": "vector",
+      "confidence": "parent-brand",
       "match": "parent-brand",
       "sourceUrl": "https://cdn.simpleicons.org/snowflake",
       "issues": [
@@ -36,10 +55,26 @@
       ]
     },
     {
+      "id": "adept-ai",
+      "name": "Adept AI",
+      "category": "foundation-model",
+      "source": "local-product-vector",
+      "quality": "vector",
+      "confidence": "placeholder",
+      "match": "entity",
+      "sourceUrl": null,
+      "issues": [
+        "review-placeholder",
+        "local-placeholder"
+      ]
+    },
+    {
       "id": "replit-ai",
       "name": "Replit AI",
       "category": "foundation-model",
       "source": "simple-icons",
+      "quality": "vector",
+      "confidence": "parent-brand",
       "match": "parent-brand",
       "sourceUrl": "https://cdn.simpleicons.org/replit",
       "issues": [
@@ -47,10 +82,54 @@
       ]
     },
     {
+      "id": "higgsfield",
+      "name": "Higgsfield",
+      "category": "media-model",
+      "source": "local-product-vector",
+      "quality": "vector",
+      "confidence": "placeholder",
+      "match": "entity",
+      "sourceUrl": null,
+      "issues": [
+        "review-placeholder",
+        "local-placeholder"
+      ]
+    },
+    {
+      "id": "canva-ai",
+      "name": "Canva AI",
+      "category": "media-model",
+      "source": "local-product-vector",
+      "quality": "vector",
+      "confidence": "placeholder",
+      "match": "entity",
+      "sourceUrl": null,
+      "issues": [
+        "review-placeholder",
+        "local-placeholder"
+      ]
+    },
+    {
+      "id": "playht",
+      "name": "PlayHT",
+      "category": "audio-model",
+      "source": "local-product-vector",
+      "quality": "vector",
+      "confidence": "placeholder",
+      "match": "entity",
+      "sourceUrl": null,
+      "issues": [
+        "review-placeholder",
+        "local-placeholder"
+      ]
+    },
+    {
       "id": "cloudflare-workers-ai",
       "name": "Cloudflare Workers AI",
       "category": "platform",
       "source": "simple-icons",
+      "quality": "vector",
+      "confidence": "parent-brand",
       "match": "parent-brand",
       "sourceUrl": "https://cdn.simpleicons.org/cloudflare",
       "issues": [
@@ -58,10 +137,26 @@
       ]
     },
     {
+      "id": "baidu-qianfan",
+      "name": "Baidu Qianfan",
+      "category": "platform",
+      "source": "local-product-vector",
+      "quality": "vector",
+      "confidence": "placeholder",
+      "match": "entity",
+      "sourceUrl": null,
+      "issues": [
+        "review-placeholder",
+        "local-placeholder"
+      ]
+    },
+    {
       "id": "alibaba-cloud-model-studio",
       "name": "Alibaba Cloud Model Studio",
       "category": "platform",
       "source": "simple-icons",
+      "quality": "vector",
+      "confidence": "parent-brand",
       "match": "parent-brand",
       "sourceUrl": "https://cdn.simpleicons.org/alibabacloud",
       "issues": [
@@ -69,10 +164,26 @@
       ]
     },
     {
+      "id": "iflytek-spark",
+      "name": "iFlytek Spark",
+      "category": "foundation-model",
+      "source": "local-product-vector",
+      "quality": "vector",
+      "confidence": "placeholder",
+      "match": "entity",
+      "sourceUrl": null,
+      "issues": [
+        "review-placeholder",
+        "local-placeholder"
+      ]
+    },
+    {
       "id": "sensetime-sensechat",
       "name": "SenseTime SenseChat",
       "category": "foundation-model",
       "source": "official-website",
+      "quality": "vector",
+      "confidence": "parent-brand",
       "match": "parent-brand",
       "sourceUrl": "https://www.sensetime.com",
       "issues": [
@@ -80,10 +191,26 @@
       ]
     },
     {
+      "id": "ant-ling",
+      "name": "Ant Ling",
+      "category": "foundation-model",
+      "source": "local-product-vector",
+      "quality": "vector",
+      "confidence": "placeholder",
+      "match": "entity",
+      "sourceUrl": null,
+      "issues": [
+        "review-placeholder",
+        "local-placeholder"
+      ]
+    },
+    {
       "id": "vivo-bluelm",
       "name": "vivo BlueLM",
       "category": "foundation-model",
       "source": "simple-icons",
+      "quality": "vector",
+      "confidence": "parent-brand",
       "match": "parent-brand",
       "sourceUrl": "https://cdn.simpleicons.org/vivo",
       "issues": [
@@ -95,6 +222,8 @@
       "name": "OPPO AndesGPT",
       "category": "foundation-model",
       "source": "simple-icons",
+      "quality": "vector",
+      "confidence": "parent-brand",
       "match": "parent-brand",
       "sourceUrl": "https://cdn.simpleicons.org/oppo",
       "issues": [
@@ -106,6 +235,8 @@
       "name": "Meituan LongCat",
       "category": "foundation-model",
       "source": "simple-icons",
+      "quality": "vector",
+      "confidence": "parent-brand",
       "match": "parent-brand",
       "sourceUrl": "https://cdn.simpleicons.org/meituan",
       "issues": [
@@ -117,6 +248,8 @@
       "name": "JD ChatRhino",
       "category": "foundation-model",
       "source": "official-website",
+      "quality": "vector",
+      "confidence": "parent-brand",
       "match": "parent-brand",
       "sourceUrl": "https://www.jdcloud.com",
       "issues": [
@@ -124,10 +257,67 @@
       ]
     },
     {
+      "id": "openbmb",
+      "name": "OpenBMB",
+      "category": "research-lab",
+      "source": "local-product-vector",
+      "quality": "vector",
+      "confidence": "placeholder",
+      "match": "entity",
+      "sourceUrl": null,
+      "issues": [
+        "review-placeholder",
+        "local-placeholder"
+      ]
+    },
+    {
+      "id": "fudan-moss",
+      "name": "Fudan MOSS",
+      "category": "research-lab",
+      "source": "local-product-vector",
+      "quality": "vector",
+      "confidence": "placeholder",
+      "match": "entity",
+      "sourceUrl": null,
+      "issues": [
+        "review-placeholder",
+        "local-placeholder"
+      ]
+    },
+    {
+      "id": "bigscience",
+      "name": "BigScience",
+      "category": "research-lab",
+      "source": "simple-icons",
+      "quality": "vector",
+      "confidence": "parent-brand",
+      "match": "host-brand",
+      "sourceUrl": "https://cdn.simpleicons.org/huggingface",
+      "issues": [
+        "review-parent-brand"
+      ]
+    },
+    {
+      "id": "nomic-ai",
+      "name": "Nomic AI",
+      "category": "foundation-model",
+      "source": "local-product-vector",
+      "quality": "vector",
+      "confidence": "placeholder",
+      "match": "entity",
+      "sourceUrl": null,
+      "issues": [
+        "review-placeholder",
+        "local-placeholder"
+      ]
+    },
+    {
       "id": "naver-hyperclova",
       "name": "NAVER HyperCLOVA",
       "category": "foundation-model",
       "source": "wikimedia-commons",
+      "quality": "vector",
+      "confidence": "parent-brand",
       "match": "parent-brand",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Naver_Clova_Logotype.svg",
       "issues": [
@@ -135,10 +325,54 @@
       ]
     },
     {
+      "id": "skt-aix",
+      "name": "SK Telecom AI",
+      "category": "foundation-model",
+      "source": "local-product-vector",
+      "quality": "vector",
+      "confidence": "placeholder",
+      "match": "entity",
+      "sourceUrl": null,
+      "issues": [
+        "review-placeholder",
+        "local-placeholder"
+      ]
+    },
+    {
+      "id": "krutrim",
+      "name": "Krutrim",
+      "category": "foundation-model",
+      "source": "local-product-vector",
+      "quality": "vector",
+      "confidence": "placeholder",
+      "match": "entity",
+      "sourceUrl": null,
+      "issues": [
+        "review-placeholder",
+        "local-placeholder"
+      ]
+    },
+    {
+      "id": "ai4bharat",
+      "name": "AI4Bharat",
+      "category": "research-lab",
+      "source": "local-product-vector",
+      "quality": "vector",
+      "confidence": "placeholder",
+      "match": "entity",
+      "sourceUrl": null,
+      "issues": [
+        "review-placeholder",
+        "local-placeholder"
+      ]
+    },
+    {
       "id": "yandexgpt",
       "name": "YandexGPT",
       "category": "foundation-model",
       "source": "simple-icons",
+      "quality": "vector",
+      "confidence": "parent-brand",
       "match": "parent-brand",
       "sourceUrl": "https://cdn.simpleicons.org/yandexcloud",
       "issues": [
@@ -146,10 +380,40 @@
       ]
     },
     {
+      "id": "sber-gigachat",
+      "name": "Sber GigaChat",
+      "category": "foundation-model",
+      "source": "local-product-vector",
+      "quality": "vector",
+      "confidence": "placeholder",
+      "match": "entity",
+      "sourceUrl": null,
+      "issues": [
+        "review-placeholder",
+        "local-placeholder"
+      ]
+    },
+    {
+      "id": "cici-ai",
+      "name": "Cici AI",
+      "category": "assistant",
+      "source": "local-product-vector",
+      "quality": "vector",
+      "confidence": "placeholder",
+      "match": "entity",
+      "sourceUrl": null,
+      "issues": [
+        "review-placeholder",
+        "local-placeholder"
+      ]
+    },
+    {
       "id": "ernie",
       "name": "ERNIE",
       "category": "assistant",
       "source": "simple-icons",
+      "quality": "vector",
+      "confidence": "parent-brand",
       "match": "parent-brand",
       "sourceUrl": "https://cdn.simpleicons.org/baidu",
       "issues": [
@@ -161,6 +425,8 @@
       "name": "Pangu",
       "category": "foundation-model",
       "source": "simple-icons",
+      "quality": "vector",
+      "confidence": "parent-brand",
       "match": "parent-brand",
       "sourceUrl": "https://cdn.simpleicons.org/huawei",
       "issues": [
@@ -172,6 +438,8 @@
       "name": "Stable Diffusion",
       "category": "media-model",
       "source": "lobe-icons",
+      "quality": "vector",
+      "confidence": "parent-brand",
       "match": "parent-brand",
       "sourceUrl": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/stability.svg",
       "issues": [
@@ -183,6 +451,8 @@
       "name": "Llama",
       "category": "foundation-model",
       "source": "simple-icons",
+      "quality": "vector",
+      "confidence": "parent-brand",
       "match": "parent-brand",
       "sourceUrl": "https://cdn.simpleicons.org/meta",
       "issues": [
@@ -194,6 +464,8 @@
       "name": "Phi",
       "category": "foundation-model",
       "source": "lobe-icons",
+      "quality": "vector",
+      "confidence": "parent-brand",
       "match": "parent-brand",
       "sourceUrl": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/microsoft.svg",
       "issues": [
