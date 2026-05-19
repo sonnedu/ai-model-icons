@@ -2,25 +2,17 @@ import fs from "node:fs";
 
 const path = new URL("../catalog/models.json", import.meta.url);
 const catalog = JSON.parse(fs.readFileSync(path, "utf8"));
-const timeoutMs = 8000;
 const failures = [];
 
 async function check(item) {
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), timeoutMs);
-
-  try {
-    const response = await fetch(item.icon.url, {
-      method: "HEAD",
-      signal: controller.signal
-    });
-    if (!response.ok) {
-      failures.push(`${response.status} ${item.id} ${item.icon.url}`);
-    }
-  } catch (error) {
-    failures.push(`ERR ${item.id} ${error.message}`);
-  } finally {
-    clearTimeout(timeout);
+  const iconPath = new URL(`../${item.icon.path}`, import.meta.url);
+  if (!fs.existsSync(iconPath)) {
+    failures.push(`MISSING ${item.id} ${item.icon.path}`);
+    return;
+  }
+  const svg = fs.readFileSync(iconPath, "utf8");
+  if (!svg.includes("<svg") || !svg.includes("viewBox=")) {
+    failures.push(`INVALID ${item.id} ${item.icon.path}`);
   }
 }
 
@@ -31,4 +23,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`OK: ${catalog.items.length} icon URLs responded`);
+console.log(`OK: ${catalog.items.length} local SVG icons verified`);

@@ -13,7 +13,7 @@ const allowedCategories = new Set([
   "local-runtime",
   "research-lab"
 ]);
-const allowedIconTypes = new Set(["simple-icons", "favicon", "official"]);
+const allowedIconTypes = new Set(["svg"]);
 const ids = new Set();
 const errors = [];
 
@@ -43,8 +43,15 @@ if (!Array.isArray(catalog.items)) {
     if (!item.icon || !allowedIconTypes.has(item.icon.type)) {
       errors.push(`${item.id} has invalid icon.type`);
     }
-    if (!/^https:\/\//.test(item.icon?.url || "")) {
-      errors.push(`${item.id} icon.url must be https`);
+    if (item.icon?.type === "svg") {
+      if (!/^assets\/icons\/[a-z0-9-]+\.svg$/.test(item.icon.path || "")) {
+        errors.push(`${item.id} icon.path must point to assets/icons/*.svg`);
+      } else if (!fs.existsSync(new URL(`../${item.icon.path}`, import.meta.url))) {
+        errors.push(`${item.id} icon.path does not exist`);
+      }
+      if (item.icon.quality !== "vector") {
+        errors.push(`${item.id} svg icon must have vector quality`);
+      }
     }
   }
 }

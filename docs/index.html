@@ -272,13 +272,14 @@
         els.empty.style.display = items.length ? "none" : "block";
 
         for (const item of items) {
+          const iconHref = `../${item.icon.path}`;
           const node = els.template.content.cloneNode(true);
-          node.querySelector("img").src = item.icon.url;
+          node.querySelector("img").src = iconHref;
           node.querySelector("img").alt = `${item.name} icon`;
           node.querySelector(".name").textContent = item.name;
           node.querySelector(".families").textContent = item.modelFamilies.join(", ");
           node.querySelector(".website").href = item.website;
-          node.querySelector(".icon").href = item.icon.url;
+          node.querySelector(".icon").href = iconHref;
 
           const chips = node.querySelector(".chips");
           for (const value of [item.category, item.country, item.icon.type]) {

@@ -1,413 +1,2132 @@
 {
   "version": "2026-05-19",
-  "licenseNote": "Brand icons and names are trademarks of their respective owners. Prefer official brand assets or Simple Icons where license terms permit.",
+  "licenseNote": "Brand names are trademarks of their respective owners. Icons in assets/icons are local vector placeholders unless source says otherwise; replace with official brand SVGs only when license terms permit.",
   "items": [
     {
       "id": "openai",
       "name": "OpenAI",
-      "modelFamilies": ["GPT", "o-series", "Sora", "DALL-E", "Whisper"],
+      "modelFamilies": [
+        "GPT",
+        "o-series",
+        "Sora",
+        "DALL-E",
+        "Whisper"
+      ],
       "category": "foundation-model",
       "country": "US",
       "website": "https://openai.com",
       "icon": {
-        "type": "favicon",
-        "url": "https://www.google.com/s2/favicons?domain=openai.com&sz=128"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/openai.svg"
       }
     },
     {
       "id": "chatgpt",
       "name": "ChatGPT",
-      "modelFamilies": ["GPT"],
+      "modelFamilies": [
+        "GPT"
+      ],
       "category": "assistant",
       "country": "US",
       "website": "https://chatgpt.com",
       "icon": {
-        "type": "favicon",
-        "url": "https://www.google.com/s2/favicons?domain=chatgpt.com&sz=128"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/chatgpt.svg"
       }
     },
     {
       "id": "anthropic",
       "name": "Anthropic",
-      "modelFamilies": ["Claude"],
+      "modelFamilies": [
+        "Claude"
+      ],
       "category": "foundation-model",
       "country": "US",
       "website": "https://anthropic.com",
       "icon": {
-        "type": "simple-icons",
-        "slug": "anthropic",
-        "url": "https://cdn.simpleicons.org/anthropic/000000"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/anthropic.svg"
       }
     },
     {
       "id": "claude",
       "name": "Claude",
-      "modelFamilies": ["Claude"],
+      "modelFamilies": [
+        "Claude"
+      ],
       "category": "assistant",
       "country": "US",
       "website": "https://claude.ai",
       "icon": {
-        "type": "favicon",
-        "url": "https://www.google.com/s2/favicons?domain=claude.ai&sz=128"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/claude.svg"
       }
     },
     {
       "id": "google-gemini",
       "name": "Google Gemini",
-      "modelFamilies": ["Gemini", "Imagen", "Veo", "Gemma"],
+      "modelFamilies": [
+        "Gemini",
+        "Imagen",
+        "Veo",
+        "Gemma"
+      ],
       "category": "foundation-model",
       "country": "US",
       "website": "https://gemini.google.com",
       "icon": {
-        "type": "simple-icons",
-        "slug": "googlegemini",
-        "url": "https://cdn.simpleicons.org/googlegemini/8E75B2"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/google-gemini.svg"
       }
     },
     {
       "id": "google-deepmind",
       "name": "Google DeepMind",
-      "modelFamilies": ["Gemini", "AlphaFold", "Gemma"],
+      "modelFamilies": [
+        "Gemini",
+        "AlphaFold",
+        "Gemma"
+      ],
       "category": "research-lab",
       "country": "UK",
       "website": "https://deepmind.google",
       "icon": {
-        "type": "favicon",
-        "url": "https://www.google.com/s2/favicons?domain=deepmind.google&sz=128"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/google-deepmind.svg"
       }
     },
     {
       "id": "meta-ai",
       "name": "Meta AI",
-      "modelFamilies": ["Llama", "SAM", "Emu"],
+      "modelFamilies": [
+        "Llama",
+        "SAM",
+        "Emu"
+      ],
       "category": "foundation-model",
       "country": "US",
       "website": "https://ai.meta.com",
       "icon": {
-        "type": "simple-icons",
-        "slug": "meta",
-        "url": "https://cdn.simpleicons.org/meta/0467DF"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/meta-ai.svg"
       }
     },
     {
       "id": "xai",
       "name": "xAI",
-      "modelFamilies": ["Grok"],
+      "modelFamilies": [
+        "Grok"
+      ],
       "category": "foundation-model",
       "country": "US",
       "website": "https://x.ai",
       "icon": {
-        "type": "favicon",
-        "url": "https://www.google.com/s2/favicons?domain=x.ai&sz=128"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/xai.svg"
       }
     },
     {
       "id": "mistral-ai",
       "name": "Mistral AI",
-      "modelFamilies": ["Mistral", "Mixtral", "Codestral", "Le Chat"],
+      "modelFamilies": [
+        "Mistral",
+        "Mixtral",
+        "Codestral",
+        "Le Chat"
+      ],
       "category": "foundation-model",
       "country": "FR",
       "website": "https://mistral.ai",
       "icon": {
-        "type": "simple-icons",
-        "slug": "mistralai",
-        "url": "https://cdn.simpleicons.org/mistralai/FA520F"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/mistral-ai.svg"
       }
     },
     {
       "id": "cohere",
       "name": "Cohere",
-      "modelFamilies": ["Command", "Embed", "Rerank"],
+      "modelFamilies": [
+        "Command",
+        "Embed",
+        "Rerank"
+      ],
       "category": "foundation-model",
       "country": "CA",
       "website": "https://cohere.com",
       "icon": {
-        "type": "favicon",
-        "url": "https://www.google.com/s2/favicons?domain=cohere.com&sz=128"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/cohere.svg"
       }
     },
     {
       "id": "perplexity",
       "name": "Perplexity",
-      "modelFamilies": ["Sonar"],
+      "modelFamilies": [
+        "Sonar"
+      ],
       "category": "assistant",
       "country": "US",
       "website": "https://perplexity.ai",
       "icon": {
-        "type": "simple-icons",
-        "slug": "perplexity",
-        "url": "https://cdn.simpleicons.org/perplexity/1FB8CD"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/perplexity.svg"
       }
     },
     {
       "id": "deepseek",
       "name": "DeepSeek",
-      "modelFamilies": ["DeepSeek"],
+      "modelFamilies": [
+        "DeepSeek"
+      ],
       "category": "foundation-model",
       "country": "CN",
       "website": "https://deepseek.com",
       "icon": {
-        "type": "simple-icons",
-        "slug": "deepseek",
-        "url": "https://cdn.simpleicons.org/deepseek/4D6BFF"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/deepseek.svg"
       }
     },
     {
       "id": "alibaba-qwen",
       "name": "Alibaba Qwen",
-      "modelFamilies": ["Qwen", "Wan", "Tongyi"],
+      "modelFamilies": [
+        "Qwen",
+        "Wan",
+        "Tongyi"
+      ],
       "category": "foundation-model",
       "country": "CN",
       "website": "https://qwen.ai",
       "icon": {
-        "type": "favicon",
-        "url": "https://www.google.com/s2/favicons?domain=qwen.ai&sz=128"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/alibaba-qwen.svg"
       }
     },
     {
       "id": "zhipu-ai",
       "name": "Zhipu AI",
-      "modelFamilies": ["GLM", "ChatGLM"],
+      "modelFamilies": [
+        "GLM",
+        "ChatGLM"
+      ],
       "category": "foundation-model",
       "country": "CN",
       "website": "https://z.ai",
       "icon": {
-        "type": "favicon",
-        "url": "https://www.google.com/s2/favicons?domain=z.ai&sz=128"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/zhipu-ai.svg"
       }
     },
     {
       "id": "moonshot-ai",
       "name": "Moonshot AI",
-      "modelFamilies": ["Kimi"],
+      "modelFamilies": [
+        "Kimi"
+      ],
       "category": "foundation-model",
       "country": "CN",
       "website": "https://moonshot.cn",
       "icon": {
-        "type": "favicon",
-        "url": "https://www.google.com/s2/favicons?domain=moonshot.cn&sz=128"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/moonshot-ai.svg"
       }
     },
     {
       "id": "baichuan-ai",
       "name": "Baichuan AI",
-      "modelFamilies": ["Baichuan"],
+      "modelFamilies": [
+        "Baichuan"
+      ],
       "category": "foundation-model",
       "country": "CN",
       "website": "https://www.baichuan-ai.com",
       "icon": {
-        "type": "favicon",
-        "url": "https://www.google.com/s2/favicons?domain=baichuan-ai.com&sz=128"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/baichuan-ai.svg"
       }
     },
     {
       "id": "minimax",
       "name": "MiniMax",
-      "modelFamilies": ["MiniMax", "Hailuo"],
+      "modelFamilies": [
+        "MiniMax",
+        "Hailuo"
+      ],
       "category": "foundation-model",
       "country": "CN",
       "website": "https://www.minimaxi.com",
       "icon": {
-        "type": "favicon",
-        "url": "https://www.google.com/s2/favicons?domain=minimaxi.com&sz=128"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/minimax.svg"
       }
     },
     {
       "id": "01-ai",
       "name": "01.AI",
-      "modelFamilies": ["Yi"],
+      "modelFamilies": [
+        "Yi"
+      ],
       "category": "foundation-model",
       "country": "CN",
       "website": "https://01.ai",
       "icon": {
-        "type": "favicon",
-        "url": "https://www.google.com/s2/favicons?domain=01.ai&sz=128"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/01-ai.svg"
       }
     },
     {
       "id": "bytedance-doubao",
       "name": "ByteDance Doubao",
-      "modelFamilies": ["Doubao", "Seed", "Jimeng"],
+      "modelFamilies": [
+        "Doubao",
+        "Seed",
+        "Jimeng"
+      ],
       "category": "foundation-model",
       "country": "CN",
       "website": "https://www.doubao.com",
       "icon": {
-        "type": "favicon",
-        "url": "https://www.google.com/s2/favicons?domain=doubao.com&sz=128"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/bytedance-doubao.svg"
       }
     },
     {
       "id": "baidu-ernie",
       "name": "Baidu ERNIE",
-      "modelFamilies": ["ERNIE", "Wenxin"],
+      "modelFamilies": [
+        "ERNIE",
+        "Wenxin"
+      ],
       "category": "foundation-model",
       "country": "CN",
       "website": "https://yiyan.baidu.com",
       "icon": {
-        "type": "simple-icons",
-        "slug": "baidu",
-        "url": "https://cdn.simpleicons.org/baidu/2932E1"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/baidu-ernie.svg"
       }
     },
     {
       "id": "tencent-hunyuan",
       "name": "Tencent Hunyuan",
-      "modelFamilies": ["Hunyuan"],
+      "modelFamilies": [
+        "Hunyuan"
+      ],
       "category": "foundation-model",
       "country": "CN",
       "website": "https://hunyuan.tencent.com",
       "icon": {
-        "type": "favicon",
-        "url": "https://www.google.com/s2/favicons?domain=hunyuan.tencent.com&sz=128"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/tencent-hunyuan.svg"
       }
     },
     {
       "id": "huawei-pangu",
       "name": "Huawei Pangu",
-      "modelFamilies": ["Pangu"],
+      "modelFamilies": [
+        "Pangu"
+      ],
       "category": "foundation-model",
       "country": "CN",
       "website": "https://www.huaweicloud.com/product/pangu.html",
       "icon": {
-        "type": "simple-icons",
-        "slug": "huawei",
-        "url": "https://cdn.simpleicons.org/huawei/FF0000"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/huawei-pangu.svg"
       }
     },
     {
       "id": "stability-ai",
       "name": "Stability AI",
-      "modelFamilies": ["Stable Diffusion", "Stable Audio", "Stable Video"],
+      "modelFamilies": [
+        "Stable Diffusion",
+        "Stable Audio",
+        "Stable Video"
+      ],
       "category": "media-model",
       "country": "UK",
       "website": "https://stability.ai",
       "icon": {
-        "type": "favicon",
-        "url": "https://www.google.com/s2/favicons?domain=stability.ai&sz=128"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/stability-ai.svg"
       }
     },
     {
       "id": "midjourney",
       "name": "Midjourney",
-      "modelFamilies": ["Midjourney"],
+      "modelFamilies": [
+        "Midjourney"
+      ],
       "category": "media-model",
       "country": "US",
       "website": "https://www.midjourney.com",
       "icon": {
-        "type": "favicon",
-        "url": "https://www.google.com/s2/favicons?domain=midjourney.com&sz=128"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/midjourney.svg"
       }
     },
     {
       "id": "runway",
       "name": "Runway",
-      "modelFamilies": ["Gen"],
+      "modelFamilies": [
+        "Gen"
+      ],
       "category": "media-model",
       "country": "US",
       "website": "https://runwayml.com",
       "icon": {
-        "type": "favicon",
-        "url": "https://www.google.com/s2/favicons?domain=runwayml.com&sz=128"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/runway.svg"
       }
     },
     {
       "id": "elevenlabs",
       "name": "ElevenLabs",
-      "modelFamilies": ["ElevenLabs"],
+      "modelFamilies": [
+        "ElevenLabs"
+      ],
       "category": "audio-model",
       "country": "US",
       "website": "https://elevenlabs.io",
       "icon": {
-        "type": "simple-icons",
-        "slug": "elevenlabs",
-        "url": "https://cdn.simpleicons.org/elevenlabs/000000"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/elevenlabs.svg"
       }
     },
     {
       "id": "hugging-face",
       "name": "Hugging Face",
-      "modelFamilies": ["Transformers", "Inference Providers"],
+      "modelFamilies": [
+        "Transformers",
+        "Inference Providers"
+      ],
       "category": "platform",
       "country": "US",
       "website": "https://huggingface.co",
       "icon": {
-        "type": "simple-icons",
-        "slug": "huggingface",
-        "url": "https://cdn.simpleicons.org/huggingface/FFD21E"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/hugging-face.svg"
       }
     },
     {
       "id": "replicate",
       "name": "Replicate",
-      "modelFamilies": ["Replicate"],
+      "modelFamilies": [
+        "Replicate"
+      ],
       "category": "platform",
       "country": "US",
       "website": "https://replicate.com",
       "icon": {
-        "type": "simple-icons",
-        "slug": "replicate",
-        "url": "https://cdn.simpleicons.org/replicate/000000"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/replicate.svg"
       }
     },
     {
       "id": "together-ai",
       "name": "Together AI",
-      "modelFamilies": ["Together Inference"],
+      "modelFamilies": [
+        "Together Inference"
+      ],
       "category": "platform",
       "country": "US",
       "website": "https://www.together.ai",
       "icon": {
-        "type": "favicon",
-        "url": "https://www.google.com/s2/favicons?domain=together.ai&sz=128"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/together-ai.svg"
       }
     },
     {
       "id": "fireworks-ai",
       "name": "Fireworks AI",
-      "modelFamilies": ["Fireworks Inference"],
+      "modelFamilies": [
+        "Fireworks Inference"
+      ],
       "category": "platform",
       "country": "US",
       "website": "https://fireworks.ai",
       "icon": {
-        "type": "favicon",
-        "url": "https://www.google.com/s2/favicons?domain=fireworks.ai&sz=128"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/fireworks-ai.svg"
       }
     },
     {
       "id": "groq",
       "name": "Groq",
-      "modelFamilies": ["GroqCloud"],
+      "modelFamilies": [
+        "GroqCloud"
+      ],
       "category": "platform",
       "country": "US",
       "website": "https://groq.com",
       "icon": {
-        "type": "favicon",
-        "url": "https://www.google.com/s2/favicons?domain=groq.com&sz=128"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/groq.svg"
       }
     },
     {
       "id": "ollama",
       "name": "Ollama",
-      "modelFamilies": ["Local LLM"],
+      "modelFamilies": [
+        "Local LLM"
+      ],
       "category": "local-runtime",
       "country": "US",
       "website": "https://ollama.com",
       "icon": {
-        "type": "simple-icons",
-        "slug": "ollama",
-        "url": "https://cdn.simpleicons.org/ollama/000000"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/ollama.svg"
       }
     },
     {
       "id": "lm-studio",
       "name": "LM Studio",
-      "modelFamilies": ["Local LLM"],
+      "modelFamilies": [
+        "Local LLM"
+      ],
       "category": "local-runtime",
       "country": "US",
       "website": "https://lmstudio.ai",
       "icon": {
-        "type": "favicon",
-        "url": "https://www.google.com/s2/favicons?domain=lmstudio.ai&sz=128"
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/lm-studio.svg"
+      }
+    },
+    {
+      "id": "ai21-labs",
+      "name": "AI21 Labs",
+      "modelFamilies": [
+        "Jamba",
+        "Jurassic"
+      ],
+      "category": "foundation-model",
+      "country": "IL",
+      "website": "https://www.ai21.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/ai21-labs.svg"
+      }
+    },
+    {
+      "id": "aleph-alpha",
+      "name": "Aleph Alpha",
+      "modelFamilies": [
+        "Luminous"
+      ],
+      "category": "foundation-model",
+      "country": "DE",
+      "website": "https://aleph-alpha.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/aleph-alpha.svg"
+      }
+    },
+    {
+      "id": "inflection-ai",
+      "name": "Inflection AI",
+      "modelFamilies": [
+        "Inflection",
+        "Pi"
+      ],
+      "category": "foundation-model",
+      "country": "US",
+      "website": "https://inflection.ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/inflection-ai.svg"
+      }
+    },
+    {
+      "id": "reka-ai",
+      "name": "Reka AI",
+      "modelFamilies": [
+        "Reka"
+      ],
+      "category": "foundation-model",
+      "country": "US",
+      "website": "https://www.reka.ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/reka-ai.svg"
+      }
+    },
+    {
+      "id": "liquid-ai",
+      "name": "Liquid AI",
+      "modelFamilies": [
+        "LFM"
+      ],
+      "category": "foundation-model",
+      "country": "US",
+      "website": "https://www.liquid.ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/liquid-ai.svg"
+      }
+    },
+    {
+      "id": "arcee-ai",
+      "name": "Arcee AI",
+      "modelFamilies": [
+        "Arcee"
+      ],
+      "category": "foundation-model",
+      "country": "US",
+      "website": "https://www.arcee.ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/arcee-ai.svg"
+      }
+    },
+    {
+      "id": "nvidia-ai",
+      "name": "NVIDIA AI",
+      "modelFamilies": [
+        "Nemotron",
+        "NIM",
+        "BioNeMo"
+      ],
+      "category": "foundation-model",
+      "country": "US",
+      "website": "https://www.nvidia.com/en-us/ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/nvidia-ai.svg"
+      }
+    },
+    {
+      "id": "microsoft-ai",
+      "name": "Microsoft AI",
+      "modelFamilies": [
+        "Phi",
+        "MAI"
+      ],
+      "category": "foundation-model",
+      "country": "US",
+      "website": "https://ai.microsoft",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/microsoft-ai.svg"
+      }
+    },
+    {
+      "id": "amazon-bedrock",
+      "name": "Amazon Bedrock",
+      "modelFamilies": [
+        "Nova",
+        "Titan"
+      ],
+      "category": "platform",
+      "country": "US",
+      "website": "https://aws.amazon.com/bedrock",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/amazon-bedrock.svg"
+      }
+    },
+    {
+      "id": "apple-machine-learning",
+      "name": "Apple Machine Learning",
+      "modelFamilies": [
+        "Apple Intelligence",
+        "OpenELM",
+        "Ferret"
+      ],
+      "category": "foundation-model",
+      "country": "US",
+      "website": "https://machinelearning.apple.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/apple-machine-learning.svg"
+      }
+    },
+    {
+      "id": "ibm-watsonx",
+      "name": "IBM watsonx",
+      "modelFamilies": [
+        "Granite"
+      ],
+      "category": "foundation-model",
+      "country": "US",
+      "website": "https://www.ibm.com/watsonx",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/ibm-watsonx.svg"
+      }
+    },
+    {
+      "id": "salesforce-ai",
+      "name": "Salesforce AI",
+      "modelFamilies": [
+        "xGen",
+        "BLIP",
+        "Einstein"
+      ],
+      "category": "foundation-model",
+      "country": "US",
+      "website": "https://www.salesforce.com/artificial-intelligence",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/salesforce-ai.svg"
+      }
+    },
+    {
+      "id": "databricks",
+      "name": "Databricks",
+      "modelFamilies": [
+        "DBRX",
+        "MosaicML"
+      ],
+      "category": "foundation-model",
+      "country": "US",
+      "website": "https://www.databricks.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/databricks.svg"
+      }
+    },
+    {
+      "id": "snowflake-arctic",
+      "name": "Snowflake Arctic",
+      "modelFamilies": [
+        "Arctic"
+      ],
+      "category": "foundation-model",
+      "country": "US",
+      "website": "https://www.snowflake.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/snowflake-arctic.svg"
+      }
+    },
+    {
+      "id": "cerebras",
+      "name": "Cerebras",
+      "modelFamilies": [
+        "Cerebras Inference",
+        "Cerebras-GPT"
+      ],
+      "category": "platform",
+      "country": "US",
+      "website": "https://www.cerebras.ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/cerebras.svg"
+      }
+    },
+    {
+      "id": "sambanova",
+      "name": "SambaNova",
+      "modelFamilies": [
+        "Samba",
+        "SambaNova Cloud"
+      ],
+      "category": "platform",
+      "country": "US",
+      "website": "https://sambanova.ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/sambanova.svg"
+      }
+    },
+    {
+      "id": "character-ai",
+      "name": "Character.AI",
+      "modelFamilies": [
+        "Character"
+      ],
+      "category": "assistant",
+      "country": "US",
+      "website": "https://character.ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/character-ai.svg"
+      }
+    },
+    {
+      "id": "adept-ai",
+      "name": "Adept AI",
+      "modelFamilies": [
+        "ACT"
+      ],
+      "category": "foundation-model",
+      "country": "US",
+      "website": "https://www.adept.ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/adept-ai.svg"
+      }
+    },
+    {
+      "id": "poolside",
+      "name": "Poolside",
+      "modelFamilies": [
+        "Poolside"
+      ],
+      "category": "foundation-model",
+      "country": "US",
+      "website": "https://poolside.ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/poolside.svg"
+      }
+    },
+    {
+      "id": "magic",
+      "name": "Magic",
+      "modelFamilies": [
+        "LTM"
+      ],
+      "category": "foundation-model",
+      "country": "US",
+      "website": "https://magic.dev",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/magic.svg"
+      }
+    },
+    {
+      "id": "replit-ai",
+      "name": "Replit AI",
+      "modelFamilies": [
+        "Replit Code"
+      ],
+      "category": "foundation-model",
+      "country": "US",
+      "website": "https://replit.com/ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/replit-ai.svg"
+      }
+    },
+    {
+      "id": "tabnine",
+      "name": "Tabnine",
+      "modelFamilies": [
+        "Tabnine"
+      ],
+      "category": "assistant",
+      "country": "IL",
+      "website": "https://www.tabnine.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/tabnine.svg"
+      }
+    },
+    {
+      "id": "codeium",
+      "name": "Codeium",
+      "modelFamilies": [
+        "Windsurf",
+        "Codeium"
+      ],
+      "category": "assistant",
+      "country": "US",
+      "website": "https://codeium.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/codeium.svg"
+      }
+    },
+    {
+      "id": "black-forest-labs",
+      "name": "Black Forest Labs",
+      "modelFamilies": [
+        "FLUX"
+      ],
+      "category": "media-model",
+      "country": "DE",
+      "website": "https://blackforestlabs.ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/black-forest-labs.svg"
+      }
+    },
+    {
+      "id": "ideogram",
+      "name": "Ideogram",
+      "modelFamilies": [
+        "Ideogram"
+      ],
+      "category": "media-model",
+      "country": "CA",
+      "website": "https://ideogram.ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/ideogram.svg"
+      }
+    },
+    {
+      "id": "luma-ai",
+      "name": "Luma AI",
+      "modelFamilies": [
+        "Dream Machine"
+      ],
+      "category": "media-model",
+      "country": "US",
+      "website": "https://lumalabs.ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/luma-ai.svg"
+      }
+    },
+    {
+      "id": "pika",
+      "name": "Pika",
+      "modelFamilies": [
+        "Pika"
+      ],
+      "category": "media-model",
+      "country": "US",
+      "website": "https://pika.art",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/pika.svg"
+      }
+    },
+    {
+      "id": "kling-ai",
+      "name": "Kling AI",
+      "modelFamilies": [
+        "Kling"
+      ],
+      "category": "media-model",
+      "country": "CN",
+      "website": "https://klingai.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/kling-ai.svg"
+      }
+    },
+    {
+      "id": "higgsfield",
+      "name": "Higgsfield",
+      "modelFamilies": [
+        "Higgsfield"
+      ],
+      "category": "media-model",
+      "country": "US",
+      "website": "https://higgsfield.ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/higgsfield.svg"
+      }
+    },
+    {
+      "id": "adobe-firefly",
+      "name": "Adobe Firefly",
+      "modelFamilies": [
+        "Firefly"
+      ],
+      "category": "media-model",
+      "country": "US",
+      "website": "https://www.adobe.com/products/firefly.html",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/adobe-firefly.svg"
+      }
+    },
+    {
+      "id": "canva-ai",
+      "name": "Canva AI",
+      "modelFamilies": [
+        "Magic Studio"
+      ],
+      "category": "media-model",
+      "country": "AU",
+      "website": "https://www.canva.com/ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/canva-ai.svg"
+      }
+    },
+    {
+      "id": "suno",
+      "name": "Suno",
+      "modelFamilies": [
+        "Suno"
+      ],
+      "category": "audio-model",
+      "country": "US",
+      "website": "https://suno.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/suno.svg"
+      }
+    },
+    {
+      "id": "udio",
+      "name": "Udio",
+      "modelFamilies": [
+        "Udio"
+      ],
+      "category": "audio-model",
+      "country": "US",
+      "website": "https://www.udio.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/udio.svg"
+      }
+    },
+    {
+      "id": "deepgram",
+      "name": "Deepgram",
+      "modelFamilies": [
+        "Nova",
+        "Aura"
+      ],
+      "category": "audio-model",
+      "country": "US",
+      "website": "https://deepgram.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/deepgram.svg"
+      }
+    },
+    {
+      "id": "assemblyai",
+      "name": "AssemblyAI",
+      "modelFamilies": [
+        "Universal",
+        "LeMUR"
+      ],
+      "category": "audio-model",
+      "country": "US",
+      "website": "https://www.assemblyai.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/assemblyai.svg"
+      }
+    },
+    {
+      "id": "cartesia",
+      "name": "Cartesia",
+      "modelFamilies": [
+        "Sonic"
+      ],
+      "category": "audio-model",
+      "country": "US",
+      "website": "https://cartesia.ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/cartesia.svg"
+      }
+    },
+    {
+      "id": "playht",
+      "name": "PlayHT",
+      "modelFamilies": [
+        "PlayHT"
+      ],
+      "category": "audio-model",
+      "country": "US",
+      "website": "https://play.ht",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/playht.svg"
+      }
+    },
+    {
+      "id": "respeecher",
+      "name": "Respeecher",
+      "modelFamilies": [
+        "Respeecher"
+      ],
+      "category": "audio-model",
+      "country": "US",
+      "website": "https://www.respeecher.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/respeecher.svg"
+      }
+    },
+    {
+      "id": "siliconflow",
+      "name": "SiliconFlow",
+      "modelFamilies": [
+        "SiliconCloud"
+      ],
+      "category": "platform",
+      "country": "CN",
+      "website": "https://siliconflow.cn",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/siliconflow.svg"
+      }
+    },
+    {
+      "id": "deepinfra",
+      "name": "DeepInfra",
+      "modelFamilies": [
+        "DeepInfra"
+      ],
+      "category": "platform",
+      "country": "US",
+      "website": "https://deepinfra.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/deepinfra.svg"
+      }
+    },
+    {
+      "id": "novita-ai",
+      "name": "Novita AI",
+      "modelFamilies": [
+        "Novita"
+      ],
+      "category": "platform",
+      "country": "US",
+      "website": "https://novita.ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/novita-ai.svg"
+      }
+    },
+    {
+      "id": "baseten",
+      "name": "Baseten",
+      "modelFamilies": [
+        "Truss",
+        "Baseten"
+      ],
+      "category": "platform",
+      "country": "US",
+      "website": "https://www.baseten.co",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/baseten.svg"
+      }
+    },
+    {
+      "id": "modal",
+      "name": "Modal",
+      "modelFamilies": [
+        "Modal"
+      ],
+      "category": "platform",
+      "country": "US",
+      "website": "https://modal.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/modal.svg"
+      }
+    },
+    {
+      "id": "fal-ai",
+      "name": "fal.ai",
+      "modelFamilies": [
+        "fal"
+      ],
+      "category": "platform",
+      "country": "US",
+      "website": "https://fal.ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/fal-ai.svg"
+      }
+    },
+    {
+      "id": "cloudflare-workers-ai",
+      "name": "Cloudflare Workers AI",
+      "modelFamilies": [
+        "Workers AI"
+      ],
+      "category": "platform",
+      "country": "US",
+      "website": "https://developers.cloudflare.com/workers-ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/cloudflare-workers-ai.svg"
+      }
+    },
+    {
+      "id": "nebius-ai",
+      "name": "Nebius AI",
+      "modelFamilies": [
+        "Nebius AI Studio"
+      ],
+      "category": "platform",
+      "country": "NL",
+      "website": "https://nebius.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/nebius-ai.svg"
+      }
+    },
+    {
+      "id": "parasail",
+      "name": "Parasail",
+      "modelFamilies": [
+        "Parasail"
+      ],
+      "category": "platform",
+      "country": "US",
+      "website": "https://www.parasail.io",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/parasail.svg"
+      }
+    },
+    {
+      "id": "friendli-ai",
+      "name": "FriendliAI",
+      "modelFamilies": [
+        "PeriFlow"
+      ],
+      "category": "platform",
+      "country": "KR",
+      "website": "https://friendli.ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/friendli-ai.svg"
+      }
+    },
+    {
+      "id": "clarifai",
+      "name": "Clarifai",
+      "modelFamilies": [
+        "Clarifai"
+      ],
+      "category": "platform",
+      "country": "US",
+      "website": "https://www.clarifai.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/clarifai.svg"
+      }
+    },
+    {
+      "id": "openrouter",
+      "name": "OpenRouter",
+      "modelFamilies": [
+        "OpenRouter"
+      ],
+      "category": "platform",
+      "country": "US",
+      "website": "https://openrouter.ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/openrouter.svg"
+      }
+    },
+    {
+      "id": "vertex-ai",
+      "name": "Google Vertex AI",
+      "modelFamilies": [
+        "Vertex AI",
+        "Model Garden"
+      ],
+      "category": "platform",
+      "country": "US",
+      "website": "https://cloud.google.com/vertex-ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/vertex-ai.svg"
+      }
+    },
+    {
+      "id": "azure-ai-foundry",
+      "name": "Azure AI Foundry",
+      "modelFamilies": [
+        "Azure AI Foundry"
+      ],
+      "category": "platform",
+      "country": "US",
+      "website": "https://azure.microsoft.com/products/ai-foundry",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/azure-ai-foundry.svg"
+      }
+    },
+    {
+      "id": "baidu-qianfan",
+      "name": "Baidu Qianfan",
+      "modelFamilies": [
+        "Qianfan"
+      ],
+      "category": "platform",
+      "country": "CN",
+      "website": "https://cloud.baidu.com/product/wenxinworkshop",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/baidu-qianfan.svg"
+      }
+    },
+    {
+      "id": "alibaba-cloud-model-studio",
+      "name": "Alibaba Cloud Model Studio",
+      "modelFamilies": [
+        "Bailian",
+        "Qwen"
+      ],
+      "category": "platform",
+      "country": "CN",
+      "website": "https://www.alibabacloud.com/product/modelstudio",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/alibaba-cloud-model-studio.svg"
+      }
+    },
+    {
+      "id": "stepfun",
+      "name": "StepFun",
+      "modelFamilies": [
+        "Step"
+      ],
+      "category": "foundation-model",
+      "country": "CN",
+      "website": "https://www.stepfun.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/stepfun.svg"
+      }
+    },
+    {
+      "id": "iflytek-spark",
+      "name": "iFlytek Spark",
+      "modelFamilies": [
+        "SparkDesk",
+        "Xinghuo"
+      ],
+      "category": "foundation-model",
+      "country": "CN",
+      "website": "https://xinghuo.xfyun.cn",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/iflytek-spark.svg"
+      }
+    },
+    {
+      "id": "sensetime-sensechat",
+      "name": "SenseTime SenseChat",
+      "modelFamilies": [
+        "SenseNova",
+        "SenseChat"
+      ],
+      "category": "foundation-model",
+      "country": "CN",
+      "website": "https://www.sensetime.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/sensetime-sensechat.svg"
+      }
+    },
+    {
+      "id": "360-zhinao",
+      "name": "360 ZhiNao",
+      "modelFamilies": [
+        "360GPT",
+        "ZhiNao"
+      ],
+      "category": "foundation-model",
+      "country": "CN",
+      "website": "https://ai.360.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/360-zhinao.svg"
+      }
+    },
+    {
+      "id": "kunlun-tiangong",
+      "name": "Kunlun Tiangong",
+      "modelFamilies": [
+        "Tiangong"
+      ],
+      "category": "foundation-model",
+      "country": "CN",
+      "website": "https://www.tiangong.cn",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/kunlun-tiangong.svg"
+      }
+    },
+    {
+      "id": "xiaomi-mimo",
+      "name": "Xiaomi MiMo",
+      "modelFamilies": [
+        "MiMo"
+      ],
+      "category": "foundation-model",
+      "country": "CN",
+      "website": "https://www.mi.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/xiaomi-mimo.svg"
+      }
+    },
+    {
+      "id": "ant-ling",
+      "name": "Ant Ling",
+      "modelFamilies": [
+        "Ling"
+      ],
+      "category": "foundation-model",
+      "country": "CN",
+      "website": "https://ling.tbox.cn",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/ant-ling.svg"
+      }
+    },
+    {
+      "id": "vivo-bluelm",
+      "name": "vivo BlueLM",
+      "modelFamilies": [
+        "BlueLM"
+      ],
+      "category": "foundation-model",
+      "country": "CN",
+      "website": "https://developers.vivo.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/vivo-bluelm.svg"
+      }
+    },
+    {
+      "id": "oppo-andesgpt",
+      "name": "OPPO AndesGPT",
+      "modelFamilies": [
+        "AndesGPT"
+      ],
+      "category": "foundation-model",
+      "country": "CN",
+      "website": "https://www.oppo.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/oppo-andesgpt.svg"
+      }
+    },
+    {
+      "id": "meituan-longcat",
+      "name": "Meituan LongCat",
+      "modelFamilies": [
+        "LongCat"
+      ],
+      "category": "foundation-model",
+      "country": "CN",
+      "website": "https://www.meituan.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/meituan-longcat.svg"
+      }
+    },
+    {
+      "id": "jd-chatrhino",
+      "name": "JD ChatRhino",
+      "modelFamilies": [
+        "ChatRhino",
+        "Yanxi"
+      ],
+      "category": "foundation-model",
+      "country": "CN",
+      "website": "https://www.jdcloud.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/jd-chatrhino.svg"
+      }
+    },
+    {
+      "id": "shanghai-ai-lab",
+      "name": "Shanghai AI Lab",
+      "modelFamilies": [
+        "InternLM",
+        "InternVL"
+      ],
+      "category": "research-lab",
+      "country": "CN",
+      "website": "https://www.shlab.org.cn",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/shanghai-ai-lab.svg"
+      }
+    },
+    {
+      "id": "baai",
+      "name": "BAAI",
+      "modelFamilies": [
+        "Aquila",
+        "FlagEmbedding",
+        "WuDao"
+      ],
+      "category": "research-lab",
+      "country": "CN",
+      "website": "https://www.baai.ac.cn",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/baai.svg"
+      }
+    },
+    {
+      "id": "openbmb",
+      "name": "OpenBMB",
+      "modelFamilies": [
+        "MiniCPM",
+        "CPM"
+      ],
+      "category": "research-lab",
+      "country": "CN",
+      "website": "https://www.openbmb.cn",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/openbmb.svg"
+      }
+    },
+    {
+      "id": "fudan-moss",
+      "name": "Fudan MOSS",
+      "modelFamilies": [
+        "MOSS"
+      ],
+      "category": "research-lab",
+      "country": "CN",
+      "website": "https://moss.fastnlp.top",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/fudan-moss.svg"
+      }
+    },
+    {
+      "id": "tii-falcon",
+      "name": "Technology Innovation Institute",
+      "modelFamilies": [
+        "Falcon"
+      ],
+      "category": "research-lab",
+      "country": "AE",
+      "website": "https://www.tii.ae",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/tii-falcon.svg"
+      }
+    },
+    {
+      "id": "g42",
+      "name": "G42",
+      "modelFamilies": [
+        "Jais"
+      ],
+      "category": "foundation-model",
+      "country": "AE",
+      "website": "https://www.g42.ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/g42.svg"
+      }
+    },
+    {
+      "id": "mbzuai",
+      "name": "MBZUAI",
+      "modelFamilies": [
+        "Jais",
+        "K2"
+      ],
+      "category": "research-lab",
+      "country": "AE",
+      "website": "https://mbzuai.ac.ae",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/mbzuai.svg"
+      }
+    },
+    {
+      "id": "allen-ai",
+      "name": "Allen AI",
+      "modelFamilies": [
+        "OLMo",
+        "Molmo"
+      ],
+      "category": "research-lab",
+      "country": "US",
+      "website": "https://allenai.org",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/allen-ai.svg"
+      }
+    },
+    {
+      "id": "eleutherai",
+      "name": "EleutherAI",
+      "modelFamilies": [
+        "GPT-NeoX",
+        "Pythia"
+      ],
+      "category": "research-lab",
+      "country": "US",
+      "website": "https://www.eleuther.ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/eleutherai.svg"
+      }
+    },
+    {
+      "id": "bigscience",
+      "name": "BigScience",
+      "modelFamilies": [
+        "BLOOM"
+      ],
+      "category": "research-lab",
+      "country": "FR",
+      "website": "https://bigscience.huggingface.co",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/bigscience.svg"
+      }
+    },
+    {
+      "id": "nous-research",
+      "name": "Nous Research",
+      "modelFamilies": [
+        "Hermes",
+        "Nous"
+      ],
+      "category": "research-lab",
+      "country": "US",
+      "website": "https://nousresearch.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/nous-research.svg"
+      }
+    },
+    {
+      "id": "nomic-ai",
+      "name": "Nomic AI",
+      "modelFamilies": [
+        "Nomic Embed",
+        "GPT4All"
+      ],
+      "category": "foundation-model",
+      "country": "US",
+      "website": "https://www.nomic.ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/nomic-ai.svg"
+      }
+    },
+    {
+      "id": "jina-ai",
+      "name": "Jina AI",
+      "modelFamilies": [
+        "Jina Embeddings",
+        "Reader"
+      ],
+      "category": "foundation-model",
+      "country": "DE",
+      "website": "https://jina.ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/jina-ai.svg"
+      }
+    },
+    {
+      "id": "voyage-ai",
+      "name": "Voyage AI",
+      "modelFamilies": [
+        "Voyage Embeddings",
+        "Voyage Rerank"
+      ],
+      "category": "foundation-model",
+      "country": "US",
+      "website": "https://www.voyageai.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/voyage-ai.svg"
+      }
+    },
+    {
+      "id": "upstage",
+      "name": "Upstage",
+      "modelFamilies": [
+        "Solar"
+      ],
+      "category": "foundation-model",
+      "country": "KR",
+      "website": "https://www.upstage.ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/upstage.svg"
+      }
+    },
+    {
+      "id": "naver-hyperclova",
+      "name": "NAVER HyperCLOVA",
+      "modelFamilies": [
+        "HyperCLOVA X"
+      ],
+      "category": "foundation-model",
+      "country": "KR",
+      "website": "https://clova.ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/naver-hyperclova.svg"
+      }
+    },
+    {
+      "id": "skt-aix",
+      "name": "SK Telecom AI",
+      "modelFamilies": [
+        "A.X"
+      ],
+      "category": "foundation-model",
+      "country": "KR",
+      "website": "https://www.sktelecom.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/skt-aix.svg"
+      }
+    },
+    {
+      "id": "rinna",
+      "name": "rinna",
+      "modelFamilies": [
+        "rinna"
+      ],
+      "category": "foundation-model",
+      "country": "JP",
+      "website": "https://rinna.co.jp",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/rinna.svg"
+      }
+    },
+    {
+      "id": "sakana-ai",
+      "name": "Sakana AI",
+      "modelFamilies": [
+        "Sakana"
+      ],
+      "category": "research-lab",
+      "country": "JP",
+      "website": "https://sakana.ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/sakana-ai.svg"
+      }
+    },
+    {
+      "id": "preferred-networks",
+      "name": "Preferred Networks",
+      "modelFamilies": [
+        "PLaMo"
+      ],
+      "category": "foundation-model",
+      "country": "JP",
+      "website": "https://www.preferred.jp",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/preferred-networks.svg"
+      }
+    },
+    {
+      "id": "sarvam-ai",
+      "name": "Sarvam AI",
+      "modelFamilies": [
+        "Sarvam"
+      ],
+      "category": "foundation-model",
+      "country": "IN",
+      "website": "https://www.sarvam.ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/sarvam-ai.svg"
+      }
+    },
+    {
+      "id": "krutrim",
+      "name": "Krutrim",
+      "modelFamilies": [
+        "Krutrim"
+      ],
+      "category": "foundation-model",
+      "country": "IN",
+      "website": "https://olakrutrim.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/krutrim.svg"
+      }
+    },
+    {
+      "id": "ai4bharat",
+      "name": "AI4Bharat",
+      "modelFamilies": [
+        "IndicTrans",
+        "IndicBERT"
+      ],
+      "category": "research-lab",
+      "country": "IN",
+      "website": "https://ai4bharat.iitm.ac.in",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/ai4bharat.svg"
+      }
+    },
+    {
+      "id": "yandexgpt",
+      "name": "YandexGPT",
+      "modelFamilies": [
+        "YandexGPT"
+      ],
+      "category": "foundation-model",
+      "country": "RU",
+      "website": "https://yandex.cloud/en/services/yandexgpt",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/yandexgpt.svg"
+      }
+    },
+    {
+      "id": "sber-gigachat",
+      "name": "Sber GigaChat",
+      "modelFamilies": [
+        "GigaChat"
+      ],
+      "category": "foundation-model",
+      "country": "RU",
+      "website": "https://developers.sber.ru/portal/products/gigachat",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/sber-gigachat.svg"
+      }
+    },
+    {
+      "id": "writer",
+      "name": "Writer",
+      "modelFamilies": [
+        "Palmyra"
+      ],
+      "category": "foundation-model",
+      "country": "US",
+      "website": "https://writer.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/writer.svg"
+      }
+    },
+    {
+      "id": "lighton",
+      "name": "LightOn",
+      "modelFamilies": [
+        "Alfred",
+        "Muse"
+      ],
+      "category": "foundation-model",
+      "country": "FR",
+      "website": "https://www.lighton.ai",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/lighton.svg"
+      }
+    },
+    {
+      "id": "phind",
+      "name": "Phind",
+      "modelFamilies": [
+        "Phind"
+      ],
+      "category": "assistant",
+      "country": "US",
+      "website": "https://www.phind.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/phind.svg"
+      }
+    },
+    {
+      "id": "you-com",
+      "name": "You.com",
+      "modelFamilies": [
+        "YouChat",
+        "ARI"
+      ],
+      "category": "assistant",
+      "country": "US",
+      "website": "https://you.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/you-com.svg"
+      }
+    },
+    {
+      "id": "poe",
+      "name": "Poe",
+      "modelFamilies": [
+        "Poe"
+      ],
+      "category": "assistant",
+      "country": "US",
+      "website": "https://poe.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/poe.svg"
+      }
+    },
+    {
+      "id": "morph-labs",
+      "name": "Morph Labs",
+      "modelFamilies": [
+        "Morph"
+      ],
+      "category": "foundation-model",
+      "country": "US",
+      "website": "https://morphllm.com",
+      "icon": {
+        "type": "svg",
+        "source": "generated-vector",
+        "quality": "vector",
+        "path": "assets/icons/morph-labs.svg"
       }
     }
   ]

@@ -6,6 +6,7 @@
 
 - Gallery: [`docs/index.html`](docs/index.html)
 - Catalog JSON: [`catalog/models.json`](catalog/models.json)
+- Local SVG Icons: [`assets/icons`](assets/icons)
 - Raw JSON: `https://raw.githubusercontent.com/<owner>/<repo>/main/catalog/models.json`
 - GitHub Pages: `https://<owner>.github.io/<repo>/`
 
@@ -21,12 +22,14 @@
 | `category` | `foundation-model`、`assistant`、`media-model`、`audio-model`、`platform`、`local-runtime`、`research-lab` |
 | `country` | 品牌/机构主要所在地 |
 | `website` | 官网 |
-| `icon.type` | `simple-icons` 或 `favicon` |
-| `icon.url` | 可直接访问的图标 URL |
+| `icon.type` | 当前统一为 `svg` |
+| `icon.path` | 本地高清矢量图标路径，如 `assets/icons/openai.svg` |
+| `icon.source` | `generated-vector` 表示本地矢量占位；替换成官方 SVG 后可改为 `official` |
+| `icon.quality` | 当前统一为 `vector` |
 
 ## Current Coverage
 
-OpenAI, ChatGPT, Anthropic, Claude, Google Gemini, Google DeepMind, Meta AI, xAI, Mistral AI, Cohere, Perplexity, DeepSeek, Alibaba Qwen, Zhipu AI, Moonshot AI, Baichuan AI, MiniMax, 01.AI, ByteDance Doubao, Baidu ERNIE, Tencent Hunyuan, Huawei Pangu, Stability AI, Midjourney, Runway, ElevenLabs, Hugging Face, Replicate, Together AI, Fireworks AI, Groq, Ollama, LM Studio.
+当前覆盖 129 个模型厂商、研究机构、AI 产品和推理平台。完整列表见 [`catalog/models.json`](catalog/models.json)。
 
 ## Validate
 
@@ -37,11 +40,11 @@ node scripts/check-icons.mjs
 
 ## Add A New Icon
 
-1. 在 [`catalog/models.json`](catalog/models.json) 的 `items` 中新增对象。
-2. 优先使用 Simple Icons CDN：`https://cdn.simpleicons.org/<slug>/<hexColor>`。
-3. 没有可用官方 SVG 时，用 favicon fallback：`https://www.google.com/s2/favicons?domain=<domain>&sz=128`。
+1. 在 [`data/providers.mjs`](data/providers.mjs) 中新增厂商。
+2. 运行 `node scripts/build-catalog.mjs` 生成 catalog 和本地 SVG。
+3. 如果有可合法使用的官方 SVG，把对应 `assets/icons/<id>.svg` 替换为官方矢量文件，并把 catalog 里的 `icon.source` 改成 `official`。
 4. 运行校验脚本。
 
 ## Trademark And License Notes
 
-本仓库只做资源索引和快速访问。品牌名称、商标和图标归各自所有者所有。商用或再分发前，应确认对应品牌资产条款、Simple Icons 条款或官网品牌规范。
+本仓库只做资源索引和快速访问。品牌名称和商标归各自所有者所有。当前 SVG 是本地矢量占位图，适合高清展示和目录管理；商用或再分发官方品牌图标前，应确认对应品牌资产条款或官网品牌规范。
