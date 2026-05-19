@@ -88,7 +88,7 @@
 
       .toolbar {
         display: grid;
-        grid-template-columns: minmax(240px, 1.5fr) repeat(3, minmax(140px, 0.55fr)) minmax(140px, 0.55fr);
+        grid-template-columns: minmax(240px, 1.5fr) repeat(3, minmax(140px, 0.55fr)) minmax(140px, 0.55fr) auto;
         gap: 12px;
         align-items: center;
       }
@@ -275,11 +275,23 @@
       }
 
       .links {
-        display: flex;
+        display: grid;
+        grid-template-columns: auto auto minmax(88px, 1fr) minmax(80px, 0.9fr);
         align-items: center;
-        gap: 12px;
+        gap: 10px;
         grid-column: 1 / -1;
         font-size: 13px;
+      }
+
+      .links a,
+      .links button {
+        flex: 0 0 auto;
+        white-space: nowrap;
+      }
+
+      .links button {
+        width: 100%;
+        min-width: 0;
       }
 
       .copy {
@@ -288,6 +300,12 @@
         color: var(--accent);
         background: transparent;
         font-size: 13px;
+      }
+
+      .reset {
+        min-width: 82px;
+        color: var(--muted);
+        background: transparent;
       }
 
       a {
@@ -303,6 +321,13 @@
         display: none;
         padding: 36px 0;
         color: var(--muted);
+      }
+
+      .empty button {
+        min-height: 34px;
+        margin-left: 10px;
+        color: var(--accent);
+        background: var(--card);
       }
 
       .drawer {
@@ -385,6 +410,47 @@
         display: none;
       }
 
+      .backTop {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        z-index: 9;
+        display: grid;
+        place-items: center;
+        width: 44px;
+        min-height: 44px;
+        padding: 0;
+        border-radius: 8px;
+        color: var(--accent);
+        background:
+          linear-gradient(var(--card), var(--card)) padding-box,
+          conic-gradient(var(--accent) var(--scroll-progress, 0%), var(--line) 0) border-box;
+        border: 2px solid transparent;
+        box-shadow: var(--shadow);
+        opacity: 1;
+        transform: translateY(0);
+        transition:
+          opacity 160ms ease,
+          transform 160ms ease,
+          border-color 160ms ease;
+      }
+
+      .backTop::before {
+        content: "";
+        position: absolute;
+        inset: 4px;
+        z-index: -1;
+        border-radius: 6px;
+        background: var(--card);
+      }
+
+      .backTop[hidden] {
+        display: grid;
+        pointer-events: none;
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
       @media (max-width: 860px) {
         .toolbar {
           grid-template-columns: 1fr;
@@ -423,6 +489,7 @@
             <option value="category">分类优先</option>
             <option value="country">国家优先</option>
           </select>
+          <button id="reset" class="reset" type="button">Reset</button>
         </div>
       </div>
     </header>
@@ -459,7 +526,10 @@
         </div>
       </section>
       <section id="grid" class="grid" aria-live="polite"></section>
-      <p id="empty" class="empty">没有匹配的图标。</p>
+      <p id="empty" class="empty">
+        没有匹配的图标。
+        <button id="emptyReset" type="button">Reset filters</button>
+      </p>
       <section id="drawer" class="drawer" aria-live="polite" hidden></section>
     </main>
 
@@ -483,6 +553,7 @@
     </template>
 
     <div id="toast" class="toast" role="status" hidden></div>
+    <button id="backTop" class="backTop" type="button" aria-label="返回顶部" title="返回顶部" hidden>↑</button>
 
     <script>
       const state = {
@@ -503,13 +574,16 @@
         country: document.querySelector("#country"),
         source: document.querySelector("#source"),
         sort: document.querySelector("#sort"),
+        reset: document.querySelector("#reset"),
+        emptyReset: document.querySelector("#emptyReset"),
         count: document.querySelector("#count"),
         breakdown: document.querySelector("#breakdown"),
         grid: document.querySelector("#grid"),
         empty: document.querySelector("#empty"),
         drawer: document.querySelector("#drawer"),
         template: document.querySelector("#cardTemplate"),
-        toast: document.querySelector("#toast")
+        toast: document.querySelector("#toast"),
+        backTop: document.querySelector("#backTop")
       };
 
       const normalize = (value) =>
@@ -689,6 +763,36 @@
         }
       }
 
+      function updateBackTop() {
+        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = scrollable > 0 ? Math.min(100, Math.max(0, (window.scrollY / scrollable) * 100)) : 0;
+        els.backTop.style.setProperty("--scroll-progress", `${progress}%`);
+        els.backTop.hidden = window.scrollY < 480;
+      }
+
+      function scrollToTop() {
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        window.scrollTo({
+          top: 0,
+          behavior: reduceMotion ? "auto" : "smooth"
+        });
+      }
+
+      function resetFilters() {
+        state.query = "";
+        state.category = "";
+        state.country = "";
+        state.source = "";
+        state.sort = "name";
+        els.search.value = "";
+        els.category.value = "";
+        els.country.value = "";
+        els.source.value = "";
+        els.sort.value = "name";
+        els.drawer.hidden = true;
+        render();
+      }
+
       async function init() {
         const [catalogResponse, aliasesResponse] = await Promise.all([
           fetch(new URL("catalog/models.json", siteBase)),
@@ -745,6 +849,11 @@
           state.sort = event.target.value;
           render();
         });
+        els.reset.addEventListener("click", resetFilters);
+        els.emptyReset.addEventListener("click", resetFilters);
+        els.backTop.addEventListener("click", scrollToTop);
+        window.addEventListener("scroll", updateBackTop, { passive: true });
+        updateBackTop();
         render();
       }
 
