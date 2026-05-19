@@ -12,24 +12,32 @@
     <style>
       :root {
         color-scheme: light dark;
-        --bg: #f7f7f4;
-        --fg: #171717;
-        --muted: #666b73;
-        --line: #d8d8d2;
+        --bg: #f6f7f9;
+        --fg: #17191f;
+        --muted: #626976;
+        --line: #d8dde6;
         --card: #ffffff;
-        --accent: #12664f;
-        --chip: #e7ece7;
+        --panel: #eef2f6;
+        --accent: #0f766e;
+        --accent-2: #2563eb;
+        --warn: #b45309;
+        --chip: #edf2f7;
+        --shadow: 0 12px 32px rgb(21 28 42 / 0.08);
       }
 
       @media (prefers-color-scheme: dark) {
         :root {
-          --bg: #151618;
-          --fg: #f3f1ea;
-          --muted: #a6a8ad;
-          --line: #34363a;
-          --card: #1e2023;
-          --accent: #78d7b4;
-          --chip: #2a302d;
+          --bg: #111318;
+          --fg: #f4f6fb;
+          --muted: #a5adbb;
+          --line: #303846;
+          --card: #191d24;
+          --panel: #151a21;
+          --accent: #5eead4;
+          --accent-2: #93c5fd;
+          --warn: #fbbf24;
+          --chip: #252d38;
+          --shadow: 0 12px 32px rgb(0 0 0 / 0.24);
         }
       }
 
@@ -49,6 +57,7 @@
       header {
         border-bottom: 1px solid var(--line);
         background: var(--card);
+        box-shadow: 0 1px 0 rgb(0 0 0 / 0.02);
       }
 
       .wrap {
@@ -58,8 +67,8 @@
 
       .top {
         display: grid;
-        gap: 18px;
-        padding: 28px 0 22px;
+        gap: 20px;
+        padding: 26px 0 20px;
       }
 
       h1 {
@@ -79,20 +88,37 @@
 
       .toolbar {
         display: grid;
-        grid-template-columns: 1fr auto;
+        grid-template-columns: minmax(240px, 1.5fr) repeat(3, minmax(140px, 0.55fr)) minmax(140px, 0.55fr);
         gap: 12px;
         align-items: center;
       }
 
       input,
-      select {
+      select,
+      button {
         min-height: 42px;
         border: 1px solid var(--line);
         border-radius: 8px;
         padding: 0 12px;
         color: var(--fg);
-        background: var(--bg);
+        background: var(--panel);
         font: inherit;
+      }
+
+      input:focus,
+      select:focus,
+      button:focus-visible,
+      a:focus-visible {
+        outline: 2px solid var(--accent-2);
+        outline-offset: 2px;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      button:hover {
+        border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
       }
 
       main {
@@ -108,6 +134,11 @@
         font-size: 14px;
       }
 
+      .stat {
+        color: var(--fg);
+        font-weight: 650;
+      }
+
       .api {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -120,6 +151,7 @@
         border: 1px solid var(--line);
         border-radius: 8px;
         background: var(--card);
+        box-shadow: var(--shadow);
       }
 
       .apiGroup h2 {
@@ -142,7 +174,7 @@
 
       .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(238px, 1fr));
         gap: 12px;
       }
 
@@ -150,11 +182,22 @@
         display: grid;
         grid-template-columns: 46px 1fr;
         gap: 12px;
-        min-height: 118px;
+        min-height: 146px;
         padding: 14px;
         border: 1px solid var(--line);
         border-radius: 8px;
         background: var(--card);
+        box-shadow: 0 1px 0 rgb(0 0 0 / 0.03);
+        transition:
+          border-color 160ms ease,
+          transform 160ms ease,
+          box-shadow 160ms ease;
+      }
+
+      .card:hover {
+        border-color: color-mix(in srgb, var(--accent) 50%, var(--line));
+        box-shadow: var(--shadow);
+        transform: translateY(-1px);
       }
 
       .iconBox {
@@ -164,7 +207,7 @@
         height: 46px;
         border: 1px solid var(--line);
         border-radius: 8px;
-        background: var(--bg);
+        background: var(--panel);
       }
 
       .iconBox img {
@@ -184,6 +227,7 @@
         color: var(--muted);
         font-size: 13px;
         line-height: 1.4;
+        min-height: 36px;
       }
 
       .chips {
@@ -196,17 +240,30 @@
 
       .chip {
         padding: 4px 7px;
-        border-radius: 999px;
+        border-radius: 7px;
         color: var(--muted);
         background: var(--chip);
         font-size: 12px;
         line-height: 1;
       }
 
+      .chip.source {
+        color: var(--accent-2);
+      }
+
       .links {
         display: flex;
+        align-items: center;
         gap: 12px;
         grid-column: 1 / -1;
+        font-size: 13px;
+      }
+
+      .copy {
+        min-height: 30px;
+        padding: 0 8px;
+        color: var(--accent);
+        background: transparent;
         font-size: 13px;
       }
 
@@ -225,9 +282,97 @@
         color: var(--muted);
       }
 
-      @media (max-width: 640px) {
+      .drawer {
+        margin-top: 18px;
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--card);
+        box-shadow: var(--shadow);
+      }
+
+      .drawer[hidden] {
+        display: none;
+      }
+
+      .drawerHeader {
+        display: grid;
+        grid-template-columns: 52px 1fr auto;
+        gap: 12px;
+        align-items: center;
+        margin-bottom: 14px;
+      }
+
+      .drawerIcon {
+        width: 52px;
+        height: 52px;
+        object-fit: contain;
+        padding: 8px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .drawer h2,
+      .drawer p {
+        margin: 0;
+      }
+
+      .drawerGrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 10px;
+      }
+
+      .field {
+        min-width: 0;
+        padding: 10px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .field span {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .field code {
+        overflow-wrap: anywhere;
+        font-size: 12px;
+      }
+
+      .toast {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        z-index: 10;
+        max-width: min(320px, calc(100% - 32px));
+        padding: 10px 12px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        color: var(--fg);
+        background: var(--card);
+        box-shadow: var(--shadow);
+      }
+
+      .toast[hidden] {
+        display: none;
+      }
+
+      @media (max-width: 860px) {
         .toolbar {
           grid-template-columns: 1fr;
+        }
+
+        .drawerHeader {
+          grid-template-columns: 52px 1fr;
+        }
+
+        .drawerHeader button {
+          grid-column: 1 / -1;
         }
       }
     </style>
@@ -237,19 +382,31 @@
       <div class="wrap top">
         <div>
           <h1>AI Model Icons</h1>
-          <p class="summary">主流大模型、AI 产品和推理平台图标索引。支持搜索、分类过滤和直接复制图标 URL。</p>
+          <p class="summary">主流大模型、AI 产品和推理平台图标索引。支持别名搜索、组合过滤、资源预览和直接复制 URL。</p>
         </div>
         <div class="toolbar">
-          <input id="search" type="search" placeholder="搜索品牌、模型、国家..." />
+          <input id="search" type="search" placeholder="搜索品牌、模型、别名、国家..." />
           <select id="category" aria-label="按分类筛选">
             <option value="">全部分类</option>
+          </select>
+          <select id="country" aria-label="按国家筛选">
+            <option value="">全部国家</option>
+          </select>
+          <select id="source" aria-label="按图标来源筛选">
+            <option value="">全部来源</option>
+          </select>
+          <select id="sort" aria-label="排序">
+            <option value="name">名称 A-Z</option>
+            <option value="category">分类优先</option>
+            <option value="country">国家优先</option>
           </select>
         </div>
       </div>
     </header>
     <main class="wrap">
       <div class="meta">
-        <span id="count">0 items</span>
+        <span id="count" class="stat">0 items</span>
+        <span id="breakdown"></span>
         <a href="catalog/models.json" target="_blank" rel="noreferrer">catalog/models.json</a>
         <a href="catalog/aliases.json" target="_blank" rel="noreferrer">aliases.json</a>
         <a href="https://github.com/sonnedu/ai-model-icons#api-usage" target="_blank" rel="noreferrer">API docs</a>
@@ -266,6 +423,8 @@
           <h2>Direct assets</h2>
           <a href="assets/icons/grok.svg" target="_blank" rel="noreferrer">Grok SVG</a>
           <code>GET /assets/icons/grok.svg</code>
+          <a href="assets/icons/gpt-4o.svg" target="_blank" rel="noreferrer">Alias SVG</a>
+          <code>GET /assets/icons/gpt-4o.svg</code>
           <a href="assets/raster/grok/apple-touch-icon-180.png" target="_blank" rel="noreferrer">Grok Apple PNG</a>
           <code>GET /assets/raster/grok/apple-touch-icon-180.png</code>
         </div>
@@ -278,6 +437,7 @@
       </section>
       <section id="grid" class="grid" aria-live="polite"></section>
       <p id="empty" class="empty">没有匹配的图标。</p>
+      <section id="drawer" class="drawer" aria-live="polite" hidden></section>
     </main>
 
     <template id="cardTemplate">
@@ -293,15 +453,23 @@
         <div class="links">
           <a class="website" target="_blank" rel="noreferrer">Website</a>
           <a class="icon" target="_blank" rel="noreferrer">Icon</a>
+          <button class="copy" type="button">Copy URL</button>
+          <button class="details" type="button">Details</button>
         </div>
       </article>
     </template>
 
+    <div id="toast" class="toast" role="status" hidden></div>
+
     <script>
       const state = {
         items: [],
+        aliasesById: new Map(),
         query: "",
-        category: ""
+        category: "",
+        country: "",
+        source: "",
+        sort: "name"
       };
 
       const siteBase = new URL(".", window.location.href);
@@ -309,15 +477,65 @@
       const els = {
         search: document.querySelector("#search"),
         category: document.querySelector("#category"),
+        country: document.querySelector("#country"),
+        source: document.querySelector("#source"),
+        sort: document.querySelector("#sort"),
         count: document.querySelector("#count"),
+        breakdown: document.querySelector("#breakdown"),
         grid: document.querySelector("#grid"),
         empty: document.querySelector("#empty"),
-        template: document.querySelector("#cardTemplate")
+        drawer: document.querySelector("#drawer"),
+        template: document.querySelector("#cardTemplate"),
+        toast: document.querySelector("#toast")
       };
 
-      const normalize = (value) => String(value || "").toLowerCase();
+      const normalize = (value) =>
+        String(value || "")
+          .normalize("NFKD")
+          .toLowerCase()
+          .replace(/&/g, "and")
+          .replace(/[^a-z0-9\u4e00-\u9fff]+/g, "");
 
       const assetUrl = (assetPath) => new URL(assetPath, siteBase).href;
+      const label = (value) => String(value || "unknown");
+      const escapeHtml = (value) =>
+        String(value || "").replace(/[&<>"']/g, (char) => ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;"
+        })[char]);
+
+      function showToast(message) {
+        els.toast.textContent = message;
+        els.toast.hidden = false;
+        window.clearTimeout(showToast.timer);
+        showToast.timer = window.setTimeout(() => {
+          els.toast.hidden = true;
+        }, 1800);
+      }
+
+      async function copyText(value) {
+        try {
+          await navigator.clipboard.writeText(value);
+          showToast("URL copied");
+        } catch {
+          const input = document.createElement("input");
+          input.value = value;
+          input.style.position = "fixed";
+          input.style.opacity = "0";
+          document.body.append(input);
+          input.select();
+          document.execCommand("copy");
+          input.remove();
+          showToast("URL copied");
+        }
+      }
+
+      function itemAliases(item) {
+        return state.aliasesById.get(item.id) || [];
+      }
 
       function matches(item) {
         const haystack = normalize([
@@ -325,16 +543,77 @@
           item.id,
           item.country,
           item.category,
-          ...(item.modelFamilies || [])
+          item.icon.source,
+          item.icon.match,
+          ...(item.modelFamilies || []),
+          ...itemAliases(item)
         ].join(" "));
-        return (!state.query || haystack.includes(state.query)) && (!state.category || item.category === state.category);
+        return (
+          (!state.query || haystack.includes(state.query)) &&
+          (!state.category || item.category === state.category) &&
+          (!state.country || item.country === state.country) &&
+          (!state.source || item.icon.source === state.source)
+        );
+      }
+
+      function sortedItems(items) {
+        return [...items].sort((a, b) => {
+          if (state.sort === "category") {
+            return a.category.localeCompare(b.category) || a.name.localeCompare(b.name);
+          }
+          if (state.sort === "country") {
+            return a.country.localeCompare(b.country) || a.name.localeCompare(b.name);
+          }
+          return a.name.localeCompare(b.name);
+        });
+      }
+
+      function renderBreakdown(items) {
+        const categories = new Set(items.map((item) => item.category));
+        const countries = new Set(items.map((item) => item.country));
+        const sources = new Set(items.map((item) => item.icon.source));
+        els.breakdown.textContent = `${categories.size} categories · ${countries.size} countries · ${sources.size} sources`;
+      }
+
+      function renderDrawer(item) {
+        const iconHref = assetUrl(item.icon.path);
+        const rasterBase = assetUrl(`assets/raster/${item.id}/`);
+        const aliases = itemAliases(item).slice(0, 18).join(", ") || "No aliases";
+        const sourceUrl = item.icon.sourceUrl || item.website;
+        els.drawer.hidden = false;
+        els.drawer.innerHTML = `
+          <div class="drawerHeader">
+            <img class="drawerIcon" src="${escapeHtml(iconHref)}" alt="${escapeHtml(item.name)} icon" />
+            <div>
+              <h2>${escapeHtml(item.name)}</h2>
+              <p class="families">${escapeHtml((item.modelFamilies || []).join(", ") || item.id)}</p>
+            </div>
+            <button type="button" data-copy="${escapeHtml(iconHref)}">Copy SVG URL</button>
+          </div>
+          <div class="drawerGrid">
+            <div class="field"><span>ID</span><code>${escapeHtml(item.id)}</code></div>
+            <div class="field"><span>Category</span><code>${escapeHtml(label(item.category))}</code></div>
+            <div class="field"><span>Country</span><code>${escapeHtml(label(item.country))}</code></div>
+            <div class="field"><span>Icon source</span><code>${escapeHtml(label(item.icon.source))}</code></div>
+            <div class="field"><span>SVG</span><code>${escapeHtml(iconHref)}</code></div>
+            <div class="field"><span>Raster base</span><code>${escapeHtml(rasterBase)}</code></div>
+            <div class="field"><span>Aliases</span><code>${escapeHtml(aliases)}</code></div>
+            <div class="field"><span>Source URL</span><code>${escapeHtml(sourceUrl)}</code></div>
+          </div>
+        `;
+        els.drawer.querySelector("[data-copy]").addEventListener("click", (event) => {
+          copyText(event.currentTarget.dataset.copy);
+        });
+        els.drawer.scrollIntoView({ behavior: "smooth", block: "nearest" });
       }
 
       function render() {
-        const items = state.items.filter(matches);
+        const items = sortedItems(state.items.filter(matches));
         els.grid.replaceChildren();
         els.count.textContent = `${items.length} / ${state.items.length} items`;
+        renderBreakdown(items);
         els.empty.style.display = items.length ? "none" : "block";
+        if (!items.length) els.drawer.hidden = true;
 
         for (const item of items) {
           const iconHref = assetUrl(item.icon.path);
@@ -345,11 +624,17 @@
           node.querySelector(".families").textContent = item.modelFamilies.join(", ");
           node.querySelector(".website").href = item.website;
           node.querySelector(".icon").href = iconHref;
+          node.querySelector(".copy").addEventListener("click", () => copyText(iconHref));
+          node.querySelector(".details").addEventListener("click", () => renderDrawer(item));
 
           const chips = node.querySelector(".chips");
-          for (const value of [item.category, item.country, item.icon.type]) {
+          for (const [value, className] of [
+            [item.category, ""],
+            [item.country, ""],
+            [item.icon.source, "source"]
+          ]) {
             const chip = document.createElement("span");
-            chip.className = "chip";
+            chip.className = `chip ${className}`.trim();
             chip.textContent = value;
             chips.append(chip);
           }
@@ -357,28 +642,50 @@
         }
       }
 
-      async function init() {
-        const response = await fetch(new URL("catalog/models.json", siteBase));
-        if (!response.ok) {
-          throw new Error(`catalog HTTP ${response.status}`);
+      function fillSelect(select, values) {
+        for (const value of values) {
+          const option = document.createElement("option");
+          option.value = value;
+          option.textContent = value;
+          select.append(option);
         }
-        const contentType = response.headers.get("content-type") || "";
+      }
+
+      async function init() {
+        const [catalogResponse, aliasesResponse] = await Promise.all([
+          fetch(new URL("catalog/models.json", siteBase)),
+          fetch(new URL("catalog/aliases.json", siteBase))
+        ]);
+        if (!catalogResponse.ok) {
+          throw new Error(`catalog HTTP ${catalogResponse.status}`);
+        }
+        const contentType = catalogResponse.headers.get("content-type") || "";
         if (!contentType.includes("application/json")) {
           throw new Error(`catalog is ${contentType || "not JSON"}`);
         }
-        const catalog = await response.json();
+        const catalog = await catalogResponse.json();
+        const aliases = aliasesResponse.ok ? await aliasesResponse.json() : { aliases: {} };
         if (!Array.isArray(catalog.items)) {
           throw new Error("catalog missing items");
         }
-        state.items = catalog.items.sort((a, b) => a.name.localeCompare(b.name));
+        state.items = catalog.items;
+
+        const aliasesById = new Map();
+        for (const [alias, id] of Object.entries(aliases.aliases || {})) {
+          if (!aliasesById.has(id)) aliasesById.set(id, []);
+          aliasesById.get(id).push(alias);
+        }
+        for (const values of aliasesById.values()) {
+          values.sort((a, b) => a.localeCompare(b));
+        }
+        state.aliasesById = aliasesById;
 
         const categories = [...new Set(state.items.map((item) => item.category))].sort();
-        for (const category of categories) {
-          const option = document.createElement("option");
-          option.value = category;
-          option.textContent = category;
-          els.category.append(option);
-        }
+        const countries = [...new Set(state.items.map((item) => item.country))].sort();
+        const sources = [...new Set(state.items.map((item) => item.icon.source))].sort();
+        fillSelect(els.category, categories);
+        fillSelect(els.country, countries);
+        fillSelect(els.source, sources);
 
         els.search.addEventListener("input", (event) => {
           state.query = normalize(event.target.value.trim());
@@ -386,6 +693,18 @@
         });
         els.category.addEventListener("change", (event) => {
           state.category = event.target.value;
+          render();
+        });
+        els.country.addEventListener("change", (event) => {
+          state.country = event.target.value;
+          render();
+        });
+        els.source.addEventListener("change", (event) => {
+          state.source = event.target.value;
+          render();
+        });
+        els.sort.addEventListener("change", (event) => {
+          state.sort = event.target.value;
           render();
         });
         render();
