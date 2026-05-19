@@ -60,6 +60,10 @@ node scripts/api-server.mjs
 curl "http://localhost:8787/api/resolve?q=GPT-4o"
 curl "http://localhost:8787/icon/claude-sonnet"
 curl "http://localhost:8787/icon/混元"
+curl "http://localhost:8787/api/assets?q=grok"
+curl "http://localhost:8787/manifest/grok.webmanifest"
+curl "http://localhost:8787/assets/apple/grok.imageset/Contents.json"
+curl "http://localhost:8787/assets/android/grok/mipmap-anydpi-v26/ic_launcher.xml"
 ```
 
 CLI:
@@ -71,6 +75,10 @@ node scripts/resolve-icon.mjs qwen
 ```
 
 The resolver supports case-insensitive matching, punctuation-insensitive matching, aliases, abbreviations, Chinese names, and model-family names.
+
+## Asset Profiles
+
+`/api/assets?q=<name>` returns reusable asset links for SVG, Apple/Xcode image sets, Android adaptive-icon profile, favicon, mask icon, and PWA manifest. Apple touch icons and Android launcher icons often require PNG or native VectorDrawable resources for production apps; this repository is SVG-first, so use the returned SVG directly where supported or rasterize/convert it in your build pipeline.
 
 ## Add A New Icon
 

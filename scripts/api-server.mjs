@@ -1,6 +1,13 @@
 import fs from "node:fs";
 import http from "node:http";
 import path from "node:path";
+import {
+  androidAdaptiveIconXml,
+  androidVectorPlaceholderXml,
+  assetProfiles,
+  webManifest,
+  xcodeImageSetContents
+} from "./asset-profiles.mjs";
 import { resolveIcon } from "./icon-resolver.mjs";
 
 const root = new URL("..", import.meta.url).pathname;
@@ -15,11 +22,25 @@ const sendJson = (res, status, payload) => {
   res.end(`${JSON.stringify(payload, null, 2)}\n`);
 };
 
+const publicOrigin = (req) => {
+  const proto = req.headers["x-forwarded-proto"] || "http";
+  return `${proto}://${req.headers.host}`;
+};
+
 const server = http.createServer((req, res) => {
   const url = new URL(req.url, `http://${req.headers.host}`);
   const query = decodeURIComponent(url.searchParams.get("q") || url.pathname.replace(/^\/icon\//, ""));
 
   if (url.pathname === "/health") return sendJson(res, 200, { ok: true });
+  if (url.pathname === "/api/assets") {
+    const result = resolveIcon(query);
+    if (!result.matched) return sendJson(res, 404, { matched: false, query });
+    return sendJson(res, 200, {
+      matched: true,
+      query,
+      ...assetProfiles(result.item, publicOrigin(req))
+    });
+  }
   if (url.pathname === "/api/resolve" || url.pathname.startsWith("/icon/")) {
     const result = resolveIcon(query);
     if (!result.matched) return sendJson(res, 404, { matched: false, query });
@@ -32,8 +53,45 @@ const server = http.createServer((req, res) => {
       score: result.score,
       icon: `/${result.item.icon.path}`,
       source: result.item.icon.source,
-      match: result.item.icon.match || null
+      match: result.item.icon.match || null,
+      assets: `/api/assets?q=${encodeURIComponent(result.item.name)}`
     });
+  }
+
+  if (url.pathname.startsWith("/manifest/") && url.pathname.endsWith(".webmanifest")) {
+    const raw = decodeURIComponent(url.pathname.replace(/^\/manifest\//, "").replace(/\.webmanifest$/, ""));
+    const result = resolveIcon(raw);
+    if (!result.matched) return sendJson(res, 404, { matched: false, query: raw });
+    res.writeHead(200, {
+      "content-type": "application/manifest+json; charset=utf-8",
+      "access-control-allow-origin": "*",
+      "cache-control": "public, max-age=3600"
+    });
+    return res.end(`${JSON.stringify(webManifest(result.item), null, 2)}\n`);
+  }
+
+  if (url.pathname.startsWith("/assets/apple/") && url.pathname.endsWith("/Contents.json")) {
+    const raw = decodeURIComponent(url.pathname.replace(/^\/assets\/apple\//, "").replace(/\.imageset\/Contents\.json$/, ""));
+    const result = resolveIcon(raw);
+    if (!result.matched) return sendJson(res, 404, { matched: false, query: raw });
+    return sendJson(res, 200, xcodeImageSetContents(result.item));
+  }
+
+  if (url.pathname.startsWith("/assets/android/") && url.pathname.endsWith(".xml")) {
+    const match = url.pathname.match(/^\/assets\/android\/([^/]+)\/(.+)$/);
+    const raw = decodeURIComponent(match?.[1] || "");
+    const file = match?.[2] || "";
+    const result = resolveIcon(raw);
+    if (!result.matched) return sendJson(res, 404, { matched: false, query: raw });
+    res.writeHead(200, {
+      "content-type": "application/xml; charset=utf-8",
+      "access-control-allow-origin": "*",
+      "cache-control": "public, max-age=3600"
+    });
+    if (file === "mipmap-anydpi-v26/ic_launcher.xml") {
+      return res.end(androidAdaptiveIconXml(result.item));
+    }
+    return res.end(androidVectorPlaceholderXml(result.item));
   }
 
   if (url.pathname.startsWith("/assets/icons/")) {
