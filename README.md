@@ -41,7 +41,7 @@
 Catalog: https://raw.githubusercontent.com/sonnedu/ai-model-icons/main/catalog/models.json
 Aliases: https://raw.githubusercontent.com/sonnedu/ai-model-icons/main/catalog/aliases.json
 SVG: https://raw.githubusercontent.com/sonnedu/ai-model-icons/main/assets/icons/grok.svg
-PNG 512: https://raw.githubusercontent.com/sonnedu/ai-model-icons/main/assets/raster/grok/android-chrome-512.png
+Apple PNG: https://raw.githubusercontent.com/sonnedu/ai-model-icons/main/assets/raster/grok/apple-touch-icon-180.png
 Pages: https://sonnedu.github.io/ai-model-icons/
 ```
 
@@ -51,7 +51,7 @@ Pages 同源示例：
 Catalog: https://sonnedu.github.io/ai-model-icons/catalog/models.json
 Aliases: https://sonnedu.github.io/ai-model-icons/catalog/aliases.json
 SVG: https://sonnedu.github.io/ai-model-icons/assets/icons/grok.svg
-PNG 512: https://sonnedu.github.io/ai-model-icons/assets/raster/grok/android-chrome-512.png
+Apple PNG: https://sonnedu.github.io/ai-model-icons/assets/raster/grok/apple-touch-icon-180.png
 ```
 
 ## Static Usage
