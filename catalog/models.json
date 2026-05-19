@@ -92,10 +92,10 @@
       "website": "https://gemini.google.com",
       "icon": {
         "type": "svg",
-        "source": "simple-icons",
         "quality": "vector",
         "path": "assets/icons/google-gemini.svg",
-        "sourceUrl": "https://cdn.simpleicons.org/googlegemini",
+        "source": "wikimedia-commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Google_Gemini_icon_2025.svg",
         "match": "entity"
       }
     },
@@ -258,12 +258,12 @@
       "id": "zhipu-ai",
       "name": "Zhipu AI",
       "modelFamilies": [
-        "GLM",
-        "ChatGLM"
+        "Zhipu AI",
+        "智谱 AI"
       ],
       "category": "foundation-model",
       "country": "CN",
-      "website": "https://z.ai",
+      "website": "https://www.zhipuai.cn",
       "icon": {
         "type": "svg",
         "source": "lobe-icons",
@@ -271,6 +271,47 @@
         "path": "assets/icons/zhipu-ai.svg",
         "sourceUrl": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/zhipu.svg",
         "match": "brand"
+      }
+    },
+    {
+      "id": "z-ai",
+      "name": "Z.ai",
+      "modelFamilies": [
+        "Z.ai"
+      ],
+      "category": "assistant",
+      "country": "CN",
+      "website": "https://z.ai",
+      "ownerId": "zhipu-ai",
+      "icon": {
+        "type": "svg",
+        "source": "wikimedia-commons",
+        "quality": "vector",
+        "path": "assets/icons/z-ai.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Z.ai_(company_logo).svg",
+        "match": "entity"
+      }
+    },
+    {
+      "id": "glm",
+      "name": "GLM",
+      "modelFamilies": [
+        "GLM",
+        "ChatGLM",
+        "GLM-4",
+        "GLM-4.5"
+      ],
+      "category": "foundation-model",
+      "country": "CN",
+      "website": "https://chatglm.cn",
+      "ownerId": "zhipu-ai",
+      "icon": {
+        "type": "svg",
+        "source": "lobe-icons",
+        "quality": "vector",
+        "path": "assets/icons/glm.svg",
+        "sourceUrl": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/chatglm.svg",
+        "match": "entity"
       }
     },
     {
@@ -378,11 +419,11 @@
       "website": "https://yiyan.baidu.com",
       "icon": {
         "type": "svg",
-        "source": "simple-icons",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/baidu-ernie.svg",
-        "sourceUrl": "https://cdn.simpleicons.org/baidu",
-        "match": "parent-brand"
+        "sourceUrl": null,
+        "match": "entity"
       }
     },
     {
@@ -414,11 +455,11 @@
       "website": "https://www.huaweicloud.com/product/pangu.html",
       "icon": {
         "type": "svg",
-        "source": "simple-icons",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/huawei-pangu.svg",
-        "sourceUrl": "https://cdn.simpleicons.org/huawei",
-        "match": "parent-brand"
+        "sourceUrl": null,
+        "match": "entity"
       }
     },
     {
@@ -768,7 +809,27 @@
         "quality": "vector",
         "path": "assets/icons/microsoft-ai.svg",
         "sourceUrl": "https://api.iconify.design/logos/microsoft-icon.svg",
-        "match": "parent-brand"
+        "match": "brand"
+      }
+    },
+    {
+      "id": "microsoft-copilot",
+      "name": "Microsoft Copilot",
+      "modelFamilies": [
+        "Copilot",
+        "Microsoft Copilot"
+      ],
+      "category": "assistant",
+      "country": "US",
+      "website": "https://copilot.microsoft.com",
+      "ownerId": "microsoft-ai",
+      "icon": {
+        "type": "svg",
+        "source": "lobe-icons",
+        "quality": "vector",
+        "path": "assets/icons/microsoft-copilot.svg",
+        "sourceUrl": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/copilot.svg",
+        "match": "entity"
       }
     },
     {
@@ -843,7 +904,7 @@
         "quality": "vector",
         "path": "assets/icons/salesforce-ai.svg",
         "sourceUrl": "https://a.sfdcstatic.com/shared/images/c360-nav/salesforce-no-type-logo.svg",
-        "match": "parent-brand"
+        "match": "brand"
       }
     },
     {
@@ -876,11 +937,11 @@
       "website": "https://www.snowflake.com",
       "icon": {
         "type": "svg",
-        "source": "simple-icons",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/snowflake-arctic.svg",
-        "sourceUrl": "https://cdn.simpleicons.org/snowflake",
-        "match": "parent-brand"
+        "sourceUrl": null,
+        "match": "entity"
       }
     },
     {
@@ -950,11 +1011,11 @@
       "website": "https://www.adept.ai",
       "icon": {
         "type": "svg",
-        "source": "generated-vector",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/adept-ai.svg",
         "sourceUrl": null,
-        "match": "needs-entity-icon"
+        "match": "entity"
       }
     },
     {
@@ -1004,11 +1065,11 @@
       "website": "https://replit.com/ai",
       "icon": {
         "type": "svg",
-        "source": "simple-icons",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/replit-ai.svg",
-        "sourceUrl": "https://cdn.simpleicons.org/replit",
-        "match": "parent-brand"
+        "sourceUrl": null,
+        "match": "entity"
       }
     },
     {
@@ -1022,10 +1083,10 @@
       "website": "https://www.tabnine.com",
       "icon": {
         "type": "svg",
-        "source": "official-website",
         "quality": "vector",
         "path": "assets/icons/tabnine.svg",
-        "sourceUrl": "https://www.tabnine.com/wp-content/uploads/2024/04/logo.svg",
+        "source": "official-website",
+        "sourceUrl": "https://www.tabnine.com/wp-content/uploads/2024/04/Vector.svg",
         "match": "entity"
       }
     },
@@ -1149,11 +1210,11 @@
       "website": "https://higgsfield.ai",
       "icon": {
         "type": "svg",
-        "source": "generated-vector",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/higgsfield.svg",
         "sourceUrl": null,
-        "match": "needs-entity-icon"
+        "match": "entity"
       }
     },
     {
@@ -1185,11 +1246,11 @@
       "website": "https://www.canva.com/ai",
       "icon": {
         "type": "svg",
-        "source": "iconify",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/canva-ai.svg",
-        "sourceUrl": "https://api.iconify.design/lineicons/canva.svg",
-        "match": "parent-brand"
+        "sourceUrl": null,
+        "match": "entity"
       }
     },
     {
@@ -1295,11 +1356,11 @@
       "website": "https://play.ht",
       "icon": {
         "type": "svg",
-        "source": "generated-vector",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/playht.svg",
         "sourceUrl": null,
-        "match": "needs-entity-icon"
+        "match": "entity"
       }
     },
     {
@@ -1440,11 +1501,11 @@
       "website": "https://developers.cloudflare.com/workers-ai",
       "icon": {
         "type": "svg",
-        "source": "simple-icons",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/cloudflare-workers-ai.svg",
-        "sourceUrl": "https://cdn.simpleicons.org/cloudflare",
-        "match": "parent-brand"
+        "sourceUrl": null,
+        "match": "entity"
       }
     },
     {
@@ -1549,11 +1610,11 @@
       "website": "https://cloud.google.com/vertex-ai",
       "icon": {
         "type": "svg",
-        "source": "simple-icons",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/vertex-ai.svg",
-        "sourceUrl": "https://cdn.simpleicons.org/googlecloud",
-        "match": "parent-brand"
+        "sourceUrl": null,
+        "match": "entity"
       }
     },
     {
@@ -1567,11 +1628,11 @@
       "website": "https://azure.microsoft.com/products/ai-foundry",
       "icon": {
         "type": "svg",
-        "source": "iconify",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/azure-ai-foundry.svg",
-        "sourceUrl": "https://api.iconify.design/logos/microsoft-azure.svg",
-        "match": "parent-brand"
+        "sourceUrl": null,
+        "match": "entity"
       }
     },
     {
@@ -1585,11 +1646,11 @@
       "website": "https://cloud.baidu.com/product/wenxinworkshop",
       "icon": {
         "type": "svg",
-        "source": "simple-icons",
         "quality": "vector",
         "path": "assets/icons/baidu-qianfan.svg",
-        "sourceUrl": "https://cdn.simpleicons.org/baidu",
-        "match": "parent-brand"
+        "source": "local-product-vector",
+        "sourceUrl": null,
+        "match": "entity"
       }
     },
     {
@@ -1604,11 +1665,11 @@
       "website": "https://www.alibabacloud.com/product/modelstudio",
       "icon": {
         "type": "svg",
-        "source": "simple-icons",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/alibaba-cloud-model-studio.svg",
-        "sourceUrl": "https://cdn.simpleicons.org/alibabacloud",
-        "match": "parent-brand"
+        "sourceUrl": null,
+        "match": "entity"
       }
     },
     {
@@ -1641,11 +1702,11 @@
       "website": "https://xinghuo.xfyun.cn",
       "icon": {
         "type": "svg",
-        "source": "iconify",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/iflytek-spark.svg",
-        "sourceUrl": "https://api.iconify.design/arcticons/iflytek-input.svg",
-        "match": "parent-brand"
+        "sourceUrl": null,
+        "match": "entity"
       }
     },
     {
@@ -1660,11 +1721,11 @@
       "website": "https://www.sensetime.com",
       "icon": {
         "type": "svg",
-        "source": "official-website",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/sensetime-sensechat.svg",
-        "sourceUrl": "https://static.sensetime.com/images/st_logo_black.svg",
-        "match": "parent-brand"
+        "sourceUrl": null,
+        "match": "entity"
       }
     },
     {
@@ -1715,11 +1776,11 @@
       "website": "https://www.mi.com",
       "icon": {
         "type": "svg",
-        "source": "simple-icons",
         "quality": "vector",
         "path": "assets/icons/xiaomi-mimo.svg",
-        "sourceUrl": "https://cdn.simpleicons.org/xiaomi",
-        "match": "parent-brand"
+        "source": "lobe-icons",
+        "sourceUrl": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/xiaomimimo.svg",
+        "match": "entity"
       }
     },
     {
@@ -1733,11 +1794,11 @@
       "website": "https://ling.tbox.cn",
       "icon": {
         "type": "svg",
-        "source": "lobe-icons",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/ant-ling.svg",
-        "sourceUrl": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/antgroup.svg",
-        "match": "parent-brand"
+        "sourceUrl": null,
+        "match": "entity"
       }
     },
     {
@@ -1751,11 +1812,11 @@
       "website": "https://developers.vivo.com",
       "icon": {
         "type": "svg",
-        "source": "simple-icons",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/vivo-bluelm.svg",
-        "sourceUrl": "https://cdn.simpleicons.org/vivo",
-        "match": "parent-brand"
+        "sourceUrl": null,
+        "match": "entity"
       }
     },
     {
@@ -1769,11 +1830,11 @@
       "website": "https://www.oppo.com",
       "icon": {
         "type": "svg",
-        "source": "simple-icons",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/oppo-andesgpt.svg",
-        "sourceUrl": "https://cdn.simpleicons.org/oppo",
-        "match": "parent-brand"
+        "sourceUrl": null,
+        "match": "entity"
       }
     },
     {
@@ -1787,11 +1848,11 @@
       "website": "https://www.meituan.com",
       "icon": {
         "type": "svg",
-        "source": "simple-icons",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/meituan-longcat.svg",
-        "sourceUrl": "https://cdn.simpleicons.org/meituan",
-        "match": "parent-brand"
+        "sourceUrl": null,
+        "match": "entity"
       }
     },
     {
@@ -1806,11 +1867,11 @@
       "website": "https://www.jdcloud.com",
       "icon": {
         "type": "svg",
-        "source": "official-website",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/jd-chatrhino.svg",
-        "sourceUrl": "https://img1.jcloudcs.com/portal/jdcloud-logo-white-2021.svg",
-        "match": "parent-brand"
+        "sourceUrl": null,
+        "match": "entity"
       }
     },
     {
@@ -1829,7 +1890,7 @@
         "quality": "vector",
         "path": "assets/icons/shanghai-ai-lab.svg",
         "sourceUrl": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/internlm.svg",
-        "match": "model-family"
+        "match": "brand"
       }
     },
     {
@@ -1864,11 +1925,11 @@
       "website": "https://www.openbmb.cn",
       "icon": {
         "type": "svg",
-        "source": "generated-vector",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/openbmb.svg",
         "sourceUrl": null,
-        "match": "needs-entity-icon"
+        "match": "entity"
       }
     },
     {
@@ -1882,11 +1943,11 @@
       "website": "https://moss.fastnlp.top",
       "icon": {
         "type": "svg",
-        "source": "generated-vector",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/fudan-moss.svg",
         "sourceUrl": null,
-        "match": "needs-entity-icon"
+        "match": "entity"
       }
     },
     {
@@ -2031,11 +2092,11 @@
       "website": "https://www.nomic.ai",
       "icon": {
         "type": "svg",
-        "source": "generated-vector",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/nomic-ai.svg",
         "sourceUrl": null,
-        "match": "needs-entity-icon"
+        "match": "entity"
       }
     },
     {
@@ -2105,11 +2166,11 @@
       "website": "https://clova.ai",
       "icon": {
         "type": "svg",
-        "source": "wikimedia-commons",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/naver-hyperclova.svg",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Naver_Clova_Logotype.svg",
-        "match": "parent-brand"
+        "sourceUrl": null,
+        "match": "entity"
       }
     },
     {
@@ -2123,11 +2184,11 @@
       "website": "https://www.sktelecom.com",
       "icon": {
         "type": "svg",
-        "source": "generated-vector",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/skt-aix.svg",
         "sourceUrl": null,
-        "match": "needs-entity-icon"
+        "match": "entity"
       }
     },
     {
@@ -2213,11 +2274,11 @@
       "website": "https://olakrutrim.com",
       "icon": {
         "type": "svg",
-        "source": "generated-vector",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/krutrim.svg",
         "sourceUrl": null,
-        "match": "needs-entity-icon"
+        "match": "entity"
       }
     },
     {
@@ -2232,11 +2293,11 @@
       "website": "https://ai4bharat.iitm.ac.in",
       "icon": {
         "type": "svg",
-        "source": "generated-vector",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/ai4bharat.svg",
         "sourceUrl": null,
-        "match": "needs-entity-icon"
+        "match": "entity"
       }
     },
     {
@@ -2250,11 +2311,11 @@
       "website": "https://yandex.cloud/en/services/yandexgpt",
       "icon": {
         "type": "svg",
-        "source": "simple-icons",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/yandexgpt.svg",
-        "sourceUrl": "https://cdn.simpleicons.org/yandexcloud",
-        "match": "parent-brand"
+        "sourceUrl": null,
+        "match": "entity"
       }
     },
     {
@@ -2268,11 +2329,11 @@
       "website": "https://developers.sber.ru/portal/products/gigachat",
       "icon": {
         "type": "svg",
-        "source": "iconify",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/sber-gigachat.svg",
-        "sourceUrl": "https://api.iconify.design/cryptocurrency-color/sberbank.svg",
-        "match": "parent-brand"
+        "sourceUrl": null,
+        "match": "entity"
       }
     },
     {
@@ -2400,10 +2461,10 @@
       "ownerId": "xai",
       "icon": {
         "type": "svg",
-        "source": "wikimedia-commons",
+        "source": "lobe-icons",
         "quality": "vector",
         "path": "assets/icons/grok.svg",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grok_logo.svg",
+        "sourceUrl": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/grok.svg",
         "match": "entity"
       }
     },
@@ -2420,10 +2481,10 @@
       "ownerId": "microsoft-ai",
       "icon": {
         "type": "svg",
-        "source": "wikimedia-commons",
+        "source": "lobe-icons",
         "quality": "vector",
         "path": "assets/icons/github-copilot.svg",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:GitHub_Copilot_logo.svg",
+        "sourceUrl": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/githubcopilot.svg",
         "match": "entity"
       }
     },
@@ -2441,10 +2502,10 @@
       "ownerId": "google-gemini",
       "icon": {
         "type": "svg",
-        "source": "simple-icons",
         "quality": "vector",
         "path": "assets/icons/gemini.svg",
-        "sourceUrl": "https://cdn.simpleicons.org/googlegemini",
+        "source": "wikimedia-commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Google_Gemini_icon_2025.svg",
         "match": "entity"
       }
     },
@@ -2548,6 +2609,26 @@
       }
     },
     {
+      "id": "cici-ai",
+      "name": "Cici AI",
+      "modelFamilies": [
+        "Cici",
+        "Dola"
+      ],
+      "category": "assistant",
+      "country": "SG",
+      "website": "https://www.ciciai.com",
+      "ownerId": "bytedance-doubao",
+      "icon": {
+        "type": "svg",
+        "quality": "vector",
+        "path": "assets/icons/cici-ai.svg",
+        "source": "local-product-vector",
+        "sourceUrl": null,
+        "match": "entity"
+      }
+    },
+    {
       "id": "hunyuan",
       "name": "Hunyuan",
       "modelFamilies": [
@@ -2581,11 +2662,11 @@
       "ownerId": "baidu-ernie",
       "icon": {
         "type": "svg",
-        "source": "simple-icons",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/ernie.svg",
-        "sourceUrl": "https://cdn.simpleicons.org/baidu",
-        "match": "parent-brand"
+        "sourceUrl": null,
+        "match": "entity"
       }
     },
     {
@@ -2601,11 +2682,11 @@
       "ownerId": "huawei-pangu",
       "icon": {
         "type": "svg",
-        "source": "simple-icons",
         "quality": "vector",
         "path": "assets/icons/pangu.svg",
-        "sourceUrl": "https://cdn.simpleicons.org/huawei",
-        "match": "parent-brand"
+        "source": "local-product-vector",
+        "sourceUrl": null,
+        "match": "entity"
       }
     },
     {
@@ -2621,11 +2702,11 @@
       "ownerId": "stability-ai",
       "icon": {
         "type": "svg",
-        "source": "lobe-icons",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/stable-diffusion.svg",
-        "sourceUrl": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/stability.svg",
-        "match": "parent-brand"
+        "sourceUrl": null,
+        "match": "entity"
       }
     },
     {
@@ -2662,11 +2743,11 @@
       "ownerId": "meta-ai",
       "icon": {
         "type": "svg",
-        "source": "lobe-icons",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/llama.svg",
-        "sourceUrl": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/meta.svg",
-        "match": "parent-brand"
+        "sourceUrl": null,
+        "match": "entity"
       }
     },
     {
@@ -2682,11 +2763,11 @@
       "ownerId": "microsoft-ai",
       "icon": {
         "type": "svg",
-        "source": "lobe-icons",
+        "source": "local-product-vector",
         "quality": "vector",
         "path": "assets/icons/phi.svg",
-        "sourceUrl": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/microsoft.svg",
-        "match": "parent-brand"
+        "sourceUrl": null,
+        "match": "entity"
       }
     }
   ]

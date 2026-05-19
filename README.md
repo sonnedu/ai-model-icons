@@ -1,116 +1,113 @@
-# Model Icons Assets
+# AI Model Icons
 
-一个面向 GitHub 和 API 快速访问的大模型图标资源库。它同时管理模型厂商、模型产品、助手、媒体模型、推理平台和本地运行时，并提供本地 SVG 缓存、别名解析、跨平台 asset profile。
+面向 GitHub 托管的大模型图标资源库。项目把模型厂商、模型产品、助手、平台和本地运行时拆成可独立解析的条目，提供本地 SVG、PNG 缓存、别名匹配、Apple / Android / Web asset profile，以及一个零框架 Node API。
 
-## What It Provides
+当前状态：
 
-- 144 个图标条目，包含厂商和产品级模型，例如 `xai` 与 `grok`、`microsoft-ai` 与 `github-copilot` 分开管理。
-- 本地 SVG 缓存：[`assets/icons`](assets/icons)
-- 本地 PNG 缓存：[`assets/raster`](assets/raster)
-- 机器可读 catalog：[`catalog/models.json`](catalog/models.json)
-- 别名索引：[`catalog/aliases.json`](catalog/aliases.json)
-- 可浏览页面：[`docs/index.html`](docs/index.html)
-- 自部署 API：[`scripts/api-server.mjs`](scripts/api-server.mjs)
-- 图标匹配审计：[`catalog/icon-match-audit.json`](catalog/icon-match-audit.json)
+- `148` 个模型/品牌/产品图标条目
+- `514` 个别名，支持大小写、简称、中文名、模型名、产品名匹配
+- `148` 组 SVG 本地缓存
+- `148` 组 PNG raster 缓存，每组包含 `16`、`32`、`48`、`180`、`192`、`512`、`1024` 尺寸
+- 图标语义审计已清零：`Needs review: 0`
+- 不再保留 `generated-vector`、`parent-brand`、`needs-entity-icon` 审计项
 
-发布到 GitHub 后：
+## Repository Layout
+
+| Path | Purpose |
+| --- | --- |
+| [`catalog/models.json`](catalog/models.json) | 主 catalog，包含条目元数据、owner、icon 来源和本地路径 |
+| [`catalog/aliases.json`](catalog/aliases.json) | 归一化后的别名索引，用于静态解析 |
+| [`catalog/icon-match-audit.json`](catalog/icon-match-audit.json) | 图标匹配审计结果 |
+| [`assets/icons`](assets/icons) | SVG 图标缓存 |
+| [`assets/raster`](assets/raster) | PNG raster 缓存 |
+| [`data/providers.mjs`](data/providers.mjs) | 生成 catalog 的结构化条目源 |
+| [`data/manual-aliases.mjs`](data/manual-aliases.mjs) | 人工别名和模型名映射 |
+| [`data/icon-sources.mjs`](data/icon-sources.mjs) | 可自动同步的官方/社区矢量源 |
+| [`docs/index.html`](docs/index.html) | GitHub Pages 静态浏览页面 |
+| [`scripts/api-server.mjs`](scripts/api-server.mjs) | 本地或服务器 API |
+
+## Publish On GitHub
+
+1. 创建 GitHub 仓库并推送本项目。
+2. 在 GitHub repo settings 里启用 GitHub Pages。
+3. Pages source 选择 `main` 分支的 `/docs` 目录。
+4. 发布后可以用 GitHub raw URL 直接访问 catalog 和图标。
+
+示例 URL：
 
 ```text
-Raw catalog: https://raw.githubusercontent.com/<owner>/<repo>/main/catalog/models.json
-Raw aliases: https://raw.githubusercontent.com/<owner>/<repo>/main/catalog/aliases.json
-GitHub Pages: https://<owner>.github.io/<repo>/
+Catalog: https://raw.githubusercontent.com/<owner>/<repo>/main/catalog/models.json
+Aliases: https://raw.githubusercontent.com/<owner>/<repo>/main/catalog/aliases.json
+SVG: https://raw.githubusercontent.com/<owner>/<repo>/main/assets/icons/grok.svg
+PNG 512: https://raw.githubusercontent.com/<owner>/<repo>/main/assets/raster/grok/android-chrome-512.png
+Pages: https://<owner>.github.io/<repo>/
 ```
-
-## Data Model
-
-`catalog/models.json` 的核心字段：
-
-| Field | Description |
-| --- | --- |
-| `id` | 稳定唯一 ID，kebab-case |
-| `name` | 展示名称 |
-| `ownerId` | 产品/模型所属厂商 ID；厂商条目通常为空 |
-| `modelFamilies` | 相关模型族、产品线、常见名称 |
-| `category` | `foundation-model`、`assistant`、`media-model`、`audio-model`、`platform`、`local-runtime`、`research-lab` |
-| `country` | 品牌/机构主要所在地 |
-| `website` | 官网 |
-| `icon.type` | 当前统一为 `svg` |
-| `icon.path` | 本地 SVG 路径，如 `assets/icons/grok.svg` |
-| `icon.source` | 来源类型，如 `wikimedia-commons`、`lobe-icons`、`simple-icons`、`official-website`、`generated-vector` |
-| `icon.sourceUrl` | 来源页面或文件 URL |
-| `icon.quality` | 当前统一为 `vector` |
-| `icon.match` | 图标与条目的语义匹配程度 |
-
-`icon.match` 的含义：
-
-| Value | Meaning |
-| --- | --- |
-| `entity` | 图标匹配条目本体，推荐用于 API 返回 |
-| `brand` | 图标匹配该品牌/机构 |
-| `parent-brand` | 暂时使用母品牌图标，模型/产品本体图标待补 |
-| `model-family` | 使用模型族图标，不一定是机构 logo |
-| `host-brand` | 使用托管/发起方品牌图标 |
-| `needs-entity-icon` | 尚未找到可靠实体图标，目前是本地矢量占位 |
 
 ## Static Usage
 
-适合 GitHub Pages、CDN、无服务端场景。
+适合 GitHub Pages、CDN、前端项目、无服务端项目。
 
-1. 读取 `catalog/models.json`
-2. 读取 `catalog/aliases.json`
-3. 对用户输入做归一化：小写、移除空格和标点
-4. 用 `aliases[normalizedInput]` 找到 `id`
-5. 从 catalog 取对应条目的 `icon.path`
+1. 拉取 `catalog/models.json`。
+2. 拉取 `catalog/aliases.json`。
+3. 把用户输入归一化：小写，移除空格、标点和连接符。
+4. 用 `aliases[normalizedInput]` 找到 `id`。
+5. 从 catalog 中取 `icon.path` 或 `assets/raster/<id>/manifest.json`。
 
-归一化规则在 [`scripts/build-aliases.mjs`](scripts/build-aliases.mjs) 和 [`scripts/icon-resolver.mjs`](scripts/icon-resolver.mjs) 中保持一致。
+JavaScript 示例：
 
-## API Server
+```js
+const normalize = (value) =>
+  String(value || "")
+    .normalize("NFKD")
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9\u4e00-\u9fff]+/g, "");
 
-启动：
+const catalog = await fetch("/catalog/models.json").then((res) => res.json());
+const aliases = await fetch("/catalog/aliases.json").then((res) => res.json());
 
-```bash
-node scripts/api-server.mjs
+const id = aliases.aliases[normalize("Grok 4")];
+const item = catalog.items.find((entry) => entry.id === id);
+
+console.log(item.icon.path); // assets/icons/grok.svg
 ```
 
-默认监听：
+## API Usage
+
+安装依赖并启动：
+
+```bash
+npm install
+npm run serve
+```
+
+默认地址：
 
 ```text
 http://localhost:8787
 ```
 
-可用环境变量：
+指定端口：
 
 ```bash
-PORT=3000 node scripts/api-server.mjs
+PORT=3000 npm run serve
 ```
 
-### Health
+### Resolve
+
+支持别名、大小写、简称、中文名、模型名和产品名。
 
 ```bash
-curl "http://localhost:8787/health"
+curl "http://localhost:8787/api/resolve?q=grok"
+curl "http://localhost:8787/api/resolve?q=Grok%204"
+curl "http://localhost:8787/api/resolve?q=glm"
+curl "http://localhost:8787/api/resolve?q=z.ai"
+curl "http://localhost:8787/api/resolve?q=github%20copilot"
+curl "http://localhost:8787/api/resolve?q=豆包"
+curl "http://localhost:8787/api/resolve?q=cici"
 ```
 
 Response:
-
-```json
-{
-  "ok": true
-}
-```
-
-### Resolve Icon
-
-支持大小写、空格、标点、简称、中文名、模型名、产品名自动匹配。
-
-```bash
-curl "http://localhost:8787/api/resolve?q=Grok%204"
-curl "http://localhost:8787/icon/grok"
-curl "http://localhost:8787/icon/copilot"
-curl "http://localhost:8787/icon/qwen"
-curl "http://localhost:8787/icon/混元"
-```
-
-Example:
 
 ```json
 {
@@ -121,42 +118,37 @@ Example:
   "ownerId": "xai",
   "score": 100,
   "icon": "/assets/icons/grok.svg",
-  "source": "wikimedia-commons",
+  "source": "lobe-icons",
   "match": "entity",
   "assets": "/api/assets?q=Grok"
 }
 ```
 
-`ownerId` 用来区分产品和厂商，例如：
+Shortcut endpoint:
 
-| Query | Returned ID | Owner |
-| --- | --- | --- |
-| `xai` | `xai` | `null` |
-| `grok` | `grok` | `xai` |
-| `copilot` | `github-copilot` | `microsoft-ai` |
-| `qwen` | `qwen` | `alibaba-qwen` |
-| `kimi` | `kimi` | `moonshot-ai` |
+```bash
+curl "http://localhost:8787/icon/grok"
+```
 
-### Asset Profile
+### Asset Profiles
 
 ```bash
 curl "http://localhost:8787/api/assets?q=grok"
 ```
 
-Returns grouped asset links for Web, Apple, Android, and raw SVG:
+返回 SVG、Web favicon、Apple、Android 和 raster 缓存路径：
 
 ```json
 {
+  "matched": true,
   "id": "grok",
   "name": "Grok",
   "ownerId": "xai",
-  "source": "wikimedia-commons",
+  "source": "lobe-icons",
   "match": "entity",
   "svg": "/assets/icons/grok.svg",
   "apple": {
     "xcodeImageSet": "/assets/apple/grok.imageset/Contents.json",
-    "universalSvg": "/assets/icons/grok.svg",
-    "appleTouchIconSvg": "/assets/icons/grok.svg",
     "appleTouchIconPng": "/assets/raster/grok/apple-touch-icon-180.png",
     "icon1024Png": "/assets/raster/grok/icon-1024.png"
   },
@@ -173,151 +165,112 @@ Returns grouped asset links for Web, Apple, Android, and raw SVG:
     "favicon16Png": "/assets/raster/grok/favicon-16.png",
     "favicon32Png": "/assets/raster/grok/favicon-32.png",
     "favicon48Png": "/assets/raster/grok/favicon-48.png",
-    "maskIcon": "/assets/icons/grok.svg",
     "webManifest": "/manifest/grok.webmanifest"
   }
 }
 ```
 
-### Raw SVG
+### Direct Asset URLs
 
 ```bash
 curl "http://localhost:8787/assets/icons/grok.svg"
-```
-
-Response content type:
-
-```text
-image/svg+xml; charset=utf-8
-```
-
-### Web Manifest
-
-```bash
+curl "http://localhost:8787/assets/raster/grok/favicon-32.png"
+curl "http://localhost:8787/assets/raster/grok/android-chrome-512.png"
+curl "http://localhost:8787/assets/raster/grok/manifest.json"
 curl "http://localhost:8787/manifest/grok.webmanifest"
 ```
 
-The manifest includes cached PNG icons at `192x192` and `512x512`, plus SVG fallback with `sizes: "any"`.
-
 ### Apple Assets
-
-Xcode image set metadata:
 
 ```bash
 curl "http://localhost:8787/assets/apple/grok.imageset/Contents.json"
-```
-
-This returns a minimal `.imageset` `Contents.json` referencing the local SVG. PNG cache is also available:
-
-```bash
+curl "http://localhost:8787/assets/apple/grok.imageset/grok.svg"
 curl "http://localhost:8787/assets/raster/grok/apple-touch-icon-180.png"
 curl "http://localhost:8787/assets/raster/grok/icon-1024.png"
 ```
 
 ### Android Assets
 
-Adaptive icon XML:
-
 ```bash
 curl "http://localhost:8787/assets/android/grok/mipmap-anydpi-v26/ic_launcher.xml"
-```
-
-VectorDrawable profile:
-
-```bash
 curl "http://localhost:8787/assets/android/grok/drawable/ic_launcher_foreground.xml"
 curl "http://localhost:8787/assets/android/grok/drawable/ic_launcher_monochrome.xml"
-```
-
-Android VectorDrawable is not equivalent to arbitrary SVG. The API provides Android profile XML plus cached PNGs:
-
-```bash
 curl "http://localhost:8787/assets/raster/grok/android-chrome-192.png"
 curl "http://localhost:8787/assets/raster/grok/android-chrome-512.png"
 ```
 
-## CLI
+Android VectorDrawable 不等价于任意 SVG。API 提供的是 profile XML 和 PNG 缓存；如果要把复杂 SVG 作为原生 APK resource，建议用 Android Studio Vector Asset 或单独的 SVG-to-VectorDrawable 构建步骤转换。
+
+## Important Matching Examples
+
+这些条目已经按“厂商”和“产品/模型”分开管理：
+
+| Query | Returned ID | Owner |
+| --- | --- | --- |
+| `xai` | `xai` | `null` |
+| `grok` | `grok` | `xai` |
+| `z.ai` | `z-ai` | `zhipu-ai` |
+| `智谱` | `zhipu-ai` | `null` |
+| `glm` | `glm` | `zhipu-ai` |
+| `copilot` | `microsoft-copilot` | `microsoft-ai` |
+| `github copilot` | `github-copilot` | `microsoft-ai` |
+| `doubao` / `豆包` | `doubao` | `bytedance-doubao` |
+| `cici` / `dola` | `cici-ai` | `bytedance-doubao` |
+| `llama` | `llama` | `meta-ai` |
+| `phi` | `phi` | `microsoft-ai` |
+| `pangu` | `pangu` | `huawei-pangu` |
+| `qianfan` | `baidu-qianfan` | `null` |
+
+## Scripts
 
 ```bash
-node scripts/resolve-icon.mjs GPT-4o
-node scripts/resolve-icon.mjs grok
-node scripts/resolve-icon.mjs copilot
-node scripts/resolve-icon.mjs qwen
-```
-
-Example:
-
-```json
-{
-  "query": "copilot",
-  "id": "github-copilot",
-  "name": "GitHub Copilot",
-  "ownerId": "microsoft-ai",
-  "icon": "assets/icons/github-copilot.svg",
-  "match": "entity",
-  "score": 100
-}
-```
-
-## Maintenance
-
-Regenerate alias index:
-
-```bash
-node scripts/build-aliases.mjs
-```
-
-Generate PNG raster cache:
-
-```bash
-npm install
+npm run build:aliases
 npm run build:raster
+npm run check
+npm run serve
 ```
 
-Validate catalog and local SVGs:
+Lower-level commands:
 
 ```bash
-node scripts/validate-catalog.mjs
-node scripts/check-icons.mjs
-```
-
-Audit semantic icon matches:
-
-```bash
+node scripts/build-catalog.mjs
+node scripts/sync-brand-icons.mjs
+node scripts/resolve-icon.mjs "gpt-4o"
+node scripts/resolve-icon.mjs "github copilot"
 node scripts/audit-icon-matches.mjs
 ```
 
-Sync configured brand sources:
+## Maintenance Workflow
+
+1. Add or update entries in [`data/providers.mjs`](data/providers.mjs).
+2. Add aliases in [`data/manual-aliases.mjs`](data/manual-aliases.mjs).
+3. Add a sync source in [`data/icon-sources.mjs`](data/icon-sources.mjs) only when it points to the correct entity icon.
+4. Put local SVGs in `assets/icons/<id>.svg`.
+5. Rebuild:
 
 ```bash
-node scripts/sync-brand-icons.mjs
+node scripts/build-catalog.mjs
+npm run build:aliases
+npm run build:raster
+npm run check
 ```
 
-Add product-level entries:
+6. Start the API and verify representative queries:
 
 ```bash
-node scripts/add-product-entries.mjs
+npm run serve
+curl "http://localhost:8787/api/resolve?q=llama"
+curl "http://localhost:8787/api/assets?q=gemini"
 ```
 
-## Adding Or Fixing Icons
+## Icon Policy
 
-1. Add or edit entries in [`catalog/models.json`](catalog/models.json), or add structured sources in [`data/icon-sources.mjs`](data/icon-sources.mjs).
-2. For product/model icons, prefer a product-level entry with `ownerId` instead of overloading the vendor entry.
-3. Put the local SVG at `assets/icons/<id>.svg`.
-4. Set `icon.match` honestly. Do not mark a parent company logo as `entity`.
-5. Add aliases in [`data/manual-aliases.mjs`](data/manual-aliases.mjs).
-6. Run validation and audit scripts.
+- Product/model entries should resolve to product/model icons, not parent company logos.
+- Vendor entries may use vendor brand icons.
+- If a reliable official/public SVG cannot be found, use a distinct `local-product-vector` SVG and mark it as `entity`.
+- Do not mark a parent company icon as `entity` for a product/model entry.
+- `npm run check` must leave `catalog/icon-match-audit.json` with `reviewCount: 0`.
 
-## Icon Matching Policy
+## License And Trademarks
 
-图标必须匹配条目本体。厂商条目可以使用厂商品牌 logo；产品、助手、模型族条目必须优先使用产品/模型自己的 logo。
-
-如果没有可靠高清矢量来源：
-
-- 使用 `needs-entity-icon` 标记，不伪装为官方图标。
-- 如果临时使用母品牌，标记 `parent-brand`。
-- API 会返回 `match`，调用方可以自行决定是否展示、降级或提示待补。
-
-## Trademark And License Notes
-
-本仓库只做资源索引、本地缓存和快速访问。品牌名称、商标和图标归各自所有者所有。商用或再分发前，应确认对应品牌资产条款、来源许可和官网品牌规范。
+This repository is an index and cache for fast local/GitHub access. Brand names, trademarks, and icons belong to their respective owners. Check each brand's asset terms before commercial redistribution.

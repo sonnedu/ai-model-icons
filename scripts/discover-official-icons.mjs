@@ -13,7 +13,7 @@ const timeoutFetch = async (url, options = {}) => {
   try {
     return await fetch(url, {
       headers: {
-        "user-agent": "models-assets-icon-discovery/1.0"
+        "user-agent": "ai-model-icons-icon-discovery/1.0"
       },
       redirect: "follow",
       signal: controller.signal

@@ -98,7 +98,7 @@ export const xcodeImageSetContents = (item) => ({
     }
   ],
   info: {
-    author: "models-assets",
+    author: "ai-model-icons",
     version: 1
   },
   properties: {

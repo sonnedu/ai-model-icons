@@ -1,5 +1,30 @@
-.DS_Store
+# Dependencies
 node_modules/
+
+# Local package-manager cache
 .npm-cache/
-dist/
+.yarn/
+.pnpm-store/
+
+# Environment and local config
 .env
+.env.*
+!.env.example
+
+# Build output and temp files
+dist/
+build/
+coverage/
+.cache/
+.tmp/
+tmp/
+*.tmp
+*.log
+*.bak
+*.swp
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

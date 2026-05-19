@@ -12,7 +12,9 @@ export const providers = [
   ["perplexity", "Perplexity", ["Sonar"], "assistant", "US", "https://perplexity.ai"],
   ["deepseek", "DeepSeek", ["DeepSeek"], "foundation-model", "CN", "https://deepseek.com"],
   ["alibaba-qwen", "Alibaba Qwen", ["Qwen", "Wan", "Tongyi"], "foundation-model", "CN", "https://qwen.ai"],
-  ["zhipu-ai", "Zhipu AI", ["GLM", "ChatGLM"], "foundation-model", "CN", "https://z.ai"],
+  ["zhipu-ai", "Zhipu AI", ["Zhipu AI", "智谱 AI"], "foundation-model", "CN", "https://www.zhipuai.cn"],
+  ["z-ai", "Z.ai", ["Z.ai"], "assistant", "CN", "https://z.ai", "zhipu-ai"],
+  ["glm", "GLM", ["GLM", "ChatGLM", "GLM-4", "GLM-4.5"], "foundation-model", "CN", "https://chatglm.cn", "zhipu-ai"],
   ["moonshot-ai", "Moonshot AI", ["Kimi"], "foundation-model", "CN", "https://moonshot.cn"],
   ["baichuan-ai", "Baichuan AI", ["Baichuan"], "foundation-model", "CN", "https://www.baichuan-ai.com"],
   ["minimax", "MiniMax", ["MiniMax", "Hailuo"], "foundation-model", "CN", "https://www.minimaxi.com"],
@@ -40,6 +42,7 @@ export const providers = [
   ["arcee-ai", "Arcee AI", ["Arcee"], "foundation-model", "US", "https://www.arcee.ai"],
   ["nvidia-ai", "NVIDIA AI", ["Nemotron", "NIM", "BioNeMo"], "foundation-model", "US", "https://www.nvidia.com/en-us/ai"],
   ["microsoft-ai", "Microsoft AI", ["Phi", "MAI"], "foundation-model", "US", "https://ai.microsoft"],
+  ["microsoft-copilot", "Microsoft Copilot", ["Copilot", "Microsoft Copilot"], "assistant", "US", "https://copilot.microsoft.com", "microsoft-ai"],
   ["amazon-bedrock", "Amazon Bedrock", ["Nova", "Titan"], "platform", "US", "https://aws.amazon.com/bedrock"],
   ["apple-intelligence", "Apple Intelligence", ["Apple Intelligence"], "assistant", "US", "https://www.apple.com/apple-intelligence/"],
   ["ibm-watsonx", "IBM watsonx", ["Granite"], "foundation-model", "US", "https://www.ibm.com/watsonx"],
@@ -136,6 +139,7 @@ export const providers = [
   ,["qwen", "Qwen", ["Qwen", "QwQ", "QvQ"], "assistant", "CN", "https://qwen.ai", "alibaba-qwen"]
   ,["kimi", "Kimi", ["Kimi", "Kimi K2"], "assistant", "CN", "https://www.kimi.com", "moonshot-ai"]
   ,["doubao", "Doubao", ["Doubao"], "assistant", "CN", "https://www.doubao.com", "bytedance-doubao"]
+  ,["cici-ai", "Cici AI", ["Cici", "Dola"], "assistant", "SG", "https://www.ciciai.com", "bytedance-doubao"]
   ,["hunyuan", "Hunyuan", ["Hunyuan", "Tencent Hunyuan"], "assistant", "CN", "https://hunyuan.tencent.com", "tencent-hunyuan"]
   ,["ernie", "ERNIE", ["ERNIE", "Wenxin", "文心一言"], "assistant", "CN", "https://yiyan.baidu.com", "baidu-ernie"]
   ,["pangu", "Pangu", ["Pangu", "盘古"], "foundation-model", "CN", "https://www.huaweicloud.com/product/pangu.html", "huawei-pangu"]
